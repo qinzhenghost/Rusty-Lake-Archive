@@ -1,0 +1,11 @@
+{
+  "kind":"event","schemaVersion":"1.0.0","id":"seasons-event-summer-1971",
+  "title":{"zhHans":"夏 · 1971","en":"Summer · 1971"},
+  "timeline":{"year":1971,"season":"summer","precision":"season","sortKey":"1971-02","certainty":"canonical"},
+  "summary":{"zhHans":"第二个季节档案位。MVP 暂只保留结构与时间索引。","en":"Second seasonal archive slot; the MVP keeps only structure and timeline metadata here."},
+  "gameIds":["seasons"],"chapterIds":["seasons-summer-1971"],
+  "participants":[{"type":"character","id":"laura-vanderboom"}],"locations":[],
+  "concepts":[{"type":"concept","id":"memory"}],
+  "spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
+  "sourceIds":["primary-seasons-game"]
+}
