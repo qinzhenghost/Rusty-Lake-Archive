@@ -1,0 +1,7 @@
+{
+  "kind":"character","schemaVersion":"1.0.0","id":"corrupted-soul","slug":"corrupted-soul",
+  "title":{"zhHans":"Corrupted Soul","en":"Corrupted Soul"},"aliases":[],
+  "summary":{"zhHans":"MVP 中保留的高剧透人物占位条目。","en":"A high-spoiler character placeholder retained for the MVP data model."},
+  "entries":[],"spoiler":{"level":"major","requiredCompletedGameIds":["seasons"],"allowManualReveal":true,"reason":{"zhHans":"建议完成 Seasons 后查看。","en":"Recommended after completing Seasons."}},
+  "sourceIds":["primary-seasons-game"]
+}
