@@ -1,0 +1,1000 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/rusty-lake-archive/content-item.schema.json",
+  "title": "Rusty Lake Archive Content Item",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/game"
+    },
+    {
+      "$ref": "#/$defs/chapter"
+    },
+    {
+      "$ref": "#/$defs/character"
+    },
+    {
+      "$ref": "#/$defs/concept"
+    },
+    {
+      "$ref": "#/$defs/location"
+    },
+    {
+      "$ref": "#/$defs/event"
+    },
+    {
+      "$ref": "#/$defs/relationSet"
+    },
+    {
+      "$ref": "#/$defs/source"
+    }
+  ],
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "required": [
+        "zhHans",
+        "en"
+      ],
+      "properties": {
+        "zhHans": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "entityRef": {
+      "type": "object",
+      "required": [
+        "type",
+        "id"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "game",
+            "chapter",
+            "character",
+            "concept",
+            "location",
+            "event"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "richToken": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "text"
+          ],
+          "properties": {
+            "kind": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "entity",
+            "label"
+          ],
+          "properties": {
+            "kind": {
+              "const": "entity"
+            },
+            "entity": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "localizedRichText": {
+      "type": "object",
+      "required": [
+        "zhHans",
+        "en"
+      ],
+      "properties": {
+        "zhHans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/richToken"
+          }
+        },
+        "en": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/richToken"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "spoilerRule": {
+      "type": "object",
+      "required": [
+        "level",
+        "requiredCompletedGameIds",
+        "allowManualReveal"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "none",
+            "minor",
+            "major",
+            "cross-game"
+          ]
+        },
+        "requiredCompletedGameIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "allowManualReveal": {
+          "type": "boolean"
+        },
+        "reason": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "mode",
+        "sourceIds"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "editorial-summary",
+            "short-quote",
+            "original-note",
+            "structural-label"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timelinePoint": {
+      "type": "object",
+      "required": [
+        "year",
+        "precision",
+        "sortKey",
+        "certainty"
+      ],
+      "properties": {
+        "year": {
+          "type": "integer",
+          "minimum": 1500,
+          "maximum": 2500
+        },
+        "season": {
+          "enum": [
+            "spring",
+            "summer",
+            "fall",
+            "winter",
+            "unknown"
+          ]
+        },
+        "precision": {
+          "enum": [
+            "year",
+            "season",
+            "date"
+          ]
+        },
+        "sortKey": {
+          "type": "string",
+          "pattern": "^[0-9]{4}(-[0-9]{2}){0,2}([.-][0-9]+)?$"
+        },
+        "certainty": {
+          "enum": [
+            "canonical",
+            "editorial",
+            "uncertain"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "factEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "claimKind",
+        "content",
+        "spoiler",
+        "provenance"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "claimKind": {
+          "enum": [
+            "fact",
+            "interpretation",
+            "theory"
+          ]
+        },
+        "content": {
+          "$ref": "#/$defs/localizedRichText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        }
+      },
+      "additionalProperties": false
+    },
+    "assetRef": {
+      "type": "object",
+      "required": [
+        "assetType",
+        "rights",
+        "alt"
+      ],
+      "properties": {
+        "assetType": {
+          "enum": [
+            "placeholder",
+            "original",
+            "official-licensed"
+          ]
+        },
+        "src": {
+          "type": "string"
+        },
+        "rights": {
+          "enum": [
+            "placeholder",
+            "owned",
+            "licensed"
+          ]
+        },
+        "alt": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "caption": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "additionalProperties": false
+    },
+    "storyBlock": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "title"
+          ],
+          "properties": {
+            "type": {
+              "const": "scene"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "title": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "subtitle": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "content"
+          ],
+          "properties": {
+            "type": {
+              "const": "paragraph"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "content": {
+              "$ref": "#/$defs/localizedRichText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "speaker",
+            "content"
+          ],
+          "properties": {
+            "type": {
+              "const": "dialogue"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "speaker": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "content": {
+              "$ref": "#/$defs/localizedRichText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "asset"
+          ],
+          "properties": {
+            "type": {
+              "const": "image"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "asset": {
+              "$ref": "#/$defs/assetRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "content",
+            "attribution"
+          ],
+          "properties": {
+            "type": {
+              "const": "quote"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "content": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "attribution": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "eventId",
+            "summary"
+          ],
+          "properties": {
+            "type": {
+              "const": "event"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "eventId": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "summary": {
+              "$ref": "#/$defs/localizedRichText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "action",
+            "target",
+            "label"
+          ],
+          "properties": {
+            "type": {
+              "const": "interaction"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "action": {
+              "enum": [
+                "open-entity",
+                "reveal-spoiler",
+                "jump-to-event"
+              ]
+            },
+            "target": {
+              "$ref": "#/$defs/entityRef"
+            },
+            "label": {
+              "$ref": "#/$defs/localizedText"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "type",
+            "spoiler",
+            "provenance",
+            "title",
+            "content",
+            "tone"
+          ],
+          "properties": {
+            "type": {
+              "const": "note"
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "spoiler": {
+              "$ref": "#/$defs/spoilerRule"
+            },
+            "provenance": {
+              "$ref": "#/$defs/provenance"
+            },
+            "title": {
+              "$ref": "#/$defs/localizedText"
+            },
+            "content": {
+              "$ref": "#/$defs/localizedRichText"
+            },
+            "tone": {
+              "enum": [
+                "archive",
+                "context",
+                "warning"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "game": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "slug",
+        "series",
+        "releaseDate",
+        "releaseOrder",
+        "recommendedPlayOrder",
+        "contentStatus",
+        "summary",
+        "chapterIds"
+      ],
+      "properties": {
+        "kind": {
+          "const": "game"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "series": {
+          "enum": [
+            "cube-escape",
+            "rusty-lake",
+            "standalone"
+          ]
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "releaseOrder": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "recommendedPlayOrder": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "contentStatus": {
+          "enum": [
+            "stub",
+            "partial",
+            "complete"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "chapterIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "chapter": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "gameId",
+        "slug",
+        "narrativeOrder",
+        "storyBlocks",
+        "featuredRefs",
+        "eventIds"
+      ],
+      "properties": {
+        "kind": {
+          "const": "chapter"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "gameId": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "narrativeOrder": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "timeline": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/timelinePoint"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "storyBlocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/storyBlock"
+          }
+        },
+        "featuredRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
+        },
+        "eventIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "character": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "slug",
+        "summary",
+        "entries",
+        "aliases"
+      ],
+      "properties": {
+        "kind": {
+          "const": "character"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "slug": {
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/factEntry"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/localizedText"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "slug",
+        "summary",
+        "entries"
+      ],
+      "properties": {
+        "kind": {
+          "const": "concept"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "slug": {
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/factEntry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "slug",
+        "summary",
+        "entries",
+        "timelineRefs"
+      ],
+      "properties": {
+        "kind": {
+          "const": "location"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "slug": {
+          "type": "string"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/factEntry"
+          }
+        },
+        "timelineRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "spoiler",
+        "sourceIds",
+        "timeline",
+        "summary",
+        "gameIds",
+        "chapterIds",
+        "participants",
+        "locations",
+        "concepts"
+      ],
+      "properties": {
+        "kind": {
+          "const": "event"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          }
+        },
+        "timeline": {
+          "$ref": "#/$defs/timelinePoint"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "gameIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "chapterIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
