@@ -1,0 +1,11 @@
+{
+  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-final","gameId":"seasons","slug":"final","narrativeOrder":5,
+  "title":{"zhHans":"Final","en":"Final"},"timeline":null,
+  "storyBlocks":[
+    {"id":"final-scene","type":"scene","title":{"zhHans":"Final","en":"Final"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
+    {"id":"final-placeholder","type":"note","title":{"zhHans":"非时间线章节","en":"Non-linear Chapter"},"content":{"zhHans":[{"kind":"text","text":"Final 不强制绑定一个新的年份；数据模型允许章节存在叙事顺序，但没有独立时间点。"}],"en":[{"kind":"text","text":"Final is not forced into a new calendar year; the model allows narrative order without assigning a separate timeline point."}]},"tone":"context","spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  ],
+  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
+  "eventIds":[],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
+  "sourceIds":["primary-seasons-game","editorial-rla"]
+}
