@@ -234,3 +234,69 @@ main { min-height: calc(100vh - 68px); }
   .reader-pager a.next { text-align: left; }
   .progress-summary { gap: 18px; }
 }
+
+
+/* Step 07 — Lore Network */
+.network-page { overflow: hidden; }
+.network-shell { margin-top: 30px; }
+.network-controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; padding: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.06); }
+.network-controls label { display: grid; gap: 7px; min-width: 180px; flex: 1 1 220px; }
+.network-controls label span { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+.network-controls input, .network-controls select { width: 100%; border: 1px solid var(--line); background: var(--paper-3); min-height: 42px; padding: 8px 10px; color: var(--ink); }
+.network-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 12px 2px; color: var(--muted); font-size: 12px; }
+.network-lock-note a { text-decoration: underline; text-underline-offset: 3px; }
+.network-scroll { overflow-x: auto; border: 1px solid var(--ink); background: linear-gradient(rgba(41,40,32,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(41,40,32,.025) 1px, transparent 1px), var(--paper-3); background-size: 28px 28px; }
+.network-canvas { position: relative; min-width: 920px; height: 680px; }
+.network-edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.network-edges line { stroke: var(--line); stroke-width: 1.4; vector-effect: non-scaling-stroke; transition: opacity .18s ease, stroke-width .18s ease; }
+.network-edges line.active { opacity: .85; stroke-width: 2; }
+.network-edges line.dimmed { opacity: .12; }
+.network-node { position: absolute; width: 150px; min-height: 62px; transform: translate(-50%, -50%); border: 1px solid var(--line); background: var(--paper); padding: 9px 10px; display: grid; gap: 4px; text-align: left; cursor: pointer; box-shadow: 3px 4px 0 rgba(41,40,32,.08); transition: opacity .18s ease, transform .18s ease, border-color .18s ease; }
+.network-node:hover { transform: translate(-50%, -50%) translateY(-2px); border-color: var(--ink); }
+.network-node span { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.network-node b { font-size: 13px; line-height: 1.25; font-weight: 600; }
+.network-node.type-game { background: var(--dark); color: var(--paper); border-color: var(--dark); }
+.network-node.type-game span { color: var(--paper-2); }
+.network-node.type-character { border-left: 4px solid #795a45; }
+.network-node.type-concept { border-left: 4px solid #526a72; }
+.network-node.type-location { border-left: 4px solid #6d7852; }
+.network-node.type-event { border-left: 4px solid var(--rust); }
+.network-node.selected { outline: 3px solid var(--rust); outline-offset: 3px; z-index: 5; }
+.network-node.dimmed { opacity: .22; }
+.network-inspector { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 20px; }
+.network-inspector-head { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.network-inspector-head h2 { margin: 5px 0 0; font-size: 30px; font-weight: 500; }
+.network-inspector-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.connection-list { display: grid; gap: 10px; margin-top: 16px; }
+.connection-card { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: center; border: 1px solid var(--line); padding: 13px 14px; }
+.connection-card .connection-arrow { font-size: 22px; color: var(--rust); }
+.connection-card b { display: block; margin: 4px 0; }
+.connection-card small { color: var(--muted); word-break: break-word; }
+.connection-card button { border: 0; border-bottom: 1px solid var(--ink); background: none; cursor: pointer; padding: 4px 0; }
+.network-empty-inspector { max-width: 760px; color: var(--muted); line-height: 1.8; }
+.related-archive { margin-top: 38px; border-top: 1px solid var(--line); padding-top: 22px; }
+.related-head { display: flex; justify-content: space-between; gap: 18px; align-items: end; margin-bottom: 14px; }
+.related-head h2 { font-size: 30px; margin: 4px 0 0; font-weight: 500; }
+.related-head > a { font-size: 12px; border-bottom: 1px solid var(--ink); }
+.related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.related-card { border: 1px solid var(--line); padding: 14px; display: grid; gap: 6px; min-height: 92px; }
+a.related-card:hover { background: rgba(255,255,255,.14); }
+.related-type { font-size: 10px; letter-spacing: .12em; color: var(--rust); text-transform: uppercase; }
+.related-card small { color: var(--muted); line-height: 1.4; word-break: break-word; }
+.related-locked { font-size: 12px; color: var(--muted); margin-top: 13px; }
+.related-locked a { text-decoration: underline; text-underline-offset: 3px; }
+.dossier-entry-list { display: grid; gap: 14px; margin-top: 20px; }
+.dossier-entry { margin-top: 0 !important; }
+.entity-inline-link { border-bottom: 1px dashed var(--rust); }
+.game-network-link { margin-top: 10px; width: 100%; }
+@media (max-width: 760px) {
+  .network-page { overflow: visible; }
+  .network-canvas { min-width: 860px; height: 650px; }
+  .network-controls { align-items: stretch; }
+  .network-controls .button-ghost { width: 100%; }
+  .network-inspector-head { align-items: flex-start; flex-direction: column; }
+  .connection-card { grid-template-columns: 28px 1fr; }
+  .connection-card button { grid-column: 2; justify-self: start; }
+  .related-grid { grid-template-columns: 1fr; }
+  .related-head { align-items: flex-start; flex-direction: column; }
+}

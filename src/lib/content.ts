@@ -1,7 +1,15 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import type { EntityRef } from '../content/schema';
-import type { ArchiveEntity, ChapterData, EntityRecord, EventData, GameData } from './models';
+import type {
+  ArchiveEntity,
+  ChapterData,
+  EntityRecord,
+  EventData,
+  GameData,
+  RelationData,
+  RelationSetData,
+} from './models';
 
 const contentRoot = join(process.cwd(), 'content');
 
@@ -63,11 +71,32 @@ export function getConcepts(): ArchiveEntity[] {
   return getArchiveEntities().filter((item) => item.kind === 'concept');
 }
 
+export function getLocations(): ArchiveEntity[] {
+  return getArchiveEntities().filter((item) => item.kind === 'location');
+}
+
 export function getEvents(): EventData[] {
   return jsonFiles('events')
     .map((path) => parseJson<EventData>(path))
     .filter((item) => item.kind === 'event')
     .sort((a, b) => a.timeline.sortKey.localeCompare(b.timeline.sortKey));
+}
+
+export function getRelationSets(): RelationSetData[] {
+  return jsonFiles('relations')
+    .map((path) => parseJson<RelationSetData>(path))
+    .filter((item) => item.kind === 'relationSet');
+}
+
+export function getRelations(): RelationData[] {
+  return getRelationSets().flatMap((set) => set.relations);
+}
+
+export function getRelationsForRef(ref: EntityRef): RelationData[] {
+  return getRelations().filter((relation) =>
+    (relation.from.type === ref.type && relation.from.id === ref.id) ||
+    (relation.to.type === ref.type && relation.to.id === ref.id),
+  );
 }
 
 export function getEntityRecord(ref: EntityRef): EntityRecord | undefined {
@@ -94,6 +123,10 @@ export function routeForRef(ref: EntityRef): string | null {
   if (ref.type === 'concept') {
     const entity = getArchiveEntities().find((item) => item.id === ref.id && item.kind === 'concept');
     return entity ? `/lore/${entity.slug}` : null;
+  }
+  if (ref.type === 'location') {
+    const entity = getArchiveEntities().find((item) => item.id === ref.id && item.kind === 'location');
+    return entity ? `/locations/${entity.slug}` : null;
   }
   if (ref.type === 'game') {
     const game = getGames().find((item) => item.id === ref.id);

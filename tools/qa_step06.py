@@ -56,7 +56,11 @@ check('ui:home-copy', 'The Lake' in home and '两套' in home, 'home does not me
 check('ui:progress-data-driven', 'games.map' in progress and 'game.contentStatus' in progress, 'progress list is not game-data-driven')
 
 pkg = json.loads((ROOT/'package.json').read_text('utf-8'))
-check('package:step06', pkg.get('version') == '0.6.0' and 'qa:step06' in pkg.get('scripts',{}) and 'qa:step06' in pkg.get('scripts',{}).get('test',''), 'Step06 package scripts/version missing')
+try:
+    major, minor = [int(x) for x in pkg.get('version','0.0.0').split('.')[:2]]
+except (TypeError, ValueError):
+    major, minor = (0, 0)
+check('package:step06', (major, minor) >= (0, 6) and 'qa:step06' in pkg.get('scripts',{}) and 'qa:step06' in pkg.get('scripts',{}).get('test',''), 'Step06 package script missing or package version predates Step06')
 check('docs:step06', (ROOT/'docs/step06/README.md').exists(), 'Step06 notes missing')
 
 print(f'Step06 QA: {sum(ok for _,ok,_ in checks)}/{len(checks)} checks passed')

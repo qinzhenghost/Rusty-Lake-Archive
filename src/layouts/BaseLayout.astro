@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  active?: 'home' | 'games' | 'timeline' | 'characters' | 'progress' | 'about';
+  active?: 'home' | 'games' | 'timeline' | 'characters' | 'network' | 'progress' | 'about';
 }
 const {
   title = 'Rusty Lake Archive',
@@ -16,6 +16,7 @@ const nav = [
   ['games', '/games', '游戏'],
   ['timeline', '/timeline', '时间线'],
   ['characters', '/characters', '人物'],
+  ['network', '/network', '关系网'],
   ['progress', '/progress', '进度'],
 ] as const;
 ---

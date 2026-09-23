@@ -93,4 +93,33 @@ export type EventData = {
   sourceIds: string[];
 };
 
+export type RelationType =
+  | 'appears_in'
+  | 'companion_of'
+  | 'located_at'
+  | 'involves'
+  | 'associated_with'
+  | 'precedes'
+  | 'follows'
+  | 'references'
+  | 'part_of';
+
+export type RelationData = {
+  id: string;
+  from: EntityRef;
+  type: RelationType;
+  to: EntityRef;
+  spoiler: SpoilerRule;
+  claimKind: ClaimKind;
+  sourceIds: string[];
+};
+
+export type RelationSetData = {
+  kind: 'relationSet';
+  schemaVersion: string;
+  id: string;
+  title: LocalizedText;
+  relations: RelationData[];
+};
+
 export type EntityRecord = ArchiveEntity | EventData | GameData | ChapterData;

@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getChaptersForGame, getGames } from '../../lib/content';
+import RelatedArchive from '../../components/RelatedArchive';
+import { getChaptersForGame, getEntityMap, getGames, getRelationsForRef } from '../../lib/content';
+import type { EntityRef } from '../../content/schema';
 import type { GameData } from '../../lib/models';
 
 export function getStaticPaths() {
@@ -9,6 +11,9 @@ export function getStaticPaths() {
 
 const { game } = Astro.props as { game: GameData };
 const chapters = getChaptersForGame(game.id);
+const subject: EntityRef = { type: 'game', id: game.id };
+const relations = getRelationsForRef(subject);
+const entityMap = getEntityMap();
 ---
 <BaseLayout title={game.title.zhHans} active="games">
   <section class="section">
@@ -19,14 +24,15 @@ const chapters = getChaptersForGame(game.id);
         {chapters.length > 0 ? (
           <div class="chapter-list">
             {chapters.map((chapter, index) => (
-              <a class="chapter-link" href={`/read/${game.slug}/${chapter.slug}`}>
+              <a class="chapter-link" href={'/read/' + game.slug + '/' + chapter.slug}>
                 <span class="chapter-index">{String(index + 1).padStart(2, '0')}</span>
-                <span><b>{chapter.title.zhHans}</b><br /><small class="muted">{chapter.timeline ? `${chapter.timeline.year} · ${chapter.timeline.precision}` : '无固定时间节点'}</small></span>
+                <span><b>{chapter.title.zhHans}</b><br /><small class="muted">{chapter.timeline ? String(chapter.timeline.year) + ' · ' + chapter.timeline.precision : '无固定时间节点'}</small></span>
                 <span>→</span>
               </a>
             ))}
           </div>
-        ) : <div class="empty-state">该作品目前只是用于验证跨作品剧透规则的数据占位，还没有录入可阅读章节。</div>}
+        ) : <div class="empty-state">该作品目前只是结构化占位，还没有录入可阅读章节。</div>}
+        <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
         <div class="kicker">Archive Metadata</div>
@@ -34,7 +40,9 @@ const chapters = getChaptersForGame(game.id);
         <p><b>推荐游玩顺序</b><br />{game.recommendedPlayOrder ?? '—'}</p>
         <p><b>内容状态</b><br />{game.contentStatus}</p>
         <p><b>章节数量</b><br />{chapters.length}</p>
-        {chapters[0] && <a class="button" href={`/read/${game.slug}/${chapters[0].slug}`}>进入第一章</a>}
+        <p><b>结构化关系</b><br />{relations.length}</p>
+        {chapters[0] && <a class="button" href={'/read/' + game.slug + '/' + chapters[0].slug}>进入第一章</a>}
+        <a class="button-ghost game-network-link" href={'/network?focus=game%3A' + game.id}>在关系网中定位</a>
       </aside>
     </div>
   </section>

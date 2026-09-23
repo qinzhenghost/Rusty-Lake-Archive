@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LoreNetwork from '../components/LoreNetwork';
+import { getEntityMap, getRelations } from '../lib/content';
+
+const relations = getRelations();
+const entityMap = getEntityMap();
+---
+<BaseLayout title="Lore Network" active="network">
+  <section class="section network-page">
+    <div class="section-head">
+      <div><div class="kicker">Relationship Map</div><h1>Lore Network</h1></div>
+      <span class="muted">只展示结构化 Relation，不根据视觉邻近推断关系</span>
+    </div>
+    <p class="section-intro">把作品、人物、概念、地点与时间事件放进同一张可探索关系网。跨作品高剧透关系会根据“我的游玩进度”隐藏；筛选只改变视图，不修改原始数据。</p>
+    <LoreNetwork client:load relations={relations} entityMap={entityMap} />
+  </section>
+</BaseLayout>

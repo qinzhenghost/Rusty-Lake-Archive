@@ -9,10 +9,11 @@ const seasons = getGameBySlug('seasons');
     <div class="hero-copy">
       <div class="kicker">Archive / Memory / Lake</div>
       <h1>进入<br />锈湖档案</h1>
-      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。现在已有两套完整阅读档案：<strong>Cube Escape: Seasons</strong> 与 <strong>Cube Escape: The Lake</strong>，并首次连通真实的跨作品关系与防剧透门槛。</p>
+      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。现在已有两套完整阅读档案：<strong>Cube Escape: Seasons</strong> 与 <strong>Cube Escape: The Lake</strong>，并已将作品、人物、概念、地点和事件连接成可探索的 Lore Network。</p>
       <div class="hero-actions">
         <a class="button" href="/read/seasons/spring-1964">从 Seasons 开始</a>
         <a class="button-ghost" href="/games/the-lake">打开 The Lake</a>
+        <a class="button-ghost" href="/network">探索关系网</a>
         <a class="button-ghost" href="/progress">设置游玩进度</a>
       </div>
       <ContinueReading client:load />
@@ -26,7 +27,7 @@ const seasons = getGameBySlug('seasons');
         <div class="file-meta">
           <div><div class="muted">STATUS</div><b>STORY READY</b></div>
           <div><div class="muted">MEMORIES</div><b>1964 → 1981</b></div>
-          <div><div class="muted">LANGUAGE</div><b>中文 / EN / 对照</b></div>
+          <div><div class="muted">NETWORK</div><b>RELATIONS</b></div>
           <div><div class="muted">SPOILER</div><b>CROSS-GAME</b></div>
         </div>
       </article>
@@ -35,7 +36,7 @@ const seasons = getGameBySlug('seasons');
   <section class="home-grid" aria-label="探索入口">
     <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>两套完整档案已上线；后续作品继续沿同一 Schema 扩展。</span></a>
     <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>只收录有可靠故事时间依据的事件，不用发布日期替代世界观年份。</span></a>
-    <a class="home-tile" href="/characters"><div class="kicker">03</div><b>人物档案</b><span>阅读过程中点击实体词即可展开档案，并区分事实、解释与理论。</span></a>
-    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>跨作品档案根据完成进度遮蔽；进度只保存在当前浏览器。</span></a>
+    <a class="home-tile" href="/network"><div class="kicker">03</div><b>Lore Network</b><span>从人物、概念、地点和作品之间的结构化关系继续探索，不靠视觉邻近猜测关联。</span></a>
+    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>关系网、完整档案和阅读器共享同一套本地进度门槛。</span></a>
   </section>
 </BaseLayout>

@@ -2,21 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DossierEntries from '../../components/DossierEntries';
 import RelatedArchive from '../../components/RelatedArchive';
-import { getCharacters, getEntityMap, getRelationsForRef } from '../../lib/content';
+import { getEntityMap, getLocations, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
 import type { ArchiveEntity } from '../../lib/models';
 
 export function getStaticPaths() {
-  return getCharacters().map((entity) => ({ params: { slug: entity.slug }, props: { entity } }));
+  return getLocations().map((entity) => ({ params: { slug: entity.slug }, props: { entity } }));
 }
 const { entity } = Astro.props as { entity: ArchiveEntity };
-const subject: EntityRef = { type: 'character', id: entity.id };
+const subject: EntityRef = { type: 'location', id: entity.id };
 const relations = getRelationsForRef(subject);
 const entityMap = getEntityMap();
 ---
-<BaseLayout title={entity.title.zhHans} active="characters">
+<BaseLayout title={entity.title.zhHans}>
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Subject File</div><h1>{entity.title.zhHans}</h1></div><span class="badge">{entity.entries.length} entries</span></div>
+    <div class="section-head"><div><div class="kicker">Location File</div><h1>{entity.title.zhHans}</h1></div><span class="badge">{relations.length} relations</span></div>
     <div class="detail-grid">
       <div>
         <p class="section-intro">{entity.summary.zhHans}</p>
@@ -24,9 +24,9 @@ const entityMap = getEntityMap();
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Spoiler Control</div>
-        <p>完整档案页与阅读器使用同一套本地游玩进度。未满足条件的条目不会因为跳出阅读器而泄露。</p>
-        <a class="button" href={'/network?focus=character%3A' + entity.id}>在关系网中定位</a>
+        <div class="kicker">Place in the Network</div>
+        <p>地点节点用于连接事件、作品与世界观空间；没有可靠年份时不会从地点关系推导时间线。</p>
+        <a class="button" href={'/network?focus=location%3A' + entity.id}>在关系网中定位</a>
       </aside>
     </div>
   </section>
