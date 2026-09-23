@@ -1,0 +1,12 @@
+{
+  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-winter-1981","gameId":"seasons","slug":"winter-1981","narrativeOrder":4,
+  "title":{"zhHans":"冬 · 1981","en":"Winter · 1981"},
+  "timeline":{"year":1981,"season":"winter","precision":"season","sortKey":"1981-04","certainty":"canonical"},
+  "storyBlocks":[
+    {"id":"winter-1981-scene","type":"scene","title":{"zhHans":"冬 · 1981","en":"Winter · 1981"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
+    {"id":"winter-1981-placeholder","type":"note","title":{"zhHans":"内容占位","en":"Content Placeholder"},"content":{"zhHans":[{"kind":"text","text":"Schema 已为本章预留双语正文、人物、事件、概念和剧透字段；详细剧情将在内容录入阶段补充。"}],"en":[{"kind":"text","text":"The schema reserves bilingual story, entity, event, concept, and spoiler fields for this chapter; detailed story content will be authored later."}]},"tone":"archive","spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  ],
+  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
+  "eventIds":["seasons-event-winter-1981"],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
+  "sourceIds":["primary-seasons-game","editorial-rla"]
+}
