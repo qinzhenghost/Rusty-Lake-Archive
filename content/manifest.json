@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "defaultLocale": "zhHans",
+  "supportedLocales": ["zhHans","en"],
+  "contentFiles": [
+    "content/sources/official-seasons-presskit.json",
+    "content/sources/official-rustylake-faq.json",
+    "content/sources/official-the-mill-presskit.json",
+    "content/sources/primary-seasons-game.json",
+    "content/sources/editorial-rla.json",
+    "content/games/seasons.json",
+    "content/games/the-mill.stub.json",
+    "content/characters/laura-vanderboom.json",
+    "content/characters/harvey.json",
+    "content/characters/corrupted-soul.json",
+    "content/concepts/memory.json",
+    "content/concepts/memory-cube.json",
+    "content/concepts/black-cube.json",
+    "content/concepts/rusty-lake.json",
+    "content/locations/lauras-room.json",
+    "content/locations/rusty-lake-location.json",
+    "content/events/seasons-event-spring-1964.json",
+    "content/events/seasons-event-summer-1971.json",
+    "content/events/seasons-event-fall-1971.json",
+    "content/events/seasons-event-winter-1981.json",
+    "content/chapters/seasons/spring-1964.json",
+    "content/chapters/seasons/summer-1971.json",
+    "content/chapters/seasons/fall-1971.json",
+    "content/chapters/seasons/winter-1981.json",
+    "content/chapters/seasons/final.json",
+    "content/relations/seasons-relations.json"
+  ],
+  "uiDefaults": {
+    "readerRoute": "/read/seasons/spring-1964",
+    "spoilerPolicy": "hide-unmet-requirements",
+    "allowManualReveal": true
+  }
+}
