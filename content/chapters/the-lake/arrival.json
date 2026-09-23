@@ -165,7 +165,7 @@
         "allowManualReveal": true
       },
       "provenance": {
-        "mode": "editorial-note",
+        "mode": "original-note",
         "sourceIds": [
           "official-rustylake-faq",
           "editorial-rla"
