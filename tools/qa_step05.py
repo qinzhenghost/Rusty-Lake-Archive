@@ -50,7 +50,11 @@ check('deploy:security-headers', 'X-Content-Type-Options' in headers and 'Permis
 deploy=(ROOT/'docs/step05/DEPLOY_CLOUDFLARE.md').read_text('utf-8') if (ROOT/'docs/step05/DEPLOY_CLOUDFLARE.md').exists() else ''
 check('deploy:cloudflare-build', 'npm run build' in deploy and 'dist' in deploy and 'main' in deploy, 'Cloudflare Pages settings incomplete')
 pkg=json.loads((ROOT/'package.json').read_text('utf-8'))
-check('package:step05', pkg.get('version') == '0.5.0' and 'qa:step05' in pkg.get('scripts',{}), 'Step05 package scripts/version missing')
+try:
+    major, minor = [int(x) for x in pkg.get('version','0.0.0').split('.')[:2]]
+except (TypeError, ValueError):
+    major, minor = (0, 0)
+check('package:step05', (major, minor) >= (0, 5) and 'qa:step05' in pkg.get('scripts',{}), 'Step05 package script missing or package version predates Step05')
 
 print(f'Step05 QA: {sum(ok for _,ok,_ in checks)}/{len(checks)} checks passed')
 for name,ok,detail in checks:
