@@ -30,7 +30,7 @@ timeline = (ROOT / 'src/pages/timeline.astro').read_text('utf-8')
 
 check('reader:no-dangerous-html', 'dangerouslySetInnerHTML' not in reader and 'innerHTML' not in reader, 'reader must render rich tokens structurally')
 check('reader:entity-links', 'entity-button' in reader and 'onEntity' in reader, 'entity tokens must stay interactive')
-check('reader:languages', all(token in reader for token in ["'zhHans'", "'en", "'bi'"]), 'three language modes missing')
+check('reader:languages', all(token in reader for token in ["'zhHans'", "'en'", "'bi'"]), 'three language modes missing')
 check('reader:spoiler-gate', 'canView' in reader and 'manualRevealIds' in reader, 'spoiler logic is not wired')
 check('reader:mobile-sheet', 'chapter-sheet' in reader and 'mobile-tabs' in reader, 'mobile chapter/navigation interaction missing')
 check('progress:local-storage', 'localStorage' in progress and 'rla-progress-v1' in progress, 'progress persistence missing')
@@ -46,7 +46,7 @@ check('package:test', 'test' in pkg.get('scripts', {}) and 'build' in pkg.get('s
 
 print(f'Step04 QA: {sum(v for _,v in checks)}/{len(checks)} checks passed')
 for name, ok in checks:
-    print(f"['{PASS'} if ok else 'FAIL'}] {name}")
+    print(f"[{'PASS' if ok else 'FAIL'}] {name}")
 if errors:
     print('\nProblems:')
     for error in errors: print('-', error)
