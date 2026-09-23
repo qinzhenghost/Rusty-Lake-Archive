@@ -1,0 +1,11 @@
+{
+  "kind":"event","schemaVersion":"1.0.0","id":"seasons-event-fall-1971",
+  "title":{"zhHans":"秋 · 1971","en":"Fall · 1971"},
+  "timeline":{"year":1971,"season":"fall","precision":"season","sortKey":"1971-03","certainty":"canonical"},
+  "summary":{"zhHans":"第三个季节档案位。MVP 暂只保留结构与时间索引。","en":"Third seasonal archive slot; the MVP keeps only structure and timeline metadata here."},
+  "gameIds":["seasons"],"chapterIds":["seasons-fall-1971"],
+  "participants":[{"type":"character","id":"laura-vanderboom"}],"locations":[],
+  "concepts":[{"type":"concept","id":"memory"}],
+  "spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
+  "sourceIds":["primary-seasons-game"]
+}
