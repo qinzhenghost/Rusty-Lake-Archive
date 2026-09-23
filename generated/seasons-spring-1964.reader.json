@@ -1,0 +1,356 @@
+{
+  "route": "/read/seasons/spring-1964",
+  "game": {
+    "id": "seasons",
+    "title": {
+      "zhHans": "Cube Escape: Seasons",
+      "en": "Cube Escape: Seasons"
+    }
+  },
+  "chapter": {
+    "id": "seasons-spring-1964",
+    "title": {
+      "zhHans": "春 · 1964",
+      "en": "Spring · 1964"
+    },
+    "timeline": {
+      "year": 1964,
+      "season": "spring",
+      "precision": "season",
+      "sortKey": "1964-01",
+      "certainty": "canonical"
+    }
+  },
+  "chapterNav": [
+    {
+      "id": "seasons-spring-1964",
+      "slug": "spring-1964",
+      "title": {
+        "zhHans": "春 · 1964",
+        "en": "Spring · 1964"
+      },
+      "active": true
+    },
+    {
+      "id": "seasons-summer-1971",
+      "slug": "summer-1971",
+      "title": {
+        "zhHans": "夏 · 1971",
+        "en": "Summer · 1971"
+      },
+      "active": false
+    },
+    {
+      "id": "seasons-fall-1971",
+      "slug": "fall-1971",
+      "title": {
+        "zhHans": "秋 · 1971",
+        "en": "Fall · 1971"
+      },
+      "active": false
+    },
+    {
+      "id": "seasons-winter-1981",
+      "slug": "winter-1981",
+      "title": {
+        "zhHans": "冬 · 1981",
+        "en": "Winter · 1981"
+      },
+      "active": false
+    },
+    {
+      "id": "seasons-final",
+      "slug": "final",
+      "title": {
+        "zhHans": "Final",
+        "en": "Final"
+      },
+      "active": false
+    }
+  ],
+  "storyBlocks": [
+    {
+      "id": "spring-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "春 · 1964",
+        "en": "Spring · 1964"
+      },
+      "subtitle": {
+        "zhHans": "第一段记忆",
+        "en": "The first memory"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "spring-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "1964 年的春天，"
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": " 身处一个看似平静的房间。这个空间会成为阅读器组织记忆与时间线的第一个锚点。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "In the spring of 1964, "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": " is in an apparently calm room. This space becomes the reader’s first anchor for memory and chronology."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "spring-image",
+      "type": "image",
+      "asset": {
+        "assetType": "placeholder",
+        "rights": "placeholder",
+        "alt": {
+          "zhHans": "Laura 房间场景占位图",
+          "en": "Placeholder for Laura's room"
+        },
+        "caption": {
+          "zhHans": "正式版本仅使用自制或获得许可的视觉素材。",
+          "en": "Production should use only original or properly licensed visual assets."
+        }
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "spring-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方资料提到她的鹦鹉 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": "。阅读器会把人物作为结构化实体，而不是写死在 HTML 字符串里。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Official material mentions her parrot "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": ". The reader stores characters as structured entities rather than hard-coded HTML."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-seasons-presskit",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "spring-event",
+      "type": "event",
+      "eventId": "seasons-event-spring-1964",
+      "summary": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "将这一段记录到 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "记忆"
+          },
+          {
+            "kind": "text",
+            "text": " 时间线。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Index this segment in the "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "memory"
+          },
+          {
+            "kind": "text",
+            "text": " timeline."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "spring-note",
+      "type": "note",
+      "title": {
+        "zhHans": "档案说明",
+        "en": "Archive Note"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "本阶段文本为项目原创摘要与结构样例，不复制游戏完整对白、谜题步骤或长篇原文。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This phase uses original editorial summaries and structural samples rather than reproducing full dialogue, puzzle steps, or long game text."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "caseNotes": [
+    {
+      "type": "character",
+      "id": "harvey",
+      "title": {
+        "zhHans": "Harvey",
+        "en": "Harvey"
+      }
+    },
+    {
+      "type": "character",
+      "id": "laura-vanderboom",
+      "title": {
+        "zhHans": "Laura Vanderboom",
+        "en": "Laura Vanderboom"
+      }
+    },
+    {
+      "type": "concept",
+      "id": "memory",
+      "title": {
+        "zhHans": "记忆",
+        "en": "Memory"
+      }
+    },
+    {
+      "type": "location",
+      "id": "lauras-room",
+      "title": {
+        "zhHans": "Laura 的房间",
+        "en": "Laura's Room"
+      }
+    }
+  ],
+  "timelineEventIds": [
+    "seasons-event-spring-1964"
+  ]
+}
