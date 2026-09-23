@@ -998,3 +998,154 @@
           "items": {
             "$ref": "#/$defs/entityRef"
           }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
+        },
+        "concepts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "from",
+        "type",
+        "to",
+        "spoiler",
+        "claimKind",
+        "sourceIds"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "from": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "type": {
+          "enum": [
+            "appears_in",
+            "companion_of",
+            "located_at",
+            "involves",
+            "associated_with",
+            "precedes",
+            "follows",
+            "references",
+            "part_of"
+          ]
+        },
+        "to": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "spoiler": {
+          "$ref": "#/$defs/spoilerRule"
+        },
+        "claimKind": {
+          "enum": [
+            "fact",
+            "interpretation",
+            "theory"
+          ]
+        },
+        "sourceIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationSet": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "relations"
+      ],
+      "properties": {
+        "kind": {
+          "const": "relationSet"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind",
+        "schemaVersion",
+        "id",
+        "title",
+        "sourceType",
+        "publisher"
+      ],
+      "properties": {
+        "kind": {
+          "const": "source"
+        },
+        "schemaVersion": {
+          "const": "1.0.0"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "sourceType": {
+          "enum": [
+            "official-page",
+            "official-presskit",
+            "primary-game",
+            "editorial"
+          ]
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publishedDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
