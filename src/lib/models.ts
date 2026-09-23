@@ -122,4 +122,34 @@ export type RelationSetData = {
   relations: RelationData[];
 };
 
+export type SearchKind =
+  | 'game'
+  | 'chapter'
+  | 'story'
+  | 'character'
+  | 'concept'
+  | 'location'
+  | 'event'
+  | 'entry'
+  | 'relation';
+
+export type SearchReaderLink = {
+  title: LocalizedText;
+  route: string;
+};
+
+export type SearchDocument = {
+  id: string;
+  contentId: string;
+  kind: SearchKind;
+  title: LocalizedText;
+  excerpt: LocalizedText;
+  searchText: LocalizedText;
+  route: string;
+  networkFocus?: string;
+  readerLinks: SearchReaderLink[];
+  spoiler: SpoilerRule;
+  sourceIds: string[];
+};
+
 export type EntityRecord = ArchiveEntity | EventData | GameData | ChapterData;

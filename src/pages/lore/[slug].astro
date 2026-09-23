@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveReaderLinks from '../../components/ArchiveReaderLinks.astro';
 import DossierEntries from '../../components/DossierEntries';
 import RelatedArchive from '../../components/RelatedArchive';
-import { getConcepts, getEntityMap, getRelationsForRef } from '../../lib/content';
+import { getConcepts, getEntityMap, getReaderLinksForRef, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
 import type { ArchiveEntity } from '../../lib/models';
 
@@ -12,6 +13,7 @@ export function getStaticPaths() {
 const { entity } = Astro.props as { entity: ArchiveEntity };
 const subject: EntityRef = { type: 'concept', id: entity.id };
 const relations = getRelationsForRef(subject);
+const readerLinks = getReaderLinksForRef(subject);
 const entityMap = getEntityMap();
 ---
 <BaseLayout title={entity.title.zhHans}>
@@ -21,12 +23,13 @@ const entityMap = getEntityMap();
       <div>
         <p class="section-intro">{entity.summary.zhHans}</p>
         <DossierEntries client:load entries={entity.entries} entityMap={entityMap} />
+        <ArchiveReaderLinks links={readerLinks} networkFocus={'concept:' + entity.id} />
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Network Index</div>
-        <p>概念档案不再是孤立词条。关系来源、事实/解释层级以及跨作品剧透门槛都从同一套 Relation 数据读取。</p>
-        <a class="button" href={'/network?focus=concept%3A' + entity.id}>在关系网中定位</a>
+        <div class="kicker">Archive Index</div>
+        <p>从当前概念可以继续回到出现它的剧情章节、定位关系网，或搜索全站其他提及。</p>
+        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}>搜索相关内容</a>
       </aside>
     </div>
   </section>

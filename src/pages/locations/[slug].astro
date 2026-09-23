@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveReaderLinks from '../../components/ArchiveReaderLinks.astro';
 import DossierEntries from '../../components/DossierEntries';
 import RelatedArchive from '../../components/RelatedArchive';
-import { getEntityMap, getLocations, getRelationsForRef } from '../../lib/content';
+import { getEntityMap, getLocations, getReaderLinksForRef, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
 import type { ArchiveEntity } from '../../lib/models';
 
@@ -12,6 +13,7 @@ export function getStaticPaths() {
 const { entity } = Astro.props as { entity: ArchiveEntity };
 const subject: EntityRef = { type: 'location', id: entity.id };
 const relations = getRelationsForRef(subject);
+const readerLinks = getReaderLinksForRef(subject);
 const entityMap = getEntityMap();
 ---
 <BaseLayout title={entity.title.zhHans}>
@@ -21,12 +23,13 @@ const entityMap = getEntityMap();
       <div>
         <p class="section-intro">{entity.summary.zhHans}</p>
         <DossierEntries client:load entries={entity.entries} entityMap={entityMap} />
+        <ArchiveReaderLinks links={readerLinks} networkFocus={'location:' + entity.id} />
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Place in the Network</div>
-        <p>地点节点用于连接事件、作品与世界观空间；没有可靠年份时不会从地点关系推导时间线。</p>
-        <a class="button" href={'/network?focus=location%3A' + entity.id}>在关系网中定位</a>
+        <div class="kicker">Place in the Archive</div>
+        <p>地点可以直接回到相关剧情章节，也可以继续追踪与事件、作品和概念之间的结构化关系。</p>
+        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}>搜索相关内容</a>
       </aside>
     </div>
   </section>

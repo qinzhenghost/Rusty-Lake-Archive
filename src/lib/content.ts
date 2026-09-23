@@ -9,6 +9,9 @@ import type {
   GameData,
   RelationData,
   RelationSetData,
+  SearchDocument,
+  SearchReaderLink,
+  StoryBlockData,
 } from './models';
 
 const contentRoot = join(process.cwd(), 'content');
@@ -144,4 +147,188 @@ export function routeForRef(ref: EntityRef): string | null {
     return chapter && game ? `/read/${game.slug}/${chapter.slug}` : '/timeline';
   }
   return null;
+}
+
+
+function richTextToText(tokens: { kind: string; text?: string; label?: string }[]): string {
+  return tokens.map((token) => token.kind === 'text' ? token.text ?? '' : token.label ?? '').join('');
+}
+
+function storyBlockText(block: StoryBlockData, locale: 'zhHans' | 'en'): string {
+  if (block.type === 'paragraph' || block.type === 'dialogue' || block.type === 'note') {
+    return richTextToText(block.content[locale]);
+  }
+  if (block.type === 'event') return richTextToText(block.summary[locale]);
+  if (block.type === 'scene') return [block.title[locale], block.subtitle?.[locale] ?? ''].filter(Boolean).join(' · ');
+  if (block.type === 'quote') return block.content[locale];
+  if (block.type === 'interaction') return block.label[locale];
+  if (block.type === 'image') return [block.asset.alt[locale], block.asset.caption?.[locale] ?? ''].filter(Boolean).join(' · ');
+  return '';
+}
+
+function networkFocusForRef(ref: EntityRef): string | undefined {
+  return ['game', 'character', 'concept', 'location', 'event'].includes(ref.type)
+    ? entityKey(ref)
+    : undefined;
+}
+
+export function getReaderLinksForRef(ref: EntityRef): SearchReaderLink[] {
+  const games = getGames();
+  const chapters = getChapters();
+  if (ref.type === 'chapter') {
+    const chapter = chapters.find((item) => item.id === ref.id);
+    const game = chapter && games.find((item) => item.id === chapter.gameId);
+    return chapter && game ? [{ title: chapter.title, route: `/read/${game.slug}/${chapter.slug}` }] : [];
+  }
+  if (ref.type === 'event') {
+    const event = getEvents().find((item) => item.id === ref.id);
+    return (event?.chapterIds ?? []).flatMap((chapterId) => {
+      const chapter = chapters.find((item) => item.id === chapterId);
+      const game = chapter && games.find((item) => item.id === chapter.gameId);
+      return chapter && game ? [{ title: chapter.title, route: `/read/${game.slug}/${chapter.slug}` }] : [];
+    }).slice(0, 3);
+  }
+  if (ref.type === 'game') {
+    const game = games.find((item) => item.id === ref.id);
+    if (!game) return [];
+    return getChaptersForGame(game.id).slice(0, 3).map((chapter) => ({
+      title: chapter.title,
+      route: `/read/${game.slug}/${chapter.slug}`,
+    }));
+  }
+  return chapters
+    .filter((chapter) => chapter.featuredRefs.some((item) => item.type === ref.type && item.id === ref.id))
+    .slice(0, 3)
+    .flatMap((chapter) => {
+      const game = games.find((item) => item.id === chapter.gameId);
+      return game ? [{ title: chapter.title, route: `/read/${game.slug}/${chapter.slug}` }] : [];
+    });
+}
+
+function entitySearchDocument(record: EntityRecord): SearchDocument {
+  const ref: EntityRef = { type: record.kind, id: record.id };
+  const route = routeForRef(ref) ?? '/';
+  const summary = 'summary' in record
+    ? record.summary
+    : { zhHans: record.title.zhHans, en: record.title.en };
+  const extraZh = record.kind === 'character' ? (record.aliases ?? []).join(' ') : '';
+  const extraEn = extraZh;
+  return {
+    id: `entity:${record.kind}:${record.id}`,
+    contentId: record.id,
+    kind: record.kind,
+    title: record.title,
+    excerpt: summary,
+    searchText: {
+      zhHans: [record.title.zhHans, summary.zhHans, record.id, extraZh].filter(Boolean).join(' '),
+      en: [record.title.en, summary.en, record.id, extraEn].filter(Boolean).join(' '),
+    },
+    route,
+    networkFocus: networkFocusForRef(ref),
+    readerLinks: getReaderLinksForRef(ref),
+    spoiler: record.spoiler,
+    sourceIds: record.sourceIds,
+  };
+}
+
+export function getSearchDocuments(): SearchDocument[] {
+  const games = getGames();
+  const chapters = getChapters();
+  const archiveEntities = getArchiveEntities();
+  const events = getEvents();
+  const entityMap = getEntityMap();
+
+  const entityDocs = [...games, ...chapters, ...archiveEntities, ...events].map(entitySearchDocument);
+
+  const storyDocs: SearchDocument[] = chapters.flatMap((chapter) => {
+    const game = games.find((item) => item.id === chapter.gameId);
+    if (!game) return [];
+    return chapter.storyBlocks
+      .map((block): SearchDocument | null => {
+        const zh = storyBlockText(block, 'zhHans').trim();
+        const en = storyBlockText(block, 'en').trim();
+        if (!zh && !en) return null;
+        return {
+          id: `story:${chapter.id}:${block.id}`,
+          contentId: block.id,
+          kind: 'story',
+          title: chapter.title,
+          excerpt: { zhHans: zh, en },
+          searchText: {
+            zhHans: [chapter.title.zhHans, game.title.zhHans, zh].join(' '),
+            en: [chapter.title.en, game.title.en, en].join(' '),
+          },
+          route: `/read/${game.slug}/${chapter.slug}`,
+          networkFocus: undefined,
+          readerLinks: [{ title: chapter.title, route: `/read/${game.slug}/${chapter.slug}` }],
+          spoiler: block.spoiler,
+          sourceIds: block.provenance?.sourceIds ?? chapter.sourceIds,
+        };
+      })
+      .filter((item): item is SearchDocument => item !== null);
+  });
+
+  const entryDocs: SearchDocument[] = archiveEntities.flatMap((entity) => {
+    const ref: EntityRef = { type: entity.kind, id: entity.id };
+    const route = routeForRef(ref) ?? '/';
+    return entity.entries.map((entry) => {
+      const zh = richTextToText(entry.content.zhHans);
+      const en = richTextToText(entry.content.en);
+      return {
+        id: `entry:${entity.kind}:${entity.id}:${entry.id}`,
+        contentId: entry.id,
+        kind: 'entry',
+        title: entity.title,
+        excerpt: { zhHans: zh, en },
+        searchText: {
+          zhHans: [entity.title.zhHans, entity.id, zh].join(' '),
+          en: [entity.title.en, entity.id, en].join(' '),
+        },
+        route,
+        networkFocus: networkFocusForRef(ref),
+        readerLinks: getReaderLinksForRef(ref),
+        spoiler: entry.spoiler,
+        sourceIds: entry.provenance?.sourceIds ?? entity.sourceIds,
+      };
+    });
+  });
+
+  const relationDocs: SearchDocument[] = getRelations().map((relation) => {
+    const fromRecord = entityMap[entityKey(relation.from)];
+    const toRecord = entityMap[entityKey(relation.to)];
+    const fromZh = fromRecord && 'title' in fromRecord ? fromRecord.title.zhHans : relation.from.id;
+    const fromEn = fromRecord && 'title' in fromRecord ? fromRecord.title.en : relation.from.id;
+    const toZh = toRecord && 'title' in toRecord ? toRecord.title.zhHans : relation.to.id;
+    const toEn = toRecord && 'title' in toRecord ? toRecord.title.en : relation.to.id;
+    const fromRoute = routeForRef(relation.from);
+    const toRoute = routeForRef(relation.to);
+    const readerLinks = [
+      ...getReaderLinksForRef(relation.from),
+      ...getReaderLinksForRef(relation.to),
+    ].filter((link, index, all) => all.findIndex((item) => item.route === link.route) === index).slice(0, 3);
+    return {
+      id: `relation:${relation.id}`,
+      contentId: relation.id,
+      kind: 'relation',
+      title: {
+        zhHans: `${fromZh} ↔ ${toZh}`,
+        en: `${fromEn} ↔ ${toEn}`,
+      },
+      excerpt: {
+        zhHans: `${fromZh} 与 ${toZh} 的结构化关系：${relation.type}`,
+        en: `Structured relation between ${fromEn} and ${toEn}: ${relation.type}`,
+      },
+      searchText: {
+        zhHans: [fromZh, toZh, relation.type, relation.claimKind].join(' '),
+        en: [fromEn, toEn, relation.type, relation.claimKind].join(' '),
+      },
+      route: fromRoute ?? toRoute ?? '/network',
+      networkFocus: networkFocusForRef(relation.from) ?? networkFocusForRef(relation.to),
+      readerLinks,
+      spoiler: relation.spoiler,
+      sourceIds: relation.sourceIds,
+    };
+  });
+
+  return [...entityDocs, ...storyDocs, ...entryDocs, ...relationDocs];
 }

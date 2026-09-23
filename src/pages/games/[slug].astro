@@ -43,6 +43,7 @@ const entityMap = getEntityMap();
         <p><b>结构化关系</b><br />{relations.length}</p>
         {chapters[0] && <a class="button" href={'/read/' + game.slug + '/' + chapters[0].slug}>进入第一章</a>}
         <a class="button-ghost game-network-link" href={'/network?focus=game%3A' + game.id}>在关系网中定位</a>
+        <a class="button-ghost game-network-link" href={'/search?q=' + encodeURIComponent(game.title.zhHans)}>搜索本作相关内容</a>
       </aside>
     </div>
   </section>

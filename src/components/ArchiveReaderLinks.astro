@@ -1,0 +1,19 @@
+---
+import type { SearchReaderLink } from '../lib/models';
+
+interface Props {
+  links: SearchReaderLink[];
+  networkFocus?: string;
+}
+const { links, networkFocus } = Astro.props;
+---
+{(links.length > 0 || networkFocus) && (
+  <section class="archive-jumps">
+    <div class="kicker">Quick Paths</div>
+    <h2>继续探索</h2>
+    <div class="archive-jump-links">
+      {links.map((link) => <a href={link.route}><span>剧情章节</span><b>{link.title.zhHans}</b><i>→</i></a>)}
+      {networkFocus && <a href={'/network?focus=' + encodeURIComponent(networkFocus)}><span>Lore Network</span><b>在关系网中定位</b><i>→</i></a>}
+    </div>
+  </section>
+)}
