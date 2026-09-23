@@ -37,7 +37,9 @@ check('progress:local-storage', 'localStorage' in progress and 'rla-progress-v1'
 check('loader:root-content', "join(process.cwd(), 'content')" in loader, 'content loader must consume Step 03 root data')
 check('route:data-driven', 'getStaticPaths' in read_page and 'getEntityMap' in read_page, 'reader routes must come from content data')
 check('timeline:data-driven', 'getEvents()' in timeline, 'timeline must use event data')
-media_ext={'.png','.jpg','.jpeg','.webp','.gif','.mp3','.wav','.ogg','.mp4','.mov'}\npublic_media=[p for p in (ROOT/'public').rglob('*') if p.is_file() and p.suffix.lower() in media_ext] if (ROOT/'public').exists() else []\ncheck('copyright:no-official-assets', not public_media, f'unreviewed media assets: {public_media}')
+media_ext={'.png','.jpg','.jpeg','.webp','.gif','.mp3','.wav','.ogg','.mp4','.mov'}
+public_media=[p for p in (ROOT/'public').rglob('*') if p.is_file() and p.suffix.lower() in media_ext] if (ROOT/'public').exists() else []
+check('copyright:no-official-assets', not public_media, f'unreviewed media assets: {public_media}')
 
 pkg = json.loads((ROOT / 'package.json').read_text('utf-8'))
 check('package:astro', 'astro' in pkg.get('dependencies', {}), 'Astro dependency missing')
