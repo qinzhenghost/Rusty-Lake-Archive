@@ -1,0 +1,10 @@
+{
+  "kind":"character","schemaVersion":"1.0.0","id":"laura-vanderboom","slug":"laura-vanderboom",
+  "title":{"zhHans":"Laura Vanderboom","en":"Laura Vanderboom"},"aliases":[],
+  "summary":{"zhHans":"《Cube Escape: Seasons》的核心人物之一。MVP 只展示当前游玩进度允许确认的信息。","en":"A central figure in Cube Escape: Seasons. The MVP reveals only information allowed by the current spoiler progress."},
+  "entries":[
+    {"id":"laura-seasons-role","claimKind":"fact","content":{"zhHans":[{"kind":"text","text":"Laura 是 Seasons 当前档案的核心人物，故事围绕她的记忆展开。"}],"en":[{"kind":"text","text":"Laura is the central subject of the current Seasons archive, which is organized around her memories."}]},"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"editorial-summary","sourceIds":["primary-seasons-game"]}},
+    {"id":"laura-cross-game-demo-lock","claimKind":"fact","content":{"zhHans":[{"kind":"text","text":"这是用于验证跨作品防剧透机制的示例档案位；实际 The Mill 内容将在后续录入。"}],"en":[{"kind":"text","text":"This is a demo archive slot for cross-game spoiler gating; actual The Mill content will be authored later."}]},"spoiler":{"level":"cross-game","requiredCompletedGameIds":["the-mill"],"allowManualReveal":true,"reason":{"zhHans":"涉及尚未完成的 The Mill 档案。","en":"Contains archive information gated behind The Mill."}},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  ],
+  "spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["primary-seasons-game","editorial-rla"]
+}
