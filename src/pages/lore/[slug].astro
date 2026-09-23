@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getConcepts } from '../../lib/content';
+import type { ArchiveEntity } from '../../lib/models';
+export function getStaticPaths() { return getConcepts().map((entity) => ({ params: { slug: entity.slug }, props: { entity } })); }
+const { entity } = Astro.props as { entity: ArchiveEntity };
+---
+<BaseLayout title={entity.title.zhHans}>
+  <section class="section"><div class="section-head"><div><div class="kicker">Lore File</div><h1>{entity.title.zhHans}</h1></div></div><p class="section-intro">{entity.summary.zhHans}</p>{entity.entries.length ? entity.entries.map((entry) => <div class="detail-card" style="max-width:820px;margin-top:16px"><div class="kicker">{entry.claimKind}</div><p>{entry.content.zhHans.map((token) => token.kind === 'text' ? token.text : token.label).join('')}</p></div>) : <div class="empty-state" style="max-width:820px">当前概念已经建立结构化实体，但详细考据条目尚未录入。</div>}</section>
+</BaseLayout>

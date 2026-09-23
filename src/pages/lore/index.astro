@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getConcepts } from '../../lib/content';
+const concepts = getConcepts();
+---
+<BaseLayout title="世界观档案">
+  <section class="section"><div class="section-head"><div><div class="kicker">Lore Files</div><h1>概念档案</h1></div></div><div class="character-grid">{concepts.map((item) => <a class="character-card" href={`/lore/${item.slug}`}><div class="portrait">LORE FILE</div><h3>{item.title.zhHans}</h3><small class="muted">{item.summary.zhHans}</small></a>)}</div></section>
+</BaseLayout>

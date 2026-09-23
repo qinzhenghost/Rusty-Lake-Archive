@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCharacters } from '../../lib/content';
+const characters = getCharacters();
+---
+<BaseLayout title="人物档案" active="characters">
+  <section class="section">
+    <div class="section-head"><div><div class="kicker">Subject Files</div><h1>人物档案</h1></div><span class="muted">事实 / 解释 / 理论分层录入</span></div>
+    <div class="character-grid">{characters.map((item) => <a class="character-card" href={`/characters/${item.slug}`}><div class="portrait">SUBJECT FILE</div><h3>{item.title.zhHans}</h3><small class="muted">{item.summary.zhHans}</small></a>)}</div>
+  </section>
+</BaseLayout>

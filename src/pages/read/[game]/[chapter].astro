@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ReaderApp from '../../../components/ReaderApp';
+import { getChapters, getChaptersForGame, getEntityMap, getGames } from '../../../lib/content';
+import type { ChapterData, GameData } from '../../../lib/models';
+
+export function getStaticPaths() {
+  const games = getGames();
+  return getChapters().map((chapter) => {
+    const game = games.find((item) => item.id === chapter.gameId);
+    if (!game) throw new Error(`Missing game for chapter ${chapter.id}`);
+    return { params: { game: game.slug, chapter: chapter.slug }, props: { game, chapter } };
+  });
+}
+
+const { game, chapter } = Astro.props as { game: GameData; chapter: ChapterData };
+const chapters = getChaptersForGame(game.id);
+const entityMap = getEntityMap();
+---
+<BaseLayout title={`${chapter.title.zhHans} · ${game.title.zhHans}`}>
+  <ReaderApp client:load game={game} chapter={chapter} chapters={chapters} entityMap={entityMap} />
+</BaseLayout>

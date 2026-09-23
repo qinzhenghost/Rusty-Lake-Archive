@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getChapters, getEvents, getGames } from '../lib/content';
+import type { EventData } from '../lib/models';
+const events = getEvents();
+const chapters = getChapters();
+const games = getGames();
+const groups = events.reduce<Record<string, EventData[]>>((acc, event) => {
+  const year = String(event.timeline.year);
+  (acc[year] ??= []).push(event);
+  return acc;
+}, {});
+function route(event: EventData) {
+  const chapter = chapters.find((item) => item.id === event.chapterIds[0]);
+  const game = chapter && games.find((item) => item.id === chapter.gameId);
+  return chapter && game ? `/read/${game.slug}/${chapter.slug}` : '/timeline';
+}
+---
+<BaseLayout title="故事时间线" active="timeline">
+  <section class="section">
+    <div class="section-head"><div><div class="kicker">Chronology</div><h1>故事时间线</h1></div><span class="muted">事件直接来自 content/events</span></div>
+    <p class="section-intro">时间线与阅读器共享同一套事件数据，避免页面手工维护两份年份与章节映射。</p>
+    <div class="timeline">
+      {Object.entries(groups).map(([year, yearEvents]) => <div class="timeline-year"><div class="year-label">{year}</div><div class="timeline-events">{yearEvents?.map((event) => <a class="timeline-event" href={route(event)}><h3>{event.title.zhHans}</h3><small class="muted">{event.summary.zhHans}</small></a>)}</div></div>)}
+    </div>
+  </section>
+</BaseLayout>

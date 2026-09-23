@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCharacters } from '../../lib/content';
+import type { ArchiveEntity } from '../../lib/models';
+
+export function getStaticPaths() {
+  return getCharacters().map((entity) => ({ params: { slug: entity.slug }, props: { entity } }));
+}
+const { entity } = Astro.props as { entity: ArchiveEntity };
+---
+<BaseLayout title={entity.title.zhHans} active="characters">
+  <section class="section">
+    <div class="section-head"><div><div class="kicker">Subject File</div><h1>{entity.title.zhHans}</h1></div><span class="badge">{entity.entries.length} entries</span></div>
+    <div class="detail-grid"><div><p class="section-intro">{entity.summary.zhHans}</p>{entity.entries.map((entry) => <div class="detail-card" style="margin-top:16px"><div class="kicker">{entry.claimKind}</div><p>{entry.content.zhHans.map((token) => token.kind === 'text' ? token.text : token.label).join('')}</p>{entry.spoiler.requiredCompletedGameIds.length > 0 && <small class="muted">剧透门槛：{entry.spoiler.requiredCompletedGameIds.join(' · ')}</small>}</div>)}</div><aside class="detail-card"><div class="kicker">Spoiler Note</div><p>独立档案页展示数据结构本身；正式的按进度过滤交互目前集中在剧情阅读器抽屉中。</p><a class="button" href="/read/seasons/spring-1964">回到阅读器</a></aside></div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: 'home' | 'games' | 'timeline' | 'characters' | 'progress' | 'about';
+}
+
+const {
+  title = 'Rusty Lake Archive',
+  description = '阅读、整理与探索 Rusty Lake / Cube Escape 世界的非官方互动剧情档案馆。',
+  active,
+} = Astro.props;
+
+const nav = [
+  ['games', '/games', '游戏'],
+  ['timeline', '/timeline', '时间线'],
+  ['characters', '/characters', '人物'],
+  ['progress', '/progress', '进度'],
+] as const;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#171915" />
+    <title>{title === 'Rusty Lake Archive' ? title : `${title} · Rusty Lake Archive`}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Rusty Lake Archive 首页">
+          <strong>RUSTY LAKE ARCHIVE</strong>
+          <span>锈湖档案馆</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          {nav.map(([key, href, label]) => (
+            <a class:list={[active === key && 'active']} href={href}>{label}</a>
+          ))}
+        </nav>
+        <a class="mobile-progress" href="/progress" aria-label="游玩进度">进度</a>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <div>RUSTY LAKE ARCHIVE · UNOFFICIAL LORE READER</div>
+        <a href="/about">关于与版权说明</a>
+      </footer>
+    </div>
+  </body>
+</html>

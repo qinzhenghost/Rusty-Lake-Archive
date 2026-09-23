@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getGameBySlug } from '../lib/content';
+const seasons = getGameBySlug('seasons');
+---
+<BaseLayout active="home">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="kicker">Archive / Memory / Lake</div>
+      <h1>进入<br />锈湖档案</h1>
+      <p>按照作品、时间、人物与线索重新阅读 Rusty Lake / Cube Escape 的故事。当前 MVP 以 <strong>Cube Escape: Seasons</strong> 为第一套结构化样例，并默认保护跨作品剧透。</p>
+      <div class="hero-actions">
+        <a class="button" href="/read/seasons/spring-1964">开始阅读 Seasons</a>
+        <a class="button-ghost" href="/progress">设置游玩进度</a>
+      </div>
+    </div>
+    <div class="hero-file">
+      <article class="file-card">
+        <div class="kicker">Case File 01</div>
+        <div class="stamp">OPEN</div>
+        <h2>{seasons?.title.zhHans ?? 'Cube Escape: Seasons'}</h2>
+        <div class="rule"></div>
+        <div class="file-meta">
+          <div><div class="muted">STATUS</div><b>PARTIAL ARCHIVE</b></div>
+          <div><div class="muted">FIRST MEMORY</div><b>1964 · SPRING</b></div>
+          <div><div class="muted">LANGUAGE</div><b>中文 / EN</b></div>
+          <div><div class="muted">SPOILER</div><b>CONTROLLED</b></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="home-grid" aria-label="探索入口">
+    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>从 Seasons 开始，后续作品按同一 Schema 持续加入。</span></a>
+    <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>按照故事年份而不是发布时间重新组织事件。</span></a>
+    <a class="home-tile" href="/characters"><div class="kicker">03</div><b>人物档案</b><span>阅读过程中点击名字即可打开当前可见档案。</span></a>
+    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>进度仅保存在当前浏览器，不需要注册账号。</span></a>
+  </section>
+</BaseLayout>

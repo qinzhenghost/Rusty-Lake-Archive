@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getChaptersForGame, getGames } from '../../lib/content';
+import type { GameData } from '../../lib/models';
+
+export function getStaticPaths() {
+  return getGames().map((game) => ({ params: { slug: game.slug }, props: { game } }));
+}
+
+const { game } = Astro.props as { game: GameData };
+const chapters = getChaptersForGame(game.id);
+---
+<BaseLayout title={game.title.zhHans} active="games">
+  <section class="section">
+    <div class="section-head"><div><div class="kicker">Game File · {game.series}</div><h1>{game.title.zhHans}</h1></div><span class="badge">{game.contentStatus.toUpperCase()}</span></div>
+    <div class="detail-grid">
+      <div>
+        <p class="section-intro">{game.summary.zhHans}</p>
+        {chapters.length > 0 ? (
+          <div class="chapter-list">
+            {chapters.map((chapter, index) => (
+              <a class="chapter-link" href={`/read/${game.slug}/${chapter.slug}`}>
+                <span class="chapter-index">{String(index + 1).padStart(2, '0')}</span>
+                <span><b>{chapter.title.zhHans}</b><br /><small class="muted">{chapter.timeline ? `${chapter.timeline.year} · ${chapter.timeline.precision}` : '无固定时间节点'}</small></span>
+                <span>→</span>
+              </a>
+            ))}
+          </div>
+        ) : <div class="empty-state">该作品目前只是用于验证跨作品剧透规则的数据占位，还没有录入可阅读章节。</div>}
+      </div>
+      <aside class="detail-card">
+        <div class="kicker">Archive Metadata</div>
+        <p><b>发布时间</b><br />{game.releaseDate ?? '—'}</p>
+        <p><b>推荐游玩顺序</b><br />{game.recommendedPlayOrder ?? '—'}</p>
+        <p><b>内容状态</b><br />{game.contentStatus}</p>
+        <p><b>章节数量</b><br />{chapters.length}</p>
+        {chapters[0] && <a class="button" href={`/read/${game.slug}/${chapters[0].slug}`}>进入第一章</a>}
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

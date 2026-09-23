@@ -1,0 +1,27 @@
+{
+  "name": "rusty-lake-archive",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && tsc -p tsconfig.content.json --noEmit",
+    "test:data": "python tools/validate_content.py && python tools/qa_check.py && python -m unittest discover -s tests -v",
+    "test": "npm run test:data && npm run check && npm run build"
+  },
+  "dependencies": {
+    "@astrojs/react": "7.0.0",
+    "astro": "7.3.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "7.0.2"
+  }
+}
