@@ -19,10 +19,10 @@ class ContentTests(unittest.TestCase):
         self.assertIn(('concept','memory'),ids)
         self.assertIn(('location','lauras-room'),ids)
 
-    def test_cross_game_spoiler_demo(self):
-        laura=json.loads((ROOT/'content/characters/laura-vanderboom.json').read_text(encoding='utf-8'))
-        locked=[e for e in laura['entries'] if e['id']=='laura-cross-game-demo-lock'][0]
-        self.assertEqual(locked['spoiler']['requiredCompletedGameIds'],['the-mill'])
+    def test_cross_game_spoiler_gate(self):
+        black=json.loads((ROOT/'content/concepts/black-cube.json').read_text(encoding='utf-8'))
+        locked=[e for e in black['entries'] if e['id']=='black-cube-the-lake-ending'][0]
+        self.assertEqual(locked['spoiler']['requiredCompletedGameIds'],['the-lake'])
         self.assertTrue(locked['spoiler']['allowManualReveal'])
 
     def test_final_has_no_fake_date(self):
