@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Rusty Lake Archive">
+  <rect width="128" height="128" rx="16" fill="#171915"/>
+  <path d="M34 34 64 20l30 14v36L64 86 34 70Z" fill="none" stroke="#ded6bd" stroke-width="5"/>
+  <path d="M34 34 64 49l30-15M64 49v37" fill="none" stroke="#8a3b2d" stroke-width="4"/>
+  <path d="M22 101c16-9 27 9 42 0s27 9 42 0" fill="none" stroke="#ded6bd" stroke-width="4" stroke-linecap="round"/>
+</svg>

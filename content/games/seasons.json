@@ -1,9 +1,36 @@
 {
-  "kind":"game","schemaVersion":"1.0.0","id":"seasons","slug":"seasons",
-  "title":{"zhHans":"Cube Escape: Seasons","en":"Cube Escape: Seasons"},
-  "series":"cube-escape","releaseDate":"2015-04-27","releaseOrder":1,"recommendedPlayOrder":1,"contentStatus":"partial",
-  "summary":{"zhHans":"以不同年份与季节中的记忆为结构，逐步展开一个房间及其人物所隐藏的异常。","en":"A memory-structured story that revisits a room across different years and seasons, gradually revealing that something is wrong."},
-  "chapterIds":["seasons-spring-1964","seasons-summer-1971","seasons-fall-1971","seasons-winter-1981","seasons-final"],
-  "spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["official-seasons-presskit","official-rustylake-faq","primary-seasons-game"]
+  "kind": "game",
+  "schemaVersion": "1.0.0",
+  "id": "seasons",
+  "slug": "seasons",
+  "title": {
+    "zhHans": "Cube Escape: Seasons",
+    "en": "Cube Escape: Seasons"
+  },
+  "series": "cube-escape",
+  "releaseDate": "2015-04-27",
+  "releaseOrder": 1,
+  "recommendedPlayOrder": 1,
+  "contentStatus": "complete",
+  "summary": {
+    "zhHans": "围绕 Laura 的四段季节记忆展开：从 1964 年春天的平静房间，到 1971 年逐渐显形的创伤，再到 1981 年借助机器返回过去，尝试改变已经发生的命运。",
+    "en": "Four seasonal memories follow Laura from a calm room in spring 1964, through trauma surfacing in 1971, to a 1981 mechanism that sends the story back into the past to alter what already happened."
+  },
+  "chapterIds": [
+    "seasons-spring-1964",
+    "seasons-summer-1971",
+    "seasons-fall-1971",
+    "seasons-winter-1981",
+    "seasons-final"
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-seasons-presskit",
+    "official-rustylake-faq",
+    "primary-seasons-game"
+  ]
 }

@@ -1,12 +1,328 @@
 {
-  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-winter-1981","gameId":"seasons","slug":"winter-1981","narrativeOrder":4,
-  "title":{"zhHans":"冬 · 1981","en":"Winter · 1981"},
-  "timeline":{"year":1981,"season":"winter","precision":"season","sortKey":"1981-04","certainty":"canonical"},
-  "storyBlocks":[
-    {"id":"winter-1981-scene","type":"scene","title":{"zhHans":"冬 · 1981","en":"Winter · 1981"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
-    {"id":"winter-1981-placeholder","type":"note","title":{"zhHans":"内容占位","en":"Content Placeholder"},"content":{"zhHans":[{"kind":"text","text":"Schema 已为本章预留双语正文、人物、事件、概念和剧透字段；详细剧情将在内容录入阶段补充。"}],"en":[{"kind":"text","text":"The schema reserves bilingual story, entity, event, concept, and spoiler fields for this chapter; detailed story content will be authored later."}]},"tone":"archive","spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-winter-1981",
+  "gameId": "seasons",
+  "slug": "winter-1981",
+  "narrativeOrder": 4,
+  "title": {
+    "zhHans": "冬 · 1981",
+    "en": "Winter · 1981"
+  },
+  "timeline": {
+    "year": 1981,
+    "season": "winter",
+    "precision": "season",
+    "sortKey": "1981-04",
+    "certainty": "canonical"
+  },
+  "storyBlocks": [
+    {
+      "id": "winter-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "冬 · 1981",
+        "en": "Winter · 1981"
+      },
+      "subtitle": {
+        "zhHans": "记忆变成一台机器",
+        "en": "Memory becomes a machine"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "1981 年冬天，熟悉的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "房间"
+          },
+          {
+            "kind": "text",
+            "text": " 已被木板、蓝图和机器结构占据。空间不再只是被观察的记忆，而像一套可以操作时间的装置。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "In winter 1981, the familiar "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "room"
+          },
+          {
+            "kind": "text",
+            "text": " is overtaken by boards, blueprints, and machinery. The space no longer behaves only as a remembered scene; it resembles a device for manipulating time."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这一章以 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "blue-cube"
+            },
+            "label": "蓝色方块"
+          },
+          {
+            "kind": "text",
+            "text": " 取代前三季反复出现的黑色方块，并通过照片上的时间把玩家重新指向春、夏、秋。叙事目标因此发生变化：不是继续向前，而是返回过去。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This chapter replaces the recurring black cube with a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "blue-cube"
+            },
+            "label": "blue cube"
+          },
+          {
+            "kind": "text",
+            "text": " and uses times attached to photographs to point back toward spring, summer, and fall. The narrative goal shifts from moving forward to returning to the past."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "蓝图把分散在房间里的装置组织成一套整体机制。到这里，"
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "记忆"
+          },
+          {
+            "kind": "text",
+            "text": " 不再只是需要逃离的场景，而成为可以被修改的因果链。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The blueprint organizes the room’s scattered devices into a single mechanism. At this point, "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "memory"
+          },
+          {
+            "kind": "text",
+            "text": " is no longer only a place to escape from; it becomes a causal chain that can be altered."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-event",
+      "type": "event",
+      "eventId": "seasons-event-winter-1981",
+      "summary": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "Winter 1981 建立回到旧记忆的机制，并把故事导向“改变过去”。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Winter 1981 establishes a mechanism for revisiting earlier memories and redirects the story toward changing the past."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-open-blue",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "blue-cube"
+      },
+      "label": {
+        "zhHans": "打开「蓝色方块」档案",
+        "en": "Open the Blue Cube file"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "winter-note",
+      "type": "note",
+      "title": {
+        "zhHans": "时间结构",
+        "en": "Time Structure"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "四季的顺序仍然保留，但从本章开始，阅读方向不再是单向的。Final 会沿着已建立的时间锚点返回早期记忆。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The seasonal order still matters, but from this chapter onward the reading direction is no longer one-way. Final returns through the time anchors already established."
+          }
+        ]
+      },
+      "tone": "context",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
   ],
-  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
-  "eventIds":["seasons-event-winter-1981"],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game","editorial-rla"]
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    },
+    {
+      "type": "location",
+      "id": "lauras-room"
+    },
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "memory-cube"
+    },
+    {
+      "type": "concept",
+      "id": "blue-cube"
+    }
+  ],
+  "eventIds": [
+    "seasons-event-winter-1981"
+  ],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "editorial-rla"
+  ]
 }

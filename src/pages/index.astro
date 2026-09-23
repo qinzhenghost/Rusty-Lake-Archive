@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContinueReading from '../components/ContinueReading';
 import { getGameBySlug } from '../lib/content';
 const seasons = getGameBySlug('seasons');
 ---
@@ -8,11 +9,12 @@ const seasons = getGameBySlug('seasons');
     <div class="hero-copy">
       <div class="kicker">Archive / Memory / Lake</div>
       <h1>进入<br />锈湖档案</h1>
-      <p>按照作品、时间、人物与线索重新阅读 Rusty Lake / Cube Escape 的故事。当前 MVP 以 <strong>Cube Escape: Seasons</strong> 为第一套结构化样例，并默认保护跨作品剧透。</p>
+      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。第一套完整阅读样例是 <strong>Cube Escape: Seasons</strong>：五章原创剧情摘要、实体档案、时间线与防剧透进度已经连通。</p>
       <div class="hero-actions">
-        <a class="button" href="/read/seasons/spring-1964">开始阅读 Seasons</a>
+        <a class="button" href="/read/seasons/spring-1964">从 Spring 1964 开始</a>
         <a class="button-ghost" href="/progress">设置游玩进度</a>
       </div>
+      <ContinueReading client:load />
     </div>
     <div class="hero-file">
       <article class="file-card">
@@ -21,18 +23,18 @@ const seasons = getGameBySlug('seasons');
         <h2>{seasons?.title.zhHans ?? 'Cube Escape: Seasons'}</h2>
         <div class="rule"></div>
         <div class="file-meta">
-          <div><div class="muted">STATUS</div><b>PARTIAL ARCHIVE</b></div>
-          <div><div class="muted">FIRST MEMORY</div><b>1964 · SPRING</b></div>
-          <div><div class="muted">LANGUAGE</div><b>中文 / EN</b></div>
+          <div><div class="muted">STATUS</div><b>STORY READY</b></div>
+          <div><div class="muted">MEMORIES</div><b>1964 → 1981</b></div>
+          <div><div class="muted">LANGUAGE</div><b>中文 / EN / 对照</b></div>
           <div><div class="muted">SPOILER</div><b>CONTROLLED</b></div>
         </div>
       </article>
     </div>
   </section>
   <section class="home-grid" aria-label="探索入口">
-    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>从 Seasons 开始，后续作品按同一 Schema 持续加入。</span></a>
-    <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>按照故事年份而不是发布时间重新组织事件。</span></a>
-    <a class="home-tile" href="/characters"><div class="kicker">03</div><b>人物档案</b><span>阅读过程中点击名字即可打开当前可见档案。</span></a>
-    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>进度仅保存在当前浏览器，不需要注册账号。</span></a>
+    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>Seasons 已完成五章剧情摘要；后续作品继续沿同一 Schema 扩展。</span></a>
+    <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>按照故事年份而不是发布时间重新组织事件，并保留时间确定性。</span></a>
+    <a class="home-tile" href="/characters"><div class="kicker">03</div><b>人物档案</b><span>阅读过程中点击实体词即可展开档案，并区分事实、解释与理论。</span></a>
+    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>进度、语言和主动解锁记录都只保存在当前浏览器。</span></a>
   </section>
 </BaseLayout>

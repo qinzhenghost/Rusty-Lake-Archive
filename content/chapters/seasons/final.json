@@ -1,11 +1,294 @@
 {
-  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-final","gameId":"seasons","slug":"final","narrativeOrder":5,
-  "title":{"zhHans":"Final","en":"Final"},"timeline":null,
-  "storyBlocks":[
-    {"id":"final-scene","type":"scene","title":{"zhHans":"Final","en":"Final"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
-    {"id":"final-placeholder","type":"note","title":{"zhHans":"非时间线章节","en":"Non-linear Chapter"},"content":{"zhHans":[{"kind":"text","text":"Final 不强制绑定一个新的年份；数据模型允许章节存在叙事顺序，但没有独立时间点。"}],"en":[{"kind":"text","text":"Final is not forced into a new calendar year; the model allows narrative order without assigning a separate timeline point."}]},"tone":"context","spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-final",
+  "gameId": "seasons",
+  "slug": "final",
+  "narrativeOrder": 5,
+  "title": {
+    "zhHans": "Final",
+    "en": "Final"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "final-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "Final",
+        "en": "Final"
+      },
+      "subtitle": {
+        "zhHans": "回到过去，而不是进入新的年份",
+        "en": "Return to the past, not a new year"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "final-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "完成四个季节后，故事没有进入第五个时间点，而是让玩家带着 1981 年获得的信息重新进入旧的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "记忆"
+          },
+          {
+            "kind": "text",
+            "text": "。电话、时钟和房间里的装置开始跨越年份互相回应。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "After the four seasons are complete, the story does not move to a fifth date. Instead, knowledge gained in 1981 is carried back into earlier "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "memory"
+            },
+            "label": "memories"
+          },
+          {
+            "kind": "text",
+            "text": ", where the telephone, clock, and machinery begin to answer one another across years."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "final-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "玩家对过去做出的改变会累积："
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": " 的处境可以被改变，房间中的物件也能为后来的机器准备条件。Seasons 因而把“解开房间”转化成“重写一段已经发生的记忆”。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Changes made in the past accumulate: "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": " can be given a different outcome, while objects in the room can be prepared for the later machine. Seasons turns room escape into the rewriting of an already-lived memory."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "final-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "最终路径回到 1964 年春天，并试图改变 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": " 的命运。这里最重要的不是一套新的谜题，而是前四章终于被证明属于同一条可以被反向影响的因果链。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The final path returns to spring 1964 and attempts to change "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": "’s fate. What matters is not a new set of puzzles, but the revelation that the first four chapters belong to one causal chain that can be influenced backward."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "final-open-memory-cube",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "memory-cube"
+      },
+      "label": {
+        "zhHans": "回看「记忆方块」档案",
+        "en": "Revisit the Memory Cube file"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "final-note",
+      "type": "note",
+      "title": {
+        "zhHans": "为什么 Final 没有年份？",
+        "en": "Why does Final have no year?"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "Final 是一次跨季节回访，不是新的独立时间点。因此数据模型保留 narrativeOrder=5，但 timeline=null，避免为了排序虚构年份。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Final revisits existing seasons rather than introducing a new independent date. The model keeps narrativeOrder=5 while leaving timeline=null instead of inventing a year for sorting."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
   ],
-  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
-  "eventIds":[],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game","editorial-rla"]
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    },
+    {
+      "type": "character",
+      "id": "harvey"
+    },
+    {
+      "type": "location",
+      "id": "lauras-room"
+    },
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "memory-cube"
+    },
+    {
+      "type": "concept",
+      "id": "blue-cube"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "editorial-rla"
+  ]
 }

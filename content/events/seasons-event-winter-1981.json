@@ -1,11 +1,60 @@
 {
-  "kind":"event","schemaVersion":"1.0.0","id":"seasons-event-winter-1981",
-  "title":{"zhHans":"冬 · 1981","en":"Winter · 1981"},
-  "timeline":{"year":1981,"season":"winter","precision":"season","sortKey":"1981-04","certainty":"canonical"},
-  "summary":{"zhHans":"第四个季节档案位。MVP 暂只保留结构与时间索引。","en":"Fourth seasonal archive slot; the MVP keeps only structure and timeline metadata here."},
-  "gameIds":["seasons"],"chapterIds":["seasons-winter-1981"],
-  "participants":[{"type":"character","id":"laura-vanderboom"}],"locations":[],
-  "concepts":[{"type":"concept","id":"memory"}],
-  "spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game"]
+  "kind": "event",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-event-winter-1981",
+  "title": {
+    "zhHans": "冬 · 1981：返回过去的机制",
+    "en": "Winter · 1981: A Mechanism to Return"
+  },
+  "timeline": {
+    "year": 1981,
+    "season": "winter",
+    "precision": "season",
+    "sortKey": "1981-04",
+    "certainty": "canonical"
+  },
+  "summary": {
+    "zhHans": "房间被机器与蓝图改造，蓝色方块与照片时间把玩家重新导向早期记忆，使“改变过去”成为新的叙事目标。",
+    "en": "Machines and blueprints transform the room; the blue cube and photographed times redirect the player toward earlier memories and make changing the past the new narrative goal."
+  },
+  "gameIds": [
+    "seasons"
+  ],
+  "chapterIds": [
+    "seasons-winter-1981"
+  ],
+  "participants": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    }
+  ],
+  "locations": [
+    {
+      "type": "location",
+      "id": "lauras-room"
+    }
+  ],
+  "concepts": [
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "memory-cube"
+    },
+    {
+      "type": "concept",
+      "id": "blue-cube"
+    }
+  ],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game"
+  ]
 }

@@ -1,12 +1,285 @@
 {
-  "kind":"relationSet","schemaVersion":"1.0.0","id":"seasons-relations",
-  "title":{"zhHans":"Seasons 关系","en":"Seasons Relations"},
-  "relations":[
-    {"id":"rel-laura-seasons","from":{"type":"character","id":"laura-vanderboom"},"type":"appears_in","to":{"type":"game","id":"seasons"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"fact","sourceIds":["primary-seasons-game"]},
-    {"id":"rel-harvey-seasons","from":{"type":"character","id":"harvey"},"type":"appears_in","to":{"type":"game","id":"seasons"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"fact","sourceIds":["official-seasons-presskit"]},
-    {"id":"rel-harvey-laura","from":{"type":"character","id":"harvey"},"type":"companion_of","to":{"type":"character","id":"laura-vanderboom"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"fact","sourceIds":["official-seasons-presskit"]},
-    {"id":"rel-spring-location","from":{"type":"event","id":"seasons-event-spring-1964"},"type":"located_at","to":{"type":"location","id":"lauras-room"},"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"fact","sourceIds":["official-seasons-presskit","primary-seasons-game"]},
-    {"id":"rel-spring-memory","from":{"type":"event","id":"seasons-event-spring-1964"},"type":"associated_with","to":{"type":"concept","id":"memory"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"interpretation","sourceIds":["editorial-rla"]},
-    {"id":"rel-spring-before-summer","from":{"type":"event","id":"seasons-event-spring-1964"},"type":"precedes","to":{"type":"event","id":"seasons-event-summer-1971"},"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},"claimKind":"fact","sourceIds":["primary-seasons-game"]}
+  "kind": "relationSet",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-relations",
+  "title": {
+    "zhHans": "Seasons 关系",
+    "en": "Seasons Relations"
+  },
+  "relations": [
+    {
+      "id": "rel-laura-seasons",
+      "from": {
+        "type": "character",
+        "id": "laura-vanderboom"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "seasons"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-harvey-seasons",
+      "from": {
+        "type": "character",
+        "id": "harvey"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "seasons"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-seasons-presskit"
+      ]
+    },
+    {
+      "id": "rel-harvey-laura",
+      "from": {
+        "type": "character",
+        "id": "harvey"
+      },
+      "type": "companion_of",
+      "to": {
+        "type": "character",
+        "id": "laura-vanderboom"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-seasons-presskit"
+      ]
+    },
+    {
+      "id": "rel-spring-location",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-spring-1964"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "lauras-room"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-seasons-presskit",
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-spring-memory",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-spring-1964"
+      },
+      "type": "associated_with",
+      "to": {
+        "type": "concept",
+        "id": "memory"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "interpretation",
+      "sourceIds": [
+        "editorial-rla"
+      ]
+    },
+    {
+      "id": "rel-spring-before-summer",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-spring-1964"
+      },
+      "type": "precedes",
+      "to": {
+        "type": "event",
+        "id": "seasons-event-summer-1971"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-summer-after-spring",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-summer-1971"
+      },
+      "type": "follows",
+      "to": {
+        "type": "event",
+        "id": "seasons-event-spring-1964"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-fall-after-summer",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-fall-1971"
+      },
+      "type": "follows",
+      "to": {
+        "type": "event",
+        "id": "seasons-event-summer-1971"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-winter-after-fall",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-winter-1981"
+      },
+      "type": "follows",
+      "to": {
+        "type": "event",
+        "id": "seasons-event-fall-1971"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-summer-location",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-summer-1971"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "lauras-room"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-fall-location",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-fall-1971"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "lauras-room"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-winter-location",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-winter-1981"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "lauras-room"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-winter-blue-cube",
+      "from": {
+        "type": "event",
+        "id": "seasons-event-winter-1981"
+      },
+      "type": "associated_with",
+      "to": {
+        "type": "concept",
+        "id": "blue-cube"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    }
   ]
 }

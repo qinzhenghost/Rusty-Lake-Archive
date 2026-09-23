@@ -1,12 +1,332 @@
 {
-  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-fall-1971","gameId":"seasons","slug":"fall-1971","narrativeOrder":3,
-  "title":{"zhHans":"秋 · 1971","en":"Fall · 1971"},
-  "timeline":{"year":1971,"season":"fall","precision":"season","sortKey":"1971-03","certainty":"canonical"},
-  "storyBlocks":[
-    {"id":"fall-1971-scene","type":"scene","title":{"zhHans":"秋 · 1971","en":"Fall · 1971"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
-    {"id":"fall-1971-placeholder","type":"note","title":{"zhHans":"内容占位","en":"Content Placeholder"},"content":{"zhHans":[{"kind":"text","text":"Schema 已为本章预留双语正文、人物、事件、概念和剧透字段；详细剧情将在内容录入阶段补充。"}],"en":[{"kind":"text","text":"The schema reserves bilingual story, entity, event, concept, and spoiler fields for this chapter; detailed story content will be authored later."}]},"tone":"archive","spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-fall-1971",
+  "gameId": "seasons",
+  "slug": "fall-1971",
+  "narrativeOrder": 3,
+  "title": {
+    "zhHans": "秋 · 1971",
+    "en": "Fall · 1971"
+  },
+  "timeline": {
+    "year": 1971,
+    "season": "fall",
+    "precision": "season",
+    "sortKey": "1971-03",
+    "certainty": "canonical"
+  },
+  "storyBlocks": [
+    {
+      "id": "fall-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "秋 · 1971",
+        "en": "Fall · 1971"
+      },
+      "subtitle": {
+        "zhHans": "日常彻底失去伪装",
+        "en": "The domestic mask collapses"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "同一年进入秋天后，"
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "房间"
+          },
+          {
+            "kind": "text",
+            "text": " 的异常从暗示变成公开的威胁。电视画面、血迹与窗外出现的黑暗身影让此前零散的不安指向同一件事：Laura 的命运已经发生严重转折。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "By fall of the same year, the "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "room"
+          },
+          {
+            "kind": "text",
+            "text": " stops merely hinting at danger. Television imagery, blood, and a dark figure outside point toward a severe turn in Laura’s fate."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "与 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": " 有关的暴力场景进一步破坏了春天留下的安全感。此处不需要把每个超现实画面解释成唯一答案；更重要的是记录它们如何把记忆从“房间”推向“创伤”。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Violence involving "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "harvey"
+            },
+            "label": "Harvey"
+          },
+          {
+            "kind": "text",
+            "text": " further destroys the safety associated with spring. The reader does not force every surreal image into a single answer; the important shift is from room-as-home to room-as-trauma."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "黑色方块再次出现并结束这一季。重复出现的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "黑色方块"
+          },
+          {
+            "kind": "text",
+            "text": " 让三个季节被读成同一套记忆系统中的连续档案，而不是三个互不相干的密室。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "A "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "black cube"
+          },
+          {
+            "kind": "text",
+            "text": " closes the season again. Its recurrence turns the first three seasons into connected records inside one memory system rather than unrelated escape rooms."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-event",
+      "type": "event",
+      "eventId": "seasons-event-fall-1971",
+      "summary": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "秋季记忆把故事从“不祥预感”推进到“事件已经发生”的阶段。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The fall memory moves the story from ominous anticipation to the sense that the event has already happened."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-open-harvey",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "character",
+        "id": "harvey"
+      },
+      "label": {
+        "zhHans": "查看 Harvey 档案",
+        "en": "Open Harvey's file"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "fall-note",
+      "type": "note",
+      "title": {
+        "zhHans": "事实与解释",
+        "en": "Fact vs. Interpretation"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "档案会把“画面中明确发生的事”和“这些画面意味着什么”分开记录。黑影、巨眼等意象可以关联到人物与世界观，但不会在没有证据时直接等同。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The archive separates what is visibly shown from what those images might mean. Motifs such as the shadow and giant eye can be linked to lore without being treated as proven identities."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
   ],
-  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
-  "eventIds":["seasons-event-fall-1971"],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game","editorial-rla"]
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    },
+    {
+      "type": "character",
+      "id": "harvey"
+    },
+    {
+      "type": "character",
+      "id": "corrupted-soul"
+    },
+    {
+      "type": "location",
+      "id": "lauras-room"
+    },
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    }
+  ],
+  "eventIds": [
+    "seasons-event-fall-1971"
+  ],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "editorial-rla"
+  ]
 }

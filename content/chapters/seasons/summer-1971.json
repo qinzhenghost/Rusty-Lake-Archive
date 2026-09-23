@@ -1,12 +1,352 @@
 {
-  "kind":"chapter","schemaVersion":"1.0.0","id":"seasons-summer-1971","gameId":"seasons","slug":"summer-1971","narrativeOrder":2,
-  "title":{"zhHans":"夏 · 1971","en":"Summer · 1971"},
-  "timeline":{"year":1971,"season":"summer","precision":"season","sortKey":"1971-02","certainty":"canonical"},
-  "storyBlocks":[
-    {"id":"summer-1971-scene","type":"scene","title":{"zhHans":"夏 · 1971","en":"Summer · 1971"},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"structural-label","sourceIds":["editorial-rla"]}},
-    {"id":"summer-1971-placeholder","type":"note","title":{"zhHans":"内容占位","en":"Content Placeholder"},"content":{"zhHans":[{"kind":"text","text":"Schema 已为本章预留双语正文、人物、事件、概念和剧透字段；详细剧情将在内容录入阶段补充。"}],"en":[{"kind":"text","text":"The schema reserves bilingual story, entity, event, concept, and spoiler fields for this chapter; detailed story content will be authored later."}]},"tone":"archive","spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"original-note","sourceIds":["editorial-rla"]}}
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-summer-1971",
+  "gameId": "seasons",
+  "slug": "summer-1971",
+  "narrativeOrder": 2,
+  "title": {
+    "zhHans": "夏 · 1971",
+    "en": "Summer · 1971"
+  },
+  "timeline": {
+    "year": 1971,
+    "season": "summer",
+    "precision": "season",
+    "sortKey": "1971-02",
+    "certainty": "canonical"
+  },
+  "storyBlocks": [
+    {
+      "id": "summer-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "夏 · 1971",
+        "en": "Summer · 1971"
+      },
+      "subtitle": {
+        "zhHans": "七年后的同一空间",
+        "en": "The same room, seven years later"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "时间跳到 1971 年夏天。"
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "房间"
+          },
+          {
+            "kind": "text",
+            "text": " 仍保留熟悉的结构，但电话、录音和窗外的远景不断制造不安；同一个空间开始像一份被反复覆盖的案卷。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Time jumps to summer 1971. The "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "lauras-room"
+            },
+            "label": "room"
+          },
+          {
+            "kind": "text",
+            "text": " keeps its familiar layout, while the telephone, recordings, and distant view beyond the window make the setting increasingly uneasy."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这一段记忆把房间与 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "rusty-lake"
+            },
+            "label": "Rusty Lake"
+          },
+          {
+            "kind": "text",
+            "text": " 的意象联系得更紧。线索不再只指向 Laura 的日常生活，而开始暗示某件已经发生或即将发生的暴力事件。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This memory pulls the room closer to the imagery of "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "rusty-lake"
+            },
+            "label": "Rusty Lake"
+          },
+          {
+            "kind": "text",
+            "text": ". The clues no longer point only to Laura’s everyday life; they begin to suggest a violent event surrounding her."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "与春天一样，记忆通过 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "黑色方块"
+          },
+          {
+            "kind": "text",
+            "text": " 被封存。重复的结构让玩家逐渐明白：每个季节既是独立片段，也是同一事件被不同时间切面重新照亮的结果。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "As in spring, the memory is sealed through a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "black cube"
+          },
+          {
+            "kind": "text",
+            "text": ". The repeated structure makes each season feel both self-contained and part of one event illuminated from different points in time."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-event",
+      "type": "event",
+      "eventId": "seasons-event-summer-1971",
+      "summary": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "1971 年夏季记忆把 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": " 的房间与更明显的危险信号连接起来。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The summer 1971 memory connects "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "laura-vanderboom"
+            },
+            "label": "Laura"
+          },
+          {
+            "kind": "text",
+            "text": "’s room with clearer signs of danger."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-open-lake",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "rusty-lake"
+      },
+      "label": {
+        "zhHans": "打开「Rusty Lake」概念档案",
+        "en": "Open the Rusty Lake concept file"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "summer-note",
+      "type": "note",
+      "title": {
+        "zhHans": "时间提示",
+        "en": "Timeline Note"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "1971 年在 Seasons 中出现两次：夏与秋。阅读时应把它们视为两个连续但气氛明显升级的记忆切片。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "1971 appears twice in Seasons: summer and fall. Treat them as consecutive memory slices whose atmosphere escalates sharply."
+          }
+        ]
+      },
+      "tone": "context",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
   ],
-  "featuredRefs":[{"type":"character","id":"laura-vanderboom"},{"type":"concept","id":"memory"}],
-  "eventIds":["seasons-event-summer-1971"],"spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game","editorial-rla"]
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    },
+    {
+      "type": "location",
+      "id": "lauras-room"
+    },
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    },
+    {
+      "type": "concept",
+      "id": "rusty-lake"
+    }
+  ],
+  "eventIds": [
+    "seasons-event-summer-1971"
+  ],
+  "spoiler": {
+    "level": "minor",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "editorial-rla"
+  ]
 }

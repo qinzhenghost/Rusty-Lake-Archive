@@ -1,7 +1,10 @@
 {
   "schemaVersion": "1.0.0",
   "defaultLocale": "zhHans",
-  "supportedLocales": ["zhHans","en"],
+  "supportedLocales": [
+    "zhHans",
+    "en"
+  ],
   "contentFiles": [
     "content/sources/official-seasons-presskit.json",
     "content/sources/official-rustylake-faq.json",
@@ -16,6 +19,7 @@
     "content/concepts/memory.json",
     "content/concepts/memory-cube.json",
     "content/concepts/black-cube.json",
+    "content/concepts/blue-cube.json",
     "content/concepts/rusty-lake.json",
     "content/locations/lauras-room.json",
     "content/locations/rusty-lake-location.json",

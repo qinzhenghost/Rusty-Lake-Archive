@@ -1,11 +1,60 @@
 {
-  "kind":"event","schemaVersion":"1.0.0","id":"seasons-event-spring-1964",
-  "title":{"zhHans":"春 · 1964","en":"Spring · 1964"},
-  "timeline":{"year":1964,"season":"spring","precision":"season","sortKey":"1964-01","certainty":"canonical"},
-  "summary":{"zhHans":"Laura 的第一段记忆以一个看似平静的房间为起点。","en":"Laura’s first memory begins in an apparently calm room."},
-  "gameIds":["seasons"],"chapterIds":["seasons-spring-1964"],
-  "participants":[{"type":"character","id":"laura-vanderboom"},{"type":"character","id":"harvey"}],
-  "locations":[{"type":"location","id":"lauras-room"}],"concepts":[{"type":"concept","id":"memory"}],
-  "spoiler":{"level":"minor","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["primary-seasons-game"]
+  "kind": "event",
+  "schemaVersion": "1.0.0",
+  "id": "seasons-event-spring-1964",
+  "title": {
+    "zhHans": "春 · 1964：第一段记忆",
+    "en": "Spring · 1964: The First Memory"
+  },
+  "timeline": {
+    "year": 1964,
+    "season": "spring",
+    "precision": "season",
+    "sortKey": "1964-01",
+    "certainty": "canonical"
+  },
+  "summary": {
+    "zhHans": "Laura 的第一段记忆从看似平静的房间开始，Harvey 与黑色方块建立起后续季节会重复出现的人物和记忆结构。",
+    "en": "Laura's first memory begins in an apparently calm room, establishing Harvey and the black cube as recurring parts of the seasonal memory structure."
+  },
+  "gameIds": [
+    "seasons"
+  ],
+  "chapterIds": [
+    "seasons-spring-1964"
+  ],
+  "participants": [
+    {
+      "type": "character",
+      "id": "laura-vanderboom"
+    },
+    {
+      "type": "character",
+      "id": "harvey"
+    }
+  ],
+  "locations": [
+    {
+      "type": "location",
+      "id": "lauras-room"
+    }
+  ],
+  "concepts": [
+    {
+      "type": "concept",
+      "id": "memory"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    }
+  ],
+  "spoiler": {
+    "level": "minor",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game"
+  ]
 }

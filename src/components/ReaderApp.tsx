@@ -4,41 +4,40 @@ import { canView } from '../content/spoiler';
 import type { ArchiveEntity, ChapterData, EntityRecord, EventData, GameData, StoryBlockData } from '../lib/models';
 
 type LanguageMode = 'zhHans' | 'en' | 'bi';
-
-type Props = {
-  game: GameData;
-  chapter: ChapterData;
-  chapters: ChapterData[];
-  entityMap: Record<string, EntityRecord>;
-};
+type Props = { game: GameData; chapter: ChapterData; chapters: ChapterData[]; entityMap: Record<string, EntityRecord> };
 
 const PROGRESS_KEY = 'rla-progress-v1';
 const REVEAL_KEY = 'rla-manual-reveals-v1';
+const LANGUAGE_KEY = 'rla-language-v1';
+const LAST_READ_KEY = 'rla-last-read-v1';
 
 function loadProgress(): UserProgress {
   if (typeof window === 'undefined') return { completedGameIds: [], manualRevealIds: [] };
   try {
     const completed = JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? '[]');
     const reveals = JSON.parse(localStorage.getItem(REVEAL_KEY) ?? '[]');
-    return {
-      completedGameIds: Array.isArray(completed) ? completed : [],
-      manualRevealIds: Array.isArray(reveals) ? reveals : [],
-    };
-  } catch {
-    return { completedGameIds: [], manualRevealIds: [] };
-  }
+    return { completedGameIds: Array.isArray(completed) ? completed : [], manualRevealIds: Array.isArray(reveals) ? reveals : [] };
+  } catch { return { completedGameIds: [], manualRevealIds: [] }; }
 }
 
 function localize(value: { zhHans: string; en: string } | undefined, mode: LanguageMode): string {
   if (!value) return '';
   return mode === 'en' ? value.en : value.zhHans;
 }
-
-function refKey(ref: EntityRef): string { return `${ref.type}:${ref.id}`; }
-
+function refKey(ref: EntityRef): string { return ref.type + ':' + ref.id; }
 function recordTitle(record: EntityRecord | undefined, mode: LanguageMode): string {
   if (!record || !('title' in record)) return 'Unknown File';
   return localize(record.title, mode);
+}
+function recordHref(ref: EntityRef, record: EntityRecord | undefined): string | null {
+  if (!record || !('slug' in record)) return null;
+  if (ref.type === 'character') return '/characters/' + record.slug;
+  if (ref.type === 'concept') return '/lore/' + record.slug;
+  if (ref.type === 'game') return '/games/' + record.slug;
+  return null;
+}
+function seasonLabel(chapter: ChapterData): string {
+  return chapter.timeline?.season ?? 'final';
 }
 
 function RichText({ value, locale, onEntity }: { value: LocalizedRichText; locale: Locale; onEntity: (ref: EntityRef) => void }) {
@@ -48,7 +47,7 @@ function RichText({ value, locale, onEntity }: { value: LocalizedRichText; local
 }
 
 function BilingualRichText({ value, mode, onEntity }: { value: LocalizedRichText; mode: LanguageMode; onEntity: (ref: EntityRef) => void }) {
-  if (mode === 'bi') return <><RichText value={value} locale="zhHans" onEntity={onEntity} /><br /><span className="muted"><RichText value={value} locale="en" onEntity={onEntity} /></span></>;
+  if (mode === 'bi') return <div className="bilingual"><div><RichText value={value} locale="zhHans" onEntity={onEntity} /></div><div className="translation"><RichText value={value} locale="en" onEntity={onEntity} /></div></div>;
   return <RichText value={value} locale={mode} onEntity={onEntity} />;
 }
 
@@ -60,14 +59,14 @@ function SpoilerGate({ id, rule, progress, onReveal, children }: { id: string; r
 function StoryBlockView({ block, mode, progress, onEntity, onReveal }: { block: StoryBlockData; mode: LanguageMode; progress: UserProgress; onEntity: (ref: EntityRef) => void; onReveal: (id: string) => void }) {
   const content = (() => {
     switch (block.type) {
-      case 'scene': return <div className="scene-label">Scene<strong>{localize(block.title, mode)}</strong>{block.subtitle && <span>{localize(block.subtitle, mode)}</span>}</div>;
+      case 'scene': return <div className="scene-label">Memory Record<strong>{localize(block.title, mode)}</strong>{block.subtitle && <span>{localize(block.subtitle, mode)}</span>}</div>;
       case 'paragraph': return <p><BilingualRichText value={block.content} mode={mode} onEntity={onEntity} /></p>;
       case 'dialogue': return <div className="story-dialogue"><BilingualRichText value={block.content} mode={mode} onEntity={onEntity} /></div>;
-      case 'image': return <figure className="story-image"><div>{localize(block.asset.alt, mode)}</div>{block.asset.caption && <figcaption>{localize(block.asset.caption, mode)}</figcaption>}</figure>;
+      case 'image': return <figure className="story-image memory-plate"><div className="memory-plate-mark">MEMORY / VISUAL PLACEHOLDER</div><div>{localize(block.asset.alt, mode)}</div>{block.asset.caption && <figcaption>{localize(block.asset.caption, mode)}</figcaption>}</figure>;
       case 'quote': return <blockquote className="inline-note">“{localize(block.content, mode)}”<br /><small>{localize(block.attribution, mode)}</small></blockquote>;
       case 'event': return <div className="story-event"><div className="kicker">Timeline Event</div><BilingualRichText value={block.summary} mode={mode} onEntity={onEntity} /></div>;
-      case 'interaction': return <button type="button" className="button-ghost" onClick={() => onEntity(block.target)}>{localize(block.label, mode)}</button>;
-      case 'note': return <div className="inline-note"><b>{localize(block.title, mode)}</b><br /><BilingualRichText value={block.content} mode={mode} onEntity={onEntity} /></div>;
+      case 'interaction': return <button type="button" className="button-ghost story-action" onClick={() => onEntity(block.target)}>{localize(block.label, mode)} →</button>;
+      case 'note': return <div className={'inline-note tone-' + block.tone}><b>{localize(block.title, mode)}</b><br /><BilingualRichText value={block.content} mode={mode} onEntity={onEntity} /></div>;
     }
   })();
   return <SpoilerGate id={block.id} rule={block.spoiler} progress={progress} onReveal={onReveal}>{content}</SpoilerGate>;
@@ -82,62 +81,100 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
   const [progress, setProgress] = useState<UserProgress>({ completedGameIds: [], manualRevealIds: [] });
   const [drawerRef, setDrawerRef] = useState<EntityRef | null>(null);
   const [chapterSheet, setChapterSheet] = useState(false);
+  const [readProgress, setReadProgress] = useState(0);
 
-  useEffect(() => { setProgress(loadProgress()); }, []);
+  useEffect(() => {
+    setProgress(loadProgress());
+    const saved = localStorage.getItem(LANGUAGE_KEY);
+    if (saved === 'zhHans' || saved === 'en' || saved === 'bi') setMode(saved);
+    localStorage.setItem(LAST_READ_KEY, JSON.stringify({
+      href: window.location.pathname,
+      game: game.title.zhHans,
+      chapter: chapter.title.zhHans,
+      updatedAt: new Date().toISOString()
+    }));
+  }, [game.title.zhHans, chapter.title.zhHans]);
 
+  useEffect(() => {
+    const update = () => {
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      setReadProgress(Math.min(100, Math.max(0, Math.round((window.scrollY / max) * 100))));
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, [chapter.id]);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setDrawerRef(null); setChapterSheet(false); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const selectMode = (next: LanguageMode) => {
+    setMode(next);
+    localStorage.setItem(LANGUAGE_KEY, next);
+  };
   const onReveal = (id: string) => {
     const ids = Array.from(new Set([...(progress.manualRevealIds ?? []), id]));
-    const next = { ...progress, manualRevealIds: ids };
-    setProgress(next);
+    setProgress({ ...progress, manualRevealIds: ids });
     localStorage.setItem(REVEAL_KEY, JSON.stringify(ids));
   };
-
   const entityRecord = drawerRef ? entityMap[refKey(drawerRef)] : undefined;
   const featured = useMemo(() => chapter.featuredRefs.map((ref) => ({ ref, record: entityMap[refKey(ref)] })).filter((item) => item.record), [chapter.featuredRefs, entityMap]);
-
   const openEntity = (ref: EntityRef) => setDrawerRef(ref);
-
   const caseGroups = {
     character: featured.filter((item) => item.ref.type === 'character'),
     location: featured.filter((item) => item.ref.type === 'location'),
     concept: featured.filter((item) => item.ref.type === 'concept'),
   };
+  const chapterIndex = chapters.findIndex((item) => item.id === chapter.id);
+  const previousChapter = chapterIndex > 0 ? chapters[chapterIndex - 1] : undefined;
+  const nextChapter = chapterIndex >= 0 && chapterIndex < chapters.length - 1 ? chapters[chapterIndex + 1] : undefined;
+  const fullHref = drawerRef && entityRecord ? recordHref(drawerRef, entityRecord) : null;
 
-  return <div className="reader-shell">
+  return <div className={'reader-shell season-' + seasonLabel(chapter)}>
+    <div className="reading-progress-track" aria-hidden="true"><span style={{ width: readProgress + '%' }} /></div>
     <aside className="reader-left">
       <div className="panel-title">CHAPTER</div>
       <nav className="chapter-nav">
-        {chapters.map((item) => <a key={item.id} className={item.id === chapter.id ? 'active' : ''} href={`/read/${game.slug}/${item.slug}`}>{item.title.zhHans}<small>{item.storyBlocks.length > 1 ? '已录入' : '占位'}</small></a>)}
+        {chapters.map((item) => <a key={item.id} className={item.id === chapter.id ? 'active' : ''} href={'/read/' + game.slug + '/' + item.slug}><span>{item.title.zhHans}</span><small>{item.storyBlocks.length >= 5 ? '完整摘要' : '简要记录'}</small></a>)}
       </nav>
-      <div className="panel-title">CONTENT POLICY</div>
-      <div className="case-block"><small className="muted">正文为项目原创摘要与结构样例，不复制完整游戏对白或谜题攻略。</small></div>
+      <div className="panel-title">READING MODE</div>
+      <div className="case-block"><small className="muted">剧情优先，隐藏攻略步骤；实体词可点击展开档案。语言与上次阅读位置保存在当前浏览器。</small></div>
     </aside>
 
     <article className="reader-main">
       <header className="reader-head">
-        <div className="kicker">{game.title.zhHans}</div>
+        <div className="kicker">{game.title.zhHans} · {chapter.timeline ? String(chapter.timeline.year) : 'RETURN'}</div>
         <h1>{localize(chapter.title, mode)}</h1>
         <div className="reader-tools">
-          <span className="muted">Chapter {String(chapter.narrativeOrder).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')}</span>
+          <span className="muted">Chapter {String(chapter.narrativeOrder).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')} · 阅读 {readProgress}%</span>
           <div className="lang-toggle" aria-label="语言模式">
-            <button className={mode === 'zhHans' ? 'active' : ''} type="button" onClick={() => setMode('zhHans')}>中文</button>
-            <button className={mode === 'en' ? 'active' : ''} type="button" onClick={() => setMode('en')}>EN</button>
-            <button className={mode === 'bi' ? 'active' : ''} type="button" onClick={() => setMode('bi')}>中英</button>
+            <button className={mode === 'zhHans' ? 'active' : ''} type="button" onClick={() => selectMode('zhHans')}>中文</button>
+            <button className={mode === 'en' ? 'active' : ''} type="button" onClick={() => selectMode('en')}>EN</button>
+            <button className={mode === 'bi' ? 'active' : ''} type="button" onClick={() => selectMode('bi')}>中英</button>
           </div>
         </div>
       </header>
       <div className="story">
         {chapter.storyBlocks.map((block) => <StoryBlockView key={block.id} block={block} mode={mode} progress={progress} onEntity={openEntity} onReveal={onReveal} />)}
+        <nav className="reader-pager" aria-label="章节翻页">
+          {previousChapter ? <a href={'/read/' + game.slug + '/' + previousChapter.slug}><span>← 上一章</span><b>{previousChapter.title.zhHans}</b></a> : <span />}
+          {nextChapter ? <a className="next" href={'/read/' + game.slug + '/' + nextChapter.slug}><span>下一章 →</span><b>{nextChapter.title.zhHans}</b></a> : <a className="next" href={'/games/' + game.slug}><span>阅读完成</span><b>返回作品档案</b></a>}
+        </nav>
       </div>
     </article>
 
     <aside className="reader-right">
       <div className="panel-title">CASE NOTES</div>
       <div className="case-block">
-        {(['character','location','concept'] as const).map((type) => caseGroups[type].length > 0 && <div className="case-item" key={type}><b>{type === 'character' ? '当前人物' : type === 'location' ? '当前地点' : '当前概念'}</b>{caseGroups[type].map(({ ref, record }) => <button key={refKey(ref)} type="button" onClick={() => openEntity(ref)}>{recordTitle(record, mode)}<br /></button>)}</div>)}
-        <div className="case-item"><b>相关时间</b><span className="muted">{chapter.timeline ? `${chapter.timeline.year} · ${chapter.timeline.season ?? chapter.timeline.precision}` : '无固定时间节点'}</span></div>
+        {(['character','location','concept'] as const).map((type) => caseGroups[type].length > 0 && <div className="case-item" key={type}><b>{type === 'character' ? '当前人物' : type === 'location' ? '当前地点' : '关键概念'}</b>{caseGroups[type].map(({ ref, record }) => <button key={refKey(ref)} type="button" onClick={() => openEntity(ref)}>{recordTitle(record, mode)}<br /></button>)}</div>)}
+        <div className="case-item"><b>相关时间</b><span className="muted">{chapter.timeline ? chapter.timeline.year + ' · ' + (chapter.timeline.season ?? chapter.timeline.precision) : '跨季节回访 / 无新年份'}</span></div>
       </div>
-      <div className="spoiler-card"><div className="kicker">Spoiler Control</div><p className="muted">人物档案里的跨作品条目会根据“我的游玩进度”自动遮蔽，并允许你主动展开。</p><a className="button-ghost" href="/progress">修改游玩进度</a></div>
+      <div className="spoiler-card"><div className="kicker">Spoiler Control</div><p className="muted">跨作品档案会根据“我的游玩进度”遮蔽。你主动展开过的条目会单独记录。</p><a className="button-ghost" href="/progress">修改游玩进度</a></div>
     </aside>
 
     <div className="mobile-tabs">
@@ -146,7 +183,7 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
       <a href="/timeline">时间线</a>
     </div>
 
-    {chapterSheet && <div className="chapter-sheet"><div className="chapter-sheet-head"><b>CHAPTER</b><button type="button" onClick={() => setChapterSheet(false)}>×</button></div><nav className="chapter-nav">{chapters.map((item) => <a key={item.id} className={item.id === chapter.id ? 'active' : ''} href={`/read/${game.slug}/${item.slug}`}>{item.title.zhHans}<small>{item.storyBlocks.length > 1 ? '已录入' : '占位'}</small></a>)}</nav></div>}
+    {chapterSheet && <><button className="sheet-backdrop" aria-label="关闭章节列表" type="button" onClick={() => setChapterSheet(false)} /><div className="chapter-sheet"><div className="chapter-sheet-head"><b>CHAPTER</b><button type="button" onClick={() => setChapterSheet(false)}>×</button></div><nav className="chapter-nav">{chapters.map((item) => <a key={item.id} className={item.id === chapter.id ? 'active' : ''} href={'/read/' + game.slug + '/' + item.slug}>{item.title.zhHans}<small>{item.storyBlocks.length >= 5 ? '完整摘要' : '简要记录'}</small></a>)}</nav></div></>}
 
     {entityRecord && drawerRef && <>
       <button aria-label="关闭档案" className="drawer-backdrop" type="button" onClick={() => setDrawerRef(null)} />
@@ -155,8 +192,10 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
         <div className="kicker">{drawerRef.type.toUpperCase()} FILE</div>
         <h2>{recordTitle(entityRecord, mode)}</h2>
         {'summary' in entityRecord && <p>{localize(entityRecord.summary, mode)}</p>}
-        {isArchiveEntity(entityRecord) && entityRecord.entries.map((entry) => <SpoilerGate key={entry.id} id={entry.id} rule={entry.spoiler} progress={progress} onReveal={onReveal}><div className="drawer-entry"><div className="claim">{entry.claimKind}</div><p><BilingualRichText value={entry.content} mode={mode} onEntity={openEntity} /></p></div></SpoilerGate>)}
+        {fullHref && <a className="drawer-full-link" href={fullHref}>打开完整档案 →</a>}
+        {isArchiveEntity(entityRecord) && entityRecord.entries.map((entry) => <SpoilerGate key={entry.id} id={entry.id} rule={entry.spoiler} progress={progress} onReveal={onReveal}><div className="drawer-entry"><div className="claim">{entry.claimKind}</div><p><BilingualRichText value={entry.content} mode={mode} onEntity={openEntity} /></p><small className="source-line">SOURCE · {entry.provenance?.sourceIds.join(' · ') ?? entityRecord.sourceIds.join(' · ')}</small></div></SpoilerGate>)}
         {entityRecord.kind === 'event' && <div className="drawer-entry"><div className="claim">timeline</div><p>{(entityRecord as EventData).timeline.year} · {(entityRecord as EventData).timeline.season ?? ''}</p></div>}
+        <p className="drawer-hint">Esc 可关闭档案</p>
       </aside>
     </>}
   </div>;
