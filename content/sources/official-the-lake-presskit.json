@@ -1,0 +1,11 @@
+{
+  "kind": "source",
+  "schemaVersion": "1.0.0",
+  "id": "official-the-lake-presskit",
+  "title": "Cube Escape The Lake — Rusty Lake Press Kit",
+  "sourceType": "official-presskit",
+  "publisher": "Rusty Lake",
+  "url": "https://press.rustylake.com/sheet.php?p=Cube+Escape+The+Lake",
+  "publishedDate": "2015-04-25",
+  "note": "Supports the official release date and high-level setting."
+}

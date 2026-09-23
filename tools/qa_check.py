@@ -31,9 +31,9 @@ view=json.loads((ROOT/'generated/seasons-spring-1964.reader.json').read_text(enc
 refs={(x['type'],x['id']) for x in view['caseNotes']}
 needed={('character','laura-vanderboom'),('character','harvey'),('concept','memory'),('location','lauras-room')}
 check('Spring Case Notes can be generated from structured refs', needed.issubset(refs), str(sorted(refs)))
-laura=reg[('character','laura-vanderboom')]
-locked=next(e for e in laura['entries'] if e['id']=='laura-cross-game-demo-lock')
-check('Cross-game spoiler gate requires The Mill', locked['spoiler']['requiredCompletedGameIds']==['the-mill'])
+black=reg[('concept','black-cube')]
+locked=next(e for e in black['entries'] if e['id']=='black-cube-the-lake-ending')
+check('Cross-game spoiler gate requires The Lake', locked['spoiler']['requiredCompletedGameIds']==['the-lake'])
 check('Manual reveal is supported', locked['spoiler']['allowManualReveal'] is True)
 ordered=sorted([o for o in items if o['kind']=='event'], key=lambda e:e['timeline']['sortKey'])
 check('Timeline sorts 1964 -> 1971 Summer -> 1971 Fall -> 1981', [x['id'] for x in ordered]==['seasons-event-spring-1964','seasons-event-summer-1971','seasons-event-fall-1971','seasons-event-winter-1981'])

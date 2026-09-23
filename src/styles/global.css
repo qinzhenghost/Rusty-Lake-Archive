@@ -192,6 +192,7 @@ main { min-height: calc(100vh - 68px); }
 .reader-shell.season-fall { --season-accent: #8a3b2d; }
 .reader-shell.season-winter { --season-accent: #526a72; }
 .reader-shell.season-final { --season-accent: #493e56; }
+.reader-shell.season-lake { --season-accent: #3f6d68; }
 .reader-shell .scene-label, .reader-shell .kicker { color: var(--season-accent); }
 .reader-shell .entity-button { border-bottom-color: var(--season-accent); }
 .reader-shell .entity-button:hover { color: var(--season-accent); }

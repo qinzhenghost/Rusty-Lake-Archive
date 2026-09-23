@@ -1,0 +1,234 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "the-lake-below-surface",
+  "gameId": "the-lake",
+  "slug": "below-surface",
+  "narrativeOrder": 2,
+  "title": {
+    "zhHans": "水面之下",
+    "en": "Below the Surface"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "lake-below-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "水面之下",
+        "en": "Below the Surface"
+      },
+      "subtitle": {
+        "zhHans": "湖开始回应",
+        "en": "The lake begins to answer"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-below-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "起初，钓鱼像是在为木屋补充普通物件；很快，湖里被拉上来的东西开始偏离常识。The Lake 由此把“湖”从背景变成会主动回应玩家的空间。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "At first, fishing seems to supply ordinary objects for the cabin. Soon the things pulled from the water stop behaving like ordinary catches, turning the lake from scenery into a space that seems to answer the player."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-below-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "一具不应出现在钓线另一端的人形存在，把这种不安推到极点。它与后来出现的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "Corrupted Soul"
+          },
+          {
+            "kind": "text",
+            "text": " 意象相互呼应，让“钓起物品”的动作第一次明显带上了人物与记忆的重量。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "A humanlike presence where no such catch should be pushes the unease much further. It echoes the later "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "Corrupted Soul"
+          },
+          {
+            "kind": "text",
+            "text": " imagery, giving the act of pulling objects from the lake a new weight tied to people and memory."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-below-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "与此同时，木屋里分散的物件逐渐被组织到同一个中心结构上。探索不再只是“找到出口”，而是把湖中取得的东西组合成一次具有仪式感的准备。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Meanwhile, objects scattered through the cabin begin to converge on one central structure. The exploration stops feeling like a simple search for an exit and becomes preparation for something ritual-like."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-below-open-soul",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "character",
+        "id": "corrupted-soul"
+      },
+      "label": {
+        "zhHans": "打开 Corrupted Soul 档案",
+        "en": "Open the Corrupted Soul file"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-below-note",
+      "type": "note",
+      "title": {
+        "zhHans": "阅读方式",
+        "en": "Reading Mode"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这里保留“发现如何改变气氛与因果”的剧情层，不列出鱼饵、密码、道具顺序等攻略步骤。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This archive keeps how discoveries change mood and causality, while omitting bait, codes, item order, and other walkthrough steps."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "location",
+      "id": "rusty-lake-cabin"
+    },
+    {
+      "type": "character",
+      "id": "corrupted-soul"
+    },
+    {
+      "type": "concept",
+      "id": "rusty-lake"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "minor",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-the-lake-game",
+    "editorial-rla"
+  ]
+}

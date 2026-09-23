@@ -1,0 +1,155 @@
+{
+  "kind": "relationSet",
+  "schemaVersion": "1.0.0",
+  "id": "the-lake-relations",
+  "title": {
+    "zhHans": "The Lake 跨作品关系",
+    "en": "The Lake Cross-game Relations"
+  },
+  "relations": [
+    {
+      "id": "rel-the-lake-cabin",
+      "from": {
+        "type": "game",
+        "id": "the-lake"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "rusty-lake-cabin"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-the-lake-page"
+      ]
+    },
+    {
+      "id": "rel-cabin-rusty-lake",
+      "from": {
+        "type": "location",
+        "id": "rusty-lake-cabin"
+      },
+      "type": "part_of",
+      "to": {
+        "type": "location",
+        "id": "rusty-lake-location"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-the-lake-page"
+      ]
+    },
+    {
+      "id": "rel-corrupted-soul-the-lake",
+      "from": {
+        "type": "character",
+        "id": "corrupted-soul"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "the-lake"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "the-lake"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及 The Lake 的后段剧情。",
+          "en": "Contains later-story information from The Lake."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-the-lake-game"
+      ]
+    },
+    {
+      "id": "rel-black-cube-the-lake",
+      "from": {
+        "type": "concept",
+        "id": "black-cube"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "the-lake"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "the-lake"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及 The Lake 的另一种结局。",
+          "en": "Contains an alternate-ending detail from The Lake."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-the-lake-game"
+      ]
+    },
+    {
+      "id": "rel-black-cube-seasons",
+      "from": {
+        "type": "concept",
+        "id": "black-cube"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "seasons"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-seasons-game"
+      ]
+    },
+    {
+      "id": "rel-the-lake-references-seasons",
+      "from": {
+        "type": "game",
+        "id": "the-lake"
+      },
+      "type": "references",
+      "to": {
+        "type": "game",
+        "id": "seasons"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "the-lake"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "揭示 The Lake 如何使用 Seasons 的信息。",
+          "en": "Reveals how The Lake uses information from Seasons."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-the-lake-game"
+      ]
+    }
+  ]
+}

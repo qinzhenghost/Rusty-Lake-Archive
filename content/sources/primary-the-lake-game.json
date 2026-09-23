@@ -1,0 +1,9 @@
+{
+  "kind": "source",
+  "schemaVersion": "1.0.0",
+  "id": "primary-the-lake-game",
+  "title": "Cube Escape: The Lake — in-game primary source",
+  "sourceType": "primary-game",
+  "publisher": "Rusty Lake",
+  "note": "Use for directly observable story structure, the Seasons callback, endings, and cube imagery. Do not reproduce puzzle walkthrough steps or long dialogue."
+}

@@ -1,7 +1,96 @@
 {
-  "kind":"character","schemaVersion":"1.0.0","id":"corrupted-soul","slug":"corrupted-soul",
-  "title":{"zhHans":"Corrupted Soul","en":"Corrupted Soul"},"aliases":[],
-  "summary":{"zhHans":"MVP 中保留的高剧透人物占位条目。","en":"A high-spoiler character placeholder retained for the MVP data model."},
-  "entries":[],"spoiler":{"level":"major","requiredCompletedGameIds":["seasons"],"allowManualReveal":true,"reason":{"zhHans":"建议完成 Seasons 后查看。","en":"Recommended after completing Seasons."}},
-  "sourceIds":["primary-seasons-game"]
+  "kind": "character",
+  "schemaVersion": "1.0.0",
+  "id": "corrupted-soul",
+  "slug": "corrupted-soul",
+  "title": {
+    "zhHans": "Corrupted Soul",
+    "en": "Corrupted Soul"
+  },
+  "aliases": [],
+  "summary": {
+    "zhHans": "锈湖故事中反复出现的黑暗人形意象；具体身份与出现情境按游玩进度分段展示。",
+    "en": "A recurring dark humanoid presence in Rusty Lake; specific appearances are revealed according to play progress."
+  },
+  "entries": [
+    {
+      "id": "corrupted-soul-seasons",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "Seasons 的记忆中会出现黑暗人形，它与 Laura 的异常记忆画面相连。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "A dark humanoid figure appears within Seasons and is tied to Laura's disturbed memory imagery."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [
+          "seasons"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "建议完成 Seasons 后查看。",
+          "en": "Recommended after completing Seasons."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game"
+        ]
+      }
+    },
+    {
+      "id": "corrupted-soul-the-lake",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "在 The Lake 的后段，黑暗人形从湖边逼近；不同结局会改变这次遭遇的结果。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Late in The Lake, a dark humanoid presence approaches from the lake; different endings change the outcome of that encounter."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "the-lake"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及 The Lake 的后段剧情与结局差异。",
+          "en": "Contains late-story and ending information from The Lake."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    }
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "primary-the-lake-game"
+  ]
 }

@@ -5,8 +5,8 @@ const games = getGames();
 ---
 <BaseLayout title="游戏档案" active="games">
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Game Files</div><h1>游戏档案</h1></div><span class="muted">按官方推荐顺序的数据骨架</span></div>
-    <p class="section-intro">当前只对 Seasons 开放完整阅读路径；其他作品可以先作为档案 stub 存在，直到内容录入完成。</p>
+    <div class="section-head"><div><div class="kicker">Game Files</div><h1>游戏档案</h1></div><span class="muted">按官方推荐顺序组织，不等同于故事时间线</span></div>
+    <p class="section-intro">Seasons 与 The Lake 已开放完整阅读路径；其他作品可以先作为档案 stub 存在，直到内容录入完成。</p>
     <div class="game-grid">
       {games.map((game) => (
         <a class:list={['game-card', game.contentStatus === 'stub' && 'content-stub']} href={`/games/${game.slug}`}>

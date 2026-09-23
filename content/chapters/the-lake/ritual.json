@@ -1,0 +1,212 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "the-lake-ritual",
+  "gameId": "the-lake",
+  "slug": "ritual",
+  "narrativeOrder": 3,
+  "title": {
+    "zhHans": "仪式与逼近",
+    "en": "Ritual and Approach"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "lake-ritual-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "仪式与逼近",
+        "en": "Ritual and Approach"
+      },
+      "subtitle": {
+        "zhHans": "第一种命运",
+        "en": "The first fate"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-ritual-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "当收集到的物件被安置到木屋中的树状结构后，房间出现了明确的仪式性图案。此前分散的钓获物和室内线索，在这一刻被组织成同一个结果。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "When the collected objects are placed on the tree-like structure inside the cabin, a ritual pattern becomes visible. The scattered catches and indoor clues are finally organized into one outcome."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-ritual-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "但默认路线并没有带来真正的安全。水面外的黑暗人形逐渐靠近，之前积累的异样在此刻转化成直接威胁。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The default route does not produce genuine safety. A dark humanlike figure draws closer from beyond the water, turning the unease accumulated so far into an immediate threat."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-ritual-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这一结局并不是唯一结果。游戏从一开始就用“改变命运”的表述埋下另一条路径，而答案不完全属于这间木屋。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This ending is not the only possible outcome. The game's own 'change your fate' framing points toward another path, and the missing knowledge does not belong entirely to this cabin."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-the-lake-page",
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-ritual-p4",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "因此 The Lake 的结构在这里出现第一次真正的跨作品分叉：只阅读这一份档案，可以理解危险；带着前作的记忆回来，才会看到另一种命运。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The Lake therefore reaches the archive's first genuine cross-game fork: this file alone explains the danger, while returning with memory from the earlier game reveals another fate."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-ritual-note",
+      "type": "note",
+      "title": {
+        "zhHans": "结局记录",
+        "en": "Ending Record"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "档案记录不同结局的叙事差异，但不会把它展开成密码或操作顺序。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The archive records narrative differences between endings without turning them into a password or action sequence."
+          }
+        ]
+      },
+      "tone": "warning",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "location",
+      "id": "rusty-lake-cabin"
+    },
+    {
+      "type": "character",
+      "id": "corrupted-soul"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-the-lake-page",
+    "primary-the-lake-game",
+    "editorial-rla"
+  ]
+}

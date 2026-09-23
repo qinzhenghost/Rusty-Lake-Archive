@@ -36,8 +36,19 @@ function recordHref(ref: EntityRef, record: EntityRecord | undefined): string | 
   if (ref.type === 'game') return '/games/' + record.slug;
   return null;
 }
-function seasonLabel(chapter: ChapterData): string {
+function readerTheme(game: GameData, chapter: ChapterData): string {
+  if (game.id === 'the-lake') return 'lake';
   return chapter.timeline?.season ?? 'final';
+}
+function chapterTimeLabel(game: GameData, chapter: ChapterData): string {
+  if (chapter.timeline) return String(chapter.timeline.year);
+  if (game.id === 'seasons' && chapter.slug === 'final') return 'RETURN';
+  return 'UNDATED';
+}
+function chapterTimeDetail(game: GameData, chapter: ChapterData): string {
+  if (chapter.timeline) return chapter.timeline.year + ' · ' + (chapter.timeline.season ?? chapter.timeline.precision);
+  if (game.id === 'seasons' && chapter.slug === 'final') return '跨季节回访 / 无新年份';
+  return '未标注明确年份';
 }
 
 function RichText({ value, locale, onEntity }: { value: LocalizedRichText; locale: Locale; onEntity: (ref: EntityRef) => void }) {
@@ -135,7 +146,7 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
   const nextChapter = chapterIndex >= 0 && chapterIndex < chapters.length - 1 ? chapters[chapterIndex + 1] : undefined;
   const fullHref = drawerRef && entityRecord ? recordHref(drawerRef, entityRecord) : null;
 
-  return <div className={'reader-shell season-' + seasonLabel(chapter)}>
+  return <div className={'reader-shell season-' + readerTheme(game, chapter)}>
     <div className="reading-progress-track" aria-hidden="true"><span style={{ width: readProgress + '%' }} /></div>
     <aside className="reader-left">
       <div className="panel-title">CHAPTER</div>
@@ -148,7 +159,7 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
 
     <article className="reader-main">
       <header className="reader-head">
-        <div className="kicker">{game.title.zhHans} · {chapter.timeline ? String(chapter.timeline.year) : 'RETURN'}</div>
+        <div className="kicker">{game.title.zhHans} · {chapterTimeLabel(game, chapter)}</div>
         <h1>{localize(chapter.title, mode)}</h1>
         <div className="reader-tools">
           <span className="muted">Chapter {String(chapter.narrativeOrder).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')} · 阅读 {readProgress}%</span>
@@ -172,7 +183,7 @@ export default function ReaderApp({ game, chapter, chapters, entityMap }: Props)
       <div className="panel-title">CASE NOTES</div>
       <div className="case-block">
         {(['character','location','concept'] as const).map((type) => caseGroups[type].length > 0 && <div className="case-item" key={type}><b>{type === 'character' ? '当前人物' : type === 'location' ? '当前地点' : '关键概念'}</b>{caseGroups[type].map(({ ref, record }) => <button key={refKey(ref)} type="button" onClick={() => openEntity(ref)}>{recordTitle(record, mode)}<br /></button>)}</div>)}
-        <div className="case-item"><b>相关时间</b><span className="muted">{chapter.timeline ? chapter.timeline.year + ' · ' + (chapter.timeline.season ?? chapter.timeline.precision) : '跨季节回访 / 无新年份'}</span></div>
+        <div className="case-item"><b>相关时间</b><span className="muted">{chapterTimeDetail(game, chapter)}</span></div>
       </div>
       <div className="spoiler-card"><div className="kicker">Spoiler Control</div><p className="muted">跨作品档案会根据“我的游玩进度”遮蔽。你主动展开过的条目会单独记录。</p><a className="button-ghost" href="/progress">修改游玩进度</a></div>
     </aside>

@@ -1,0 +1,313 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "the-lake-change-fate",
+  "gameId": "the-lake",
+  "slug": "change-fate",
+  "narrativeOrder": 4,
+  "title": {
+    "zhHans": "改变命运",
+    "en": "Change Your Fate"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "lake-fate-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "改变命运",
+        "en": "Change Your Fate"
+      },
+      "subtitle": {
+        "zhHans": "来自 Seasons 的记忆",
+        "en": "A memory carried from Seasons"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "木屋中存在一处明确要求玩家“记得 Seasons”的机关。它不是彩蛋式提及，而是把 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "game",
+              "id": "seasons"
+            },
+            "label": "Cube Escape: Seasons"
+          },
+          {
+            "kind": "text",
+            "text": " 中获得的知识直接变成 The Lake 的可用条件。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "One mechanism in the cabin explicitly asks the player to remember "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "game",
+              "id": "seasons"
+            },
+            "label": "Cube Escape: Seasons"
+          },
+          {
+            "kind": "text",
+            "text": ". This is more than a cameo: knowledge learned in the earlier game becomes an actionable condition inside The Lake."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "用来自 Seasons 的信息打开这条分支后，玩家得到不同的宝石，并用它替换默认路线中的关键位置。相同的空间和物件因此导向了不同结果。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Using information carried from Seasons opens a branch that provides a different gem, replacing the key element used in the default route. The same room and objects can therefore lead to a different result."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这一次，逼近的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "Corrupted Soul"
+          },
+          {
+            "kind": "text",
+            "text": " 被挡住并最终消失，随后留下一个 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "黑色方块"
+          },
+          {
+            "kind": "text",
+            "text": "。The Lake 的“改变命运”由此获得了具体结果。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This time the approaching "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "Corrupted Soul"
+          },
+          {
+            "kind": "text",
+            "text": " is held back and eventually disappears, leaving behind a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "black cube"
+          },
+          {
+            "kind": "text",
+            "text": ". The Lake's promise of changing fate becomes a concrete outcome."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-p4",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "对档案馆而言，这是第一条被完整验证的跨作品关系：作品顺序不只是菜单排序，前作的信息可以改变后作中实际发生的事情。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "For the archive, this is the first fully demonstrated cross-game relation: play order is not merely menu ordering—information from one game can alter what actually happens in another."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-open-cube",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "black-cube"
+      },
+      "label": {
+        "zhHans": "打开「黑色方块」档案",
+        "en": "Open the Black Cube file"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-fate-note",
+      "type": "note",
+      "title": {
+        "zhHans": "跨作品档案",
+        "en": "Cross-game Archive"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "从 Seasons 阅读黑色方块档案时，这段 The Lake 结局信息会被进度系统遮蔽；完成 The Lake 后才自动解锁。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "When the Black Cube file is opened from Seasons, this The Lake ending detail stays redacted until The Lake is marked complete."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "corrupted-soul"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    },
+    {
+      "type": "game",
+      "id": "seasons"
+    },
+    {
+      "type": "location",
+      "id": "rusty-lake-cabin"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-the-lake-game",
+    "editorial-rla"
+  ]
+}

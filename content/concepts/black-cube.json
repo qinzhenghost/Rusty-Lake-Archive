@@ -1,1 +1,89 @@
-{"kind":"concept","schemaVersion":"1.0.0","id":"black-cube","slug":"black-cube","title":{"zhHans":"黑色方块","en":"Black Cube"},"summary":{"zhHans":"MVP 预留概念条目，避免在 Schema 阶段提前写入高剧透解释。","en":"Reserved concept entry that avoids encoding spoiler-heavy interpretation during the schema phase."},"entries":[],"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["editorial-rla"]}
+{
+  "kind": "concept",
+  "schemaVersion": "1.0.0",
+  "id": "black-cube",
+  "slug": "black-cube",
+  "title": {
+    "zhHans": "黑色方块",
+    "en": "Black Cube"
+  },
+  "summary": {
+    "zhHans": "在多部作品中反复出现的黑色方块意象。档案只按当前游玩进度展示已经允许确认的具体出现方式。",
+    "en": "A recurring black-cube motif across multiple games. This file reveals only the appearances allowed by the current play-progress settings."
+  },
+  "entries": [
+    {
+      "id": "black-cube-seasons",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "在 Seasons 中，黑色方块与不同季节记忆之间的推进相连。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "In Seasons, black cubes are tied to progression between different seasonal memories."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-seasons-game"
+        ]
+      }
+    },
+    {
+      "id": "black-cube-the-lake-ending",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "The Lake 的另一种结局中，逼近的 Corrupted Soul 消失后留下一个黑色方块。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "In an alternate outcome of The Lake, a black cube remains after the approaching Corrupted Soul disappears."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "the-lake"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及 The Lake 的另一种结局。",
+          "en": "Contains an alternate-ending detail from The Lake."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-the-lake-game"
+        ]
+      }
+    }
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-seasons-game",
+    "primary-the-lake-game"
+  ]
+}

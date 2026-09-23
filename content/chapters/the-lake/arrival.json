@@ -1,0 +1,256 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "the-lake-arrival",
+  "gameId": "the-lake",
+  "slug": "arrival",
+  "narrativeOrder": 1,
+  "title": {
+    "zhHans": "抵达小屋",
+    "en": "Arrival at the Cabin"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "lake-arrival-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "抵达小屋",
+        "en": "Arrival at the Cabin"
+      },
+      "subtitle": {
+        "zhHans": "没有年份的第二份档案",
+        "en": "A second file without a stated year"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-arrival-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "故事从一座位于 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "rusty-lake"
+            },
+            "label": "Rusty Lake"
+          },
+          {
+            "kind": "text",
+            "text": " 小岛上的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "rusty-lake-cabin"
+            },
+            "label": "废弃木屋"
+          },
+          {
+            "kind": "text",
+            "text": " 开始。这里没有明确年份，只有封闭房间、湖水和一组等待被使用的工具。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The story begins inside an "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "rusty-lake-cabin"
+            },
+            "label": "abandoned cabin"
+          },
+          {
+            "kind": "text",
+            "text": " on a small island at "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "rusty-lake"
+            },
+            "label": "Rusty Lake"
+          },
+          {
+            "kind": "text",
+            "text": ". No explicit year is given—only the enclosed room, the lake, and a small set of tools waiting to be used."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-the-lake-page",
+          "primary-the-lake-game"
+        ]
+      }
+    },
+    {
+      "id": "lake-arrival-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "最醒目的线索是钓鱼设备。与 Seasons 反复回访同一房间的结构不同，The Lake 把注意力集中到木屋与水面之间：室内发现会推动你再次面对湖。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Fishing gear is the clearest invitation. Unlike Seasons, which repeatedly revisits the same room across time, The Lake concentrates attention on the exchange between cabin and water: discoveries indoors keep sending you back toward the lake."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-the-lake-page",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-arrival-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方推荐游玩顺序把 The Lake 放在 Seasons 之后，但这只是推荐体验顺序，并不等于故事发生年份。档案因此保留“无日期”状态。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The official recommended play order places The Lake after Seasons, but that is a suggested experience order—not an in-universe date. This archive therefore keeps the chapter undated."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-note",
+        "sourceIds": [
+          "official-rustylake-faq",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-arrival-open-cabin",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "location",
+        "id": "rusty-lake-cabin"
+      },
+      "label": {
+        "zhHans": "打开「小岛木屋」档案",
+        "en": "Open the Island Cabin file"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "lake-arrival-note",
+      "type": "note",
+      "title": {
+        "zhHans": "时间说明",
+        "en": "Timeline Note"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "本档案不会用发布日期或推荐游玩顺序替代世界观年份。没有可靠年份时，时间字段保持为空。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This archive never substitutes release date or recommended play order for an in-universe year. When no reliable story date is available, the timeline field stays empty."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "location",
+      "id": "rusty-lake-cabin"
+    },
+    {
+      "type": "concept",
+      "id": "rusty-lake"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-the-lake-page",
+    "official-rustylake-faq",
+    "primary-the-lake-game",
+    "editorial-rla"
+  ]
+}

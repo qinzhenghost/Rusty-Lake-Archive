@@ -1,0 +1,54 @@
+{
+  "kind": "location",
+  "schemaVersion": "1.0.0",
+  "id": "rusty-lake-cabin",
+  "slug": "rusty-lake-cabin",
+  "title": {
+    "zhHans": "Rusty Lake 小岛木屋",
+    "en": "Rusty Lake Island Cabin"
+  },
+  "summary": {
+    "zhHans": "《The Lake》的主要场景：位于 Rusty Lake 一座小岛上的废弃木屋。",
+    "en": "The primary setting of The Lake: an abandoned cabin on a small island at Rusty Lake."
+  },
+  "entries": [
+    {
+      "id": "cabin-official-setting",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方页面将场景描述为 Rusty Lake 一座小岛上的废弃木屋。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The official page describes the setting as an abandoned cabin on a small island at Rusty Lake."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-the-lake-page"
+        ]
+      }
+    }
+  ],
+  "timelineRefs": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-the-lake-page"
+  ]
+}

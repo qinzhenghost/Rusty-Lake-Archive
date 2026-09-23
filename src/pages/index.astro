@@ -9,9 +9,10 @@ const seasons = getGameBySlug('seasons');
     <div class="hero-copy">
       <div class="kicker">Archive / Memory / Lake</div>
       <h1>进入<br />锈湖档案</h1>
-      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。第一套完整阅读样例是 <strong>Cube Escape: Seasons</strong>：五章原创剧情摘要、实体档案、时间线与防剧透进度已经连通。</p>
+      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。现在已有两套完整阅读档案：<strong>Cube Escape: Seasons</strong> 与 <strong>Cube Escape: The Lake</strong>，并首次连通真实的跨作品关系与防剧透门槛。</p>
       <div class="hero-actions">
-        <a class="button" href="/read/seasons/spring-1964">从 Spring 1964 开始</a>
+        <a class="button" href="/read/seasons/spring-1964">从 Seasons 开始</a>
+        <a class="button-ghost" href="/games/the-lake">打开 The Lake</a>
         <a class="button-ghost" href="/progress">设置游玩进度</a>
       </div>
       <ContinueReading client:load />
@@ -26,15 +27,15 @@ const seasons = getGameBySlug('seasons');
           <div><div class="muted">STATUS</div><b>STORY READY</b></div>
           <div><div class="muted">MEMORIES</div><b>1964 → 1981</b></div>
           <div><div class="muted">LANGUAGE</div><b>中文 / EN / 对照</b></div>
-          <div><div class="muted">SPOILER</div><b>CONTROLLED</b></div>
+          <div><div class="muted">SPOILER</div><b>CROSS-GAME</b></div>
         </div>
       </article>
     </div>
   </section>
   <section class="home-grid" aria-label="探索入口">
-    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>Seasons 已完成五章剧情摘要；后续作品继续沿同一 Schema 扩展。</span></a>
-    <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>按照故事年份而不是发布时间重新组织事件，并保留时间确定性。</span></a>
+    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>两套完整档案已上线；后续作品继续沿同一 Schema 扩展。</span></a>
+    <a class="home-tile" href="/timeline"><div class="kicker">02</div><b>故事时间线</b><span>只收录有可靠故事时间依据的事件，不用发布日期替代世界观年份。</span></a>
     <a class="home-tile" href="/characters"><div class="kicker">03</div><b>人物档案</b><span>阅读过程中点击实体词即可展开档案，并区分事实、解释与理论。</span></a>
-    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>进度、语言和主动解锁记录都只保存在当前浏览器。</span></a>
+    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>跨作品档案根据完成进度遮蔽；进度只保存在当前浏览器。</span></a>
   </section>
 </BaseLayout>
