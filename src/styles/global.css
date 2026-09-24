@@ -218,6 +218,9 @@ main { min-height: calc(100vh - 68px); }
 .progress-summary { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; padding: 18px 0 26px; border-bottom: 1px solid var(--line); }
 .progress-summary div { min-width: 120px; display: grid; gap: 5px; }
 .progress-summary b { font-size: 25px; font-weight: 500; }
+.progress-bulk-actions { display: flex !important; flex: 1 1 320px; flex-direction: row !important; flex-wrap: wrap; gap: 8px !important; align-items: center; }
+.progress-bulk-actions .button, .progress-bulk-actions .button-ghost { min-width: 120px; }
+.progress-bulk-actions .button:disabled { opacity: .45; cursor: default; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }

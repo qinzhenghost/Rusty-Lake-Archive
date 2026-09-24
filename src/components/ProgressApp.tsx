@@ -24,9 +24,27 @@ export default function ProgressApp({ games }: { games: GameData[] }) {
     localStorage.removeItem(REVEAL_KEY);
     setReveals(0);
   };
+  const markAllCompleted = () => {
+    const allIds = games.map((game) => game.id);
+    setCompleted(allIds);
+    localStorage.setItem(KEY, JSON.stringify(allIds));
+  };
+  const clearAllCompleted = () => {
+    setCompleted([]);
+    localStorage.setItem(KEY, JSON.stringify([]));
+  };
+  const allCompleted = games.length > 0 && games.every((game) => completed.includes(game.id));
 
   return <div className="progress-wrap">
-    <div className="progress-summary"><div><span className="kicker">Completed</span><b>{completed.length} / {games.length}</b></div><div><span className="kicker">Manual Reveals</span><b>{reveals}</b></div>{reveals > 0 && <button className="button-ghost" type="button" onClick={clearReveals}>清除主动解锁记录</button>}</div>
+    <div className="progress-summary">
+      <div><span className="kicker">Completed</span><b>{completed.length} / {games.length}</b></div>
+      <div><span className="kicker">Manual Reveals</span><b>{reveals}</b></div>
+      <div className="progress-bulk-actions">
+        <button className="button" type="button" onClick={markAllCompleted} disabled={allCompleted}>一键全部标记</button>
+        {completed.length > 0 && <button className="button-ghost" type="button" onClick={clearAllCompleted}>全部取消</button>}
+        {reveals > 0 && <button className="button-ghost" type="button" onClick={clearReveals}>清除主动解锁记录</button>}
+      </div>
+    </div>
     {games.map((game) => {
       const on = completed.includes(game.id);
       return <div className="progress-row" key={game.id}>

@@ -24,6 +24,7 @@ location = (ROOT/'src/pages/locations/[slug].astro').read_text('utf-8')
 game = (ROOT/'src/pages/games/[slug].astro').read_text('utf-8')
 home = (ROOT/'src/pages/index.astro').read_text('utf-8')
 progress = (ROOT/'src/pages/progress.astro').read_text('utf-8')
+progress_app = (ROOT/'src/components/ProgressApp.tsx').read_text('utf-8')
 
 check('models:search-types', all(x in models for x in ['SearchKind','SearchDocument','SearchReaderLink']), 'search models missing')
 check('index:builder', 'export function getSearchDocuments()' in loader, 'search index builder missing')
@@ -55,6 +56,8 @@ check('quick:lore', 'ArchiveReaderLinks' in lore and 'getReaderLinksForRef' in l
 check('quick:location', 'ArchiveReaderLinks' in location and 'getReaderLinksForRef' in location, 'location quick paths missing')
 check('quick:game-search', '/search?q=' in game, 'game search shortcut missing')
 check('progress:mentions-search', '全站搜索' in progress, 'progress page does not describe search gating')
+check('progress:bulk-mark-all', 'markAllCompleted' in progress_app and '一键全部标记' in progress_app and 'games.map((game) => game.id)' in progress_app, 'mark-all progress action missing')
+check('progress:bulk-clear', 'clearAllCompleted' in progress_app and '全部取消' in progress_app, 'clear-all progress action missing')
 
 check('style:search', all(x in css for x in ['search-shell','search-result','archive-jumps','@media (max-width: 720px)']), 'search/mobile styles missing')
 
