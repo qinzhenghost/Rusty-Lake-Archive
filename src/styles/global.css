@@ -193,6 +193,7 @@ main { min-height: calc(100vh - 68px); }
 .reader-shell.season-winter { --season-accent: #526a72; }
 .reader-shell.season-final { --season-accent: #493e56; }
 .reader-shell.season-lake { --season-accent: #3f6d68; }
+.reader-shell.season-arles { --season-accent: #9a5f2e; }
 .reader-shell .scene-label, .reader-shell .kicker { color: var(--season-accent); }
 .reader-shell .entity-button { border-bottom-color: var(--season-accent); }
 .reader-shell .entity-button:hover { color: var(--season-accent); }

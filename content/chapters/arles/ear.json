@@ -1,0 +1,205 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "arles-ear",
+  "gameId": "arles",
+  "slug": "ear",
+  "narrativeOrder": 3,
+  "title": {
+    "zhHans": "进入耳中",
+    "en": "Into the Ear"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "arles-ear-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "进入耳中",
+        "en": "Into the Ear"
+      },
+      "subtitle": {
+        "zhHans": "熟悉的房间开始向身体内部折叠",
+        "en": "The familiar room folds inward"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-ear-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "游戏把艺术家最著名的身体意象之一转化成真正的空间入口：角色割下耳朵并将它置于房间中的容器后，原本属于身体的一部分变成可以进入的通道。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The game turns one of the artist's most famous bodily motifs into a literal spatial entrance: after the character removes his ear and places it in a vessel, part of the body becomes a passage that can be entered."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-ear-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "耳内并不是写实结构，而是一段不断延伸的超现实走廊。门、物件与尺度关系被重新排列，卧室的逻辑开始彻底失效。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Inside the ear is not a realistic anatomy but an extended surreal corridor. Doors, objects, and scale are rearranged, and the logic of the bedroom stops behaving normally."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-ear-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "从这一刻开始，“逃出房间”已经不再是唯一目标。更重要的是穿过艺术家自身的内部世界，再回到一个看似相同、实际已经改变的房间。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "From this point, escaping the room is no longer the only goal. The more important movement is through the artist's internal world and back into a room that looks familiar but has changed."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-ear-vincent",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "character",
+        "id": "vincent-van-gogh"
+      },
+      "label": {
+        "zhHans": "打开「文森特·梵高」档案",
+        "en": "Open the Vincent van Gogh file"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-ear-guide",
+      "type": "note",
+      "title": {
+        "zhHans": "攻略边界",
+        "en": "Walkthrough Boundary"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "耳内谜题包含具体称重与密码流程，本档案不会记录答案，只描述它在叙事上的空间转折。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The ear sequence contains specific weighing and code puzzles. This archive omits those answers and records only the narrative transition they create."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "vincent-van-gogh"
+    },
+    {
+      "type": "location",
+      "id": "arles-bedroom"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-arles-game",
+    "editorial-rla"
+  ]
+}

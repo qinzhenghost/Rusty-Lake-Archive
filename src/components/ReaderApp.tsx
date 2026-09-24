@@ -37,6 +37,7 @@ function recordHref(ref: EntityRef, record: EntityRecord | undefined): string | 
 }
 function readerTheme(game: GameData, chapter: ChapterData): string {
   if (game.id === 'the-lake') return 'lake';
+  if (game.id === 'arles') return 'arles';
   return chapter.timeline?.season ?? 'final';
 }
 function chapterTimeLabel(game: GameData, chapter: ChapterData, language: ArchiveLanguage): string {

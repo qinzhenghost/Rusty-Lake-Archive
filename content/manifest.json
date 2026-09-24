@@ -42,7 +42,19 @@
     "content/chapters/the-lake/ritual.json",
     "content/chapters/the-lake/change-fate.json",
     "content/relations/seasons-relations.json",
-    "content/relations/the-lake-relations.json"
+    "content/relations/the-lake-relations.json",
+    "content/sources/official-arles-page.json",
+    "content/sources/official-arles-release.json",
+    "content/sources/primary-arles-game.json",
+    "content/games/arles.json",
+    "content/characters/vincent-van-gogh.json",
+    "content/concepts/white-cube.json",
+    "content/locations/arles-bedroom.json",
+    "content/chapters/arles/bedroom.json",
+    "content/chapters/arles/canvas.json",
+    "content/chapters/arles/ear.json",
+    "content/chapters/arles/mirror.json",
+    "content/relations/arles-relations.json"
   ],
   "uiDefaults": {
     "readerRoute": "/read/seasons/spring-1964",

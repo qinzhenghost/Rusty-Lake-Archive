@@ -1,0 +1,258 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "arles-bedroom",
+  "gameId": "arles",
+  "slug": "bedroom",
+  "narrativeOrder": 1,
+  "title": {
+    "zhHans": "被画作包围的房间",
+    "en": "A Room Surrounded by Art"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "arles-bedroom-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "被画作包围的房间",
+        "en": "A Room Surrounded by Art"
+      },
+      "subtitle": {
+        "zhHans": "支线档案从阿尔勒开始",
+        "en": "A side file begins in Arles"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-bedroom-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "故事把 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "vincent-van-gogh"
+            },
+            "label": "文森特·梵高"
+          },
+          {
+            "kind": "text",
+            "text": " 放进一间位于阿尔勒的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "arles-bedroom"
+            },
+            "label": "卧室"
+          },
+          {
+            "kind": "text",
+            "text": "。墙上的画框、颜料、镜子和个人物件让这里更像一间工作中的画室，而不是普通逃脱房间。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The story places "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "vincent-van-gogh"
+            },
+            "label": "Vincent van Gogh"
+          },
+          {
+            "kind": "text",
+            "text": " inside a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "location",
+              "id": "arles-bedroom"
+            },
+            "label": "bedroom in Arles"
+          },
+          {
+            "kind": "text",
+            "text": ". Frames, pigments, mirrors, and personal objects make it feel like an active studio rather than an ordinary escape room."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-arles-page",
+          "official-arles-release",
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-bedroom-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方页面把“完成画作、寻找颜色、收集绘画材料”放在核心位置。于是房间里的物件不只是谜题道具，也不断把注意力拉回艺术家的观看方式与作品本身。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The official page centers completing pictures, finding colors, and gathering painting materials. Objects therefore function not only as puzzle pieces but as repeated returns to the artist's way of seeing and making images."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-arles-page",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-bedroom-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "Rusty Lake 在发布时把本作称为相对《逃离方块：四季》和《逃离方块：锈湖湖畔》的一次“支线式”转向。档案因此把它作为同一系列中的独立分支阅读，而不是强行接到劳拉主线的具体年份。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "At release, Rusty Lake described Arles as a side step from the Seasons and The Lake story. The archive therefore treats it as an independent branch within the same series rather than forcing it into Laura's dated storyline."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-arles-release",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-bedroom-open",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "location",
+        "id": "arles-bedroom"
+      },
+      "label": {
+        "zhHans": "打开「阿尔勒卧室」档案",
+        "en": "Open the Bedroom in Arles file"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-bedroom-time",
+      "type": "note",
+      "title": {
+        "zhHans": "时间说明",
+        "en": "Timeline Note"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "当前官方页面没有给出本作可靠的世界观年份；发布日期和推荐游玩顺序都不会替代故事年份，因此本章保持无日期。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The current official page does not establish a reliable in-universe year. Release date and recommended play order are not substitutes for story chronology, so this chapter remains undated."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "vincent-van-gogh"
+    },
+    {
+      "type": "location",
+      "id": "arles-bedroom"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-arles-page",
+    "official-arles-release",
+    "official-rustylake-faq",
+    "primary-arles-game",
+    "editorial-rla"
+  ]
+}

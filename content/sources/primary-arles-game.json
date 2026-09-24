@@ -1,0 +1,9 @@
+{
+  "kind": "source",
+  "schemaVersion": "1.0.0",
+  "id": "primary-arles-game",
+  "title": "Cube Escape: Arles — in-game primary source",
+  "sourceType": "primary-game",
+  "publisher": "Rusty Lake",
+  "note": "Use for directly observable story structure, Vincent van Gogh framing, the ear passage, mirror transformation, and black/white cube imagery. Do not reproduce puzzle codes, step-by-step solutions, or long dialogue."
+}

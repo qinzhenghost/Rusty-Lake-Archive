@@ -1,0 +1,36 @@
+{
+  "kind": "game",
+  "schemaVersion": "1.0.0",
+  "id": "arles",
+  "slug": "arles",
+  "title": {
+    "zhHans": "逃离方块：阿尔勒",
+    "en": "Cube Escape: Arles"
+  },
+  "series": "cube-escape",
+  "releaseDate": "2015-06-05",
+  "releaseOrder": 3,
+  "recommendedPlayOrder": 3,
+  "contentStatus": "complete",
+  "summary": {
+    "zhHans": "一间被画作、颜料与镜像包围的阿尔勒卧室，把艺术家的现实空间逐步推向超现实内部世界。作品沿用方块与腐化灵魂意象，但官方将它描述为相对《四季》和《锈湖湖畔》的一次支线式展开。",
+    "en": "A bedroom in Arles surrounded by paintings, pigments, and reflections gradually opens into an impossible interior world. The game uses cube and Corrupted Soul imagery while Rusty Lake described it as a side step from the Seasons and The Lake story."
+  },
+  "chapterIds": [
+    "arles-bedroom",
+    "arles-canvas",
+    "arles-ear",
+    "arles-mirror"
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-arles-page",
+    "official-arles-release",
+    "official-rustylake-faq",
+    "primary-arles-game"
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "kind": "relationSet",
+  "schemaVersion": "1.0.0",
+  "id": "arles-relations",
+  "title": {
+    "zhHans": "《逃离方块：阿尔勒》关系",
+    "en": "Cube Escape: Arles Relations"
+  },
+  "relations": [
+    {
+      "id": "rel-vincent-arles",
+      "from": {
+        "type": "character",
+        "id": "vincent-van-gogh"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "arles"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-arles-release",
+        "primary-arles-game"
+      ]
+    },
+    {
+      "id": "rel-arles-bedroom",
+      "from": {
+        "type": "game",
+        "id": "arles"
+      },
+      "type": "located_at",
+      "to": {
+        "type": "location",
+        "id": "arles-bedroom"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-arles-page"
+      ]
+    },
+    {
+      "id": "rel-arles-rusty-lake",
+      "from": {
+        "type": "game",
+        "id": "arles"
+      },
+      "type": "associated_with",
+      "to": {
+        "type": "concept",
+        "id": "rusty-lake"
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "official-arles-page",
+        "official-arles-release"
+      ]
+    },
+    {
+      "id": "rel-black-cube-arles",
+      "from": {
+        "type": "concept",
+        "id": "black-cube"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "arles"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-arles-game"
+      ]
+    },
+    {
+      "id": "rel-white-cube-arles",
+      "from": {
+        "type": "concept",
+        "id": "white-cube"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "arles"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-arles-game"
+      ]
+    },
+    {
+      "id": "rel-corrupted-soul-arles",
+      "from": {
+        "type": "character",
+        "id": "corrupted-soul"
+      },
+      "type": "appears_in",
+      "to": {
+        "type": "game",
+        "id": "arles"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-arles-game"
+      ]
+    },
+    {
+      "id": "rel-white-cube-corrupted-soul",
+      "from": {
+        "type": "concept",
+        "id": "white-cube"
+      },
+      "type": "associated_with",
+      "to": {
+        "type": "character",
+        "id": "corrupted-soul"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "claimKind": "fact",
+      "sourceIds": [
+        "primary-arles-game"
+      ]
+    },
+    {
+      "id": "rel-vincent-corrupted-soul",
+      "from": {
+        "type": "character",
+        "id": "vincent-van-gogh"
+      },
+      "type": "associated_with",
+      "to": {
+        "type": "character",
+        "id": "corrupted-soul"
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "claimKind": "interpretation",
+      "sourceIds": [
+        "primary-arles-game",
+        "editorial-rla"
+      ]
+    }
+  ]
+}

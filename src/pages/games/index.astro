@@ -8,7 +8,7 @@ const games = getGames();
 <BaseLayout title="游戏档案" titleEn="Game Files" active="games">
   <section class="section">
     <div class="section-head"><div><div class="kicker"><I18nText zh="作品档案" en="Game Files" /></div><h1><I18nText zh="游戏档案" en="Game Files" /></h1></div><span class="muted"><I18nText zh="按官方推荐顺序组织，不等同于故事时间线" en="Organized by official recommended play order, not in-universe chronology" /></span></div>
-    <p class="section-intro"><I18nText zh="《逃离方块：四季》与《逃离方块：锈湖湖畔》已开放完整阅读路径；其他作品可以先作为档案占位，直到内容录入完成。" en="Cube Escape: Seasons and Cube Escape: The Lake have complete reading paths. Other games may remain archive stubs until their content is authored." /></p>
+    <p class="section-intro"><I18nText zh="《逃离方块：四季》《逃离方块：锈湖湖畔》与《逃离方块：阿尔勒》已开放完整阅读路径；其余作品会按官方推荐顺序继续录入。" en="Cube Escape: Seasons, Cube Escape: The Lake, and Cube Escape: Arles have complete reading paths. Remaining games will continue to be added in the official recommended order." /></p>
     <div class="game-grid">
       {games.map((game) => (
         <a class:list={['game-card', game.contentStatus === 'stub' && 'content-stub']} href={'/games/' + game.slug}>

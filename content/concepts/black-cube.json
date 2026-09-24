@@ -75,6 +75,41 @@
           "primary-the-lake-game"
         ]
       }
+    },
+    {
+      "id": "black-cube-arles",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "《逃离方块：阿尔勒》中，完成房间里的绘画后，一个黑色方块从画布中出现，并在结尾与白色方块共同作用于出口。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "In Cube Escape: Arles, completing a painting reveals a black cube from the canvas; it later works together with the white cube at the final exit."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
     }
   ],
   "spoiler": {
@@ -84,6 +119,7 @@
   },
   "sourceIds": [
     "primary-seasons-game",
-    "primary-the-lake-game"
+    "primary-the-lake-game",
+    "primary-arles-game"
   ]
 }

@@ -1,23 +1,27 @@
-# Rusty Lake Archive
+# Rusty Lake Archive｜锈湖档案馆
 
-Rusty Lake Archive（锈湖档案馆）是一个面向 Rusty Lake / Cube Escape 系列的非官方互动剧情阅读与世界观整理工具。
+一个面向 Rusty Lake / Cube Escape 系列的非官方互动剧情阅读与世界观整理工具。项目坚持“阅读优先、关联探索、防剧透”，不做逐步攻略站。
 
-当前进入 Step 05：Seasons 五章剧情阅读、档案联动、防剧透、阅读状态与上线准备已经形成一套可公开测试的静态站。
+当前进入 **Step 09**。已经形成三套完整阅读档案：
+
+- 《逃离方块：四季》 / Cube Escape: Seasons
+- 《逃离方块：锈湖湖畔》 / Cube Escape: The Lake
+- 《逃离方块：阿尔勒》 / Cube Escape: Arles
 
 ## 当前能力
 
-- Cube Escape: Seasons 五章原创剧情摘要：Spring 1964 / Summer 1971 / Fall 1971 / Winter 1981 / Final
-- 数据驱动游戏、章节、人物、概念、地点与事件页面
+- 数据驱动的游戏、章节、人物、概念、地点、事件与 Relation
 - 桌面三栏剧情阅读器；移动端正文优先 + Bottom Sheet
-- 中文 / English / 中英对照，并记住语言偏好
-- 首页“继续阅读”，自动返回上次章节
-- 阅读百分比与上 / 下一章导航
-- Rich Token 人物 / 概念点击，不使用 HTML 字符串注入
-- 人物 / 概念档案抽屉，显示 fact / interpretation / theory 与来源 ID
-- 基于 content/events 自动生成故事时间线
-- localStorage 游玩进度、跨作品防剧透与主动解锁记录
-- Spring / Summer / Fall / Winter / Final 季节视觉变量
-- Cloudflare Pages 静态部署准备：npm run build → dist
+- 全站中文 / English 切换并记住语言偏好
+- 中文实体名为主，英文原名作为补充
+- 首页继续阅读、阅读百分比、上一章 / 下一章
+- Rich Token 实体点击与完整档案抽屉
+- 全站结构化搜索，中文与英文可交叉检索
+- Lore Network 世界观关系网与反向导航
+- localStorage 游玩进度、跨作品防剧透与主动解锁
+- 事实 / 解释 / 理论分层，并保留来源 ID
+- Seasons 时间线；对缺少可靠年份的作品保持 undated，不用发布日期冒充故事年份
+- Cloudflare Workers 静态部署：`npm run build` → `dist`
 
 ## 本地运行
 
@@ -28,17 +32,15 @@ Rusty Lake Archive（锈湖档案馆）是一个面向 Rusty Lake / Cube Escape 
 
     npm test
 
-## Cloudflare Pages
-
-部署参数：
-
-- Production branch: main
-- Build command: npm run build
-- Build output directory: dist
-- Node: 22
-
-详细步骤见 docs/step05/DEPLOY_CLOUDFLARE.md。
-
 ## 内容与版权原则
 
-本项目定位为非官方 Lore Explorer。正文优先使用原创编辑摘要与必要的结构化事实，不复制完整游戏文本、不提供逐步谜题攻略、不打包未经授权的官方美术 / 音频 / 视频；事实、解释与玩家理论在数据层明确区分。
+正文优先采用原创编辑摘要和必要的结构化事实。不复制完整游戏对白，不提供谜题密码与逐步攻略，不打包未经授权的官方美术、音频或视频。历史人物进入游戏档案时，明确区分“游戏中的改编”与现实人物传记。
+
+## 部署
+
+Production branch: `main`  
+Build command: `npm run build`  
+Output: `dist`  
+Node: 22
+
+Cloudflare 细节仍见 `docs/step05/DEPLOY_CLOUDFLARE.md`。

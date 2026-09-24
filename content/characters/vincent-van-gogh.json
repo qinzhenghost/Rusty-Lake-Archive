@@ -1,0 +1,93 @@
+{
+  "kind": "character",
+  "schemaVersion": "1.0.0",
+  "id": "vincent-van-gogh",
+  "slug": "vincent-van-gogh",
+  "title": {
+    "zhHans": "文森特·梵高",
+    "en": "Vincent van Gogh"
+  },
+  "aliases": [],
+  "summary": {
+    "zhHans": "《逃离方块：阿尔勒》的玩家角色。档案只讨论游戏对这位历史艺术家的超现实改编，不把游戏情节当作现实传记。",
+    "en": "The player character of Cube Escape: Arles. This archive treats the game as a surreal adaptation of the historical artist, not as a literal biography."
+  },
+  "entries": [
+    {
+      "id": "vincent-arles-player",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "游戏将阿尔勒卧室、绘画和自画像式镜像组织成围绕文森特·梵高展开的逃脱空间。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The game organizes the Arles bedroom, paintings, and self-reflective imagery around Vincent van Gogh."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-arles-release",
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "vincent-corrupted-reflection",
+      "claimKind": "interpretation",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "后段把镜中的自我转化为腐化灵魂，可以理解为游戏把角色的内在冲突视觉化；这是档案解释，而不是官方对梵高生平的判断。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The late-game transformation of the mirror image into a Corrupted Soul can be read as a visualization of inner conflict. This is an archive interpretation, not an official judgment about van Gogh's life."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-arles-release",
+    "primary-arles-game",
+    "editorial-rla"
+  ]
+}

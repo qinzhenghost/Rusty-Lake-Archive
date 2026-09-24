@@ -1,0 +1,233 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "arles-canvas",
+  "gameId": "arles",
+  "slug": "canvas",
+  "narrativeOrder": 2,
+  "title": {
+    "zhHans": "完成画布",
+    "en": "Completing the Canvas"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "arles-canvas-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "完成画布",
+        "en": "Completing the Canvas"
+      },
+      "subtitle": {
+        "zhHans": "颜色开始变成通往另一层空间的钥匙",
+        "en": "Color becomes a key to another layer"
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-canvas-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "随着画作碎片、调色材料和房间里的颜色线索逐渐汇合，卧室从“被艺术包围”转变成“可以被艺术重新组织”的空间。玩家不是单纯找到钥匙，而是在把散落的视觉信息重新拼成完整画面。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "As picture fragments, painting materials, and color clues converge, the bedroom changes from a room surrounded by art into a room that can be reorganized through art. Progress comes from rebuilding scattered visual information into completed images."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-canvas-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "其中一幅未完成的画在颜色被补全后显出一个 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "黑色方块"
+          },
+          {
+            "kind": "text",
+            "text": "。方块因此不只是被“找到”的物件，而像是从图像内部被提取出来。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "One unfinished image reveals a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "Black Cube"
+          },
+          {
+            "kind": "text",
+            "text": " once its colors are completed. The cube is not merely found in the room; it seems to be extracted from the image itself."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-canvas-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "这一段把本作最重要的视觉规则建立起来：现实房间、画布和后续的超现实空间之间没有稳定边界，艺术作品会直接改变可行动的世界。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "This establishes Arles' central visual rule: the bedroom, the canvas, and the later impossible spaces do not have stable boundaries. An artwork can directly alter the world the player can act within."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "minor",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-canvas-black",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "black-cube"
+      },
+      "label": {
+        "zhHans": "打开「黑色方块」档案",
+        "en": "Open the Black Cube file"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-canvas-guide",
+      "type": "note",
+      "title": {
+        "zhHans": "阅读原则",
+        "en": "Reading Principle"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "档案只保留叙事作用与意象变化，不记录颜色答案、密码或逐步操作顺序。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The archive preserves narrative function and imagery, not color solutions, passwords, or step-by-step puzzle instructions."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "vincent-van-gogh"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    },
+    {
+      "type": "location",
+      "id": "arles-bedroom"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "minor",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-arles-game",
+    "editorial-rla"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "location",
+  "schemaVersion": "1.0.0",
+  "id": "arles-bedroom",
+  "slug": "arles-bedroom",
+  "title": {
+    "zhHans": "阿尔勒卧室",
+    "en": "Bedroom in Arles"
+  },
+  "summary": {
+    "zhHans": "《逃离方块：阿尔勒》的主要场景：一间被画作、镜子、颜料和个人物件包围的卧室。",
+    "en": "The primary setting of Cube Escape: Arles: a bedroom surrounded by paintings, mirrors, pigments, and personal objects."
+  },
+  "entries": [
+    {
+      "id": "arles-bedroom-official",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方游戏页面明确把玩家置于阿尔勒的卧室，并以完成画作、寻找颜色与绘画材料作为空间探索的核心。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "The official game page places the player in a bedroom in Arles and frames the space around completing pictures, finding colors, and gathering painting materials."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-arles-page"
+        ]
+      }
+    }
+  ],
+  "timelineRefs": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-arles-page",
+    "primary-arles-game"
+  ]
+}

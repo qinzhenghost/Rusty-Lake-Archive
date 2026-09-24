@@ -82,6 +82,41 @@
           "primary-the-lake-game"
         ]
       }
+    },
+    {
+      "id": "corrupted-soul-arles",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "《逃离方块：阿尔勒》后段，角色回到变化后的卧室时，镜中的倒影呈现为腐化灵魂；这次遭遇直接关联白色方块的出现。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Late in Cube Escape: Arles, the character returns to an altered bedroom where the mirror reflection appears as a Corrupted Soul; this encounter is directly tied to the appearance of the white cube."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
     }
   ],
   "spoiler": {
@@ -91,6 +126,7 @@
   },
   "sourceIds": [
     "primary-seasons-game",
-    "primary-the-lake-game"
+    "primary-the-lake-game",
+    "primary-arles-game"
   ]
 }

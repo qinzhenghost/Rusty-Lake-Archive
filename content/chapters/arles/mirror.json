@@ -1,0 +1,317 @@
+{
+  "kind": "chapter",
+  "schemaVersion": "1.0.0",
+  "id": "arles-mirror",
+  "gameId": "arles",
+  "slug": "mirror",
+  "narrativeOrder": 4,
+  "title": {
+    "zhHans": "镜中的另一面",
+    "en": "The Other Side of the Mirror"
+  },
+  "timeline": null,
+  "storyBlocks": [
+    {
+      "id": "arles-mirror-scene",
+      "type": "scene",
+      "title": {
+        "zhHans": "镜中的另一面",
+        "en": "The Other Side of the Mirror"
+      },
+      "subtitle": {
+        "zhHans": "同一间卧室出现了不同的自我",
+        "en": "The same bedroom holds a different self"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "structural-label",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-p1",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "穿过内部空间后，角色回到一个与原来高度相似的卧室，但镜中的倒影已经变成 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "腐化灵魂"
+          },
+          {
+            "kind": "text",
+            "text": "。变化发生在“自我影像”上，使镜子成为本作最直接的身份裂变场景。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "After crossing the interior passage, the character returns to a room closely resembling the original, but the reflection has become a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "character",
+              "id": "corrupted-soul"
+            },
+            "label": "Corrupted Soul"
+          },
+          {
+            "kind": "text",
+            "text": ". The transformation occurs in the self-image, making the mirror the game's clearest scene of fractured identity."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-p2",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "与腐化倒影的冲突结束后，房间里留下一个 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "white-cube"
+            },
+            "label": "白色方块"
+          },
+          {
+            "kind": "text",
+            "text": "。它与此前从画布中出现的 "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "黑色方块"
+          },
+          {
+            "kind": "text",
+            "text": " 形成一组互补的钥匙。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "After the confrontation with the corrupted reflection, a "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "white-cube"
+            },
+            "label": "White Cube"
+          },
+          {
+            "kind": "text",
+            "text": " remains. Together with the "
+          },
+          {
+            "kind": "entity",
+            "entity": {
+              "type": "concept",
+              "id": "black-cube"
+            },
+            "label": "Black Cube"
+          },
+          {
+            "kind": "text",
+            "text": " taken from the canvas, it forms a complementary pair of keys."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-p3",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "黑白两个方块共同作用于出口后，封闭卧室被打开到一幅夜色中的绘画式景观。游戏最后不是回到现实街道，而是进一步让角色进入作品般的世界。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "When the black and white cubes are used together at the exit, the sealed bedroom opens into a painted night landscape. The ending does not return the character to an ordinary street; it pushes him further into a world that behaves like an artwork."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-p4",
+      "type": "paragraph",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "从档案结构看，本作第一次把黑、白两种方块明确并置在同一个收束段落中，也让腐化灵魂从系列反复出现的威胁变成与角色自身镜像直接相连的存在。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "From the archive's structural view, Arles brings black and white cubes together in one closing sequence and ties the recurring Corrupted Soul motif directly to the character's own mirror image."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game",
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-white",
+      "type": "interaction",
+      "action": "open-entity",
+      "target": {
+        "type": "concept",
+        "id": "white-cube"
+      },
+      "label": {
+        "zhHans": "打开「白色方块」档案",
+        "en": "Open the White Cube file"
+      },
+      "spoiler": {
+        "level": "major",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
+      "id": "arles-mirror-note",
+      "type": "note",
+      "title": {
+        "zhHans": "档案解释",
+        "en": "Archive Reading"
+      },
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "“镜像＝内在冲突”属于档案层的解释，不等同于官方对历史人物心理状态的判断。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Reading the mirror as inner conflict is an archive interpretation, not an official assessment of the historical figure's mental state."
+          }
+        ]
+      },
+      "tone": "archive",
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    }
+  ],
+  "featuredRefs": [
+    {
+      "type": "character",
+      "id": "vincent-van-gogh"
+    },
+    {
+      "type": "character",
+      "id": "corrupted-soul"
+    },
+    {
+      "type": "concept",
+      "id": "black-cube"
+    },
+    {
+      "type": "concept",
+      "id": "white-cube"
+    },
+    {
+      "type": "location",
+      "id": "arles-bedroom"
+    }
+  ],
+  "eventIds": [],
+  "spoiler": {
+    "level": "major",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-arles-game",
+    "editorial-rla"
+  ]
+}

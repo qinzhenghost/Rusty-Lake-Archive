@@ -1,0 +1,59 @@
+{
+  "kind": "concept",
+  "schemaVersion": "1.0.0",
+  "id": "white-cube",
+  "slug": "white-cube",
+  "title": {
+    "zhHans": "白色方块",
+    "en": "White Cube"
+  },
+  "summary": {
+    "zhHans": "在《逃离方块：阿尔勒》中出现的白色方块意象；具体取得方式按游玩进度隐藏。",
+    "en": "A white-cube motif appearing in Cube Escape: Arles; the exact way it is obtained is hidden according to play progress."
+  },
+  "entries": [
+    {
+      "id": "white-cube-arles",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "《逃离方块：阿尔勒》后段，角色与镜中的腐化倒影发生冲突后得到白色方块，并与黑色方块共同作用于最终出口。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Late in Cube Escape: Arles, the character obtains a white cube after confronting the corrupted mirror image; it works together with the black cube at the final exit."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "cross-game",
+        "requiredCompletedGameIds": [
+          "arles"
+        ],
+        "allowManualReveal": true,
+        "reason": {
+          "zhHans": "涉及《逃离方块：阿尔勒》的后段剧情。",
+          "en": "Contains later-story information from Cube Escape: Arles."
+        }
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "primary-arles-game"
+        ]
+      }
+    }
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "primary-arles-game"
+  ]
+}
