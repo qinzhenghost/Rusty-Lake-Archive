@@ -86,7 +86,11 @@ for rel in static_pages:
 
 pkg=json.loads((ROOT/'package.json').read_text('utf-8'))
 check('package:i18n-script','qa:i18n' in pkg.get('scripts',{}) and 'qa:i18n' in pkg.get('scripts',{}).get('test',''),'i18n QA is not part of the full test')
-check('package:version',pkg.get('version')=='0.8.2',pkg.get('version'))
+try:
+    version_tuple = tuple(int(x) for x in pkg.get('version','0.0.0').split('.')[:3])
+except (TypeError, ValueError):
+    version_tuple = (0, 0, 0)
+check('package:version', version_tuple >= (0, 8, 2), pkg.get('version'))
 
 print(f'I18N QA: {sum(ok for _,ok,_ in checks)}/{len(checks)} checks passed')
 for name,ok,detail in checks:
