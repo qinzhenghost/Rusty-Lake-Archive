@@ -42,9 +42,9 @@ check('network:spoiler-aware', 'canView' in network and 'rla-progress-v1' in net
 check('network:manual-reveal-aware', 'rla-manual-reveals-v1' in network, 'network does not consume manual reveal state')
 check('network:focus-query', "get('focus')" in network and 'setSelected(focus)' in network, 'focus query support missing')
 check('network:filters', 'relationType' in network and '搜索档案' in network and '全部关系' in network, 'network search/filter controls missing')
-check('network:source-labels', 'SOURCE ·' in network, 'relation provenance not surfaced')
+check('network:source-labels', "'SOURCE'" in network and "'来源'" in network and 'sourceIds.join' in network, 'relation provenance not surfaced bilingually')
 check('network:responsive', 'network-scroll' in css and '@media (max-width: 760px)' in css, 'mobile network fallback missing')
-check('nav:network', "['network', '/network', '关系网']" in layout, 'network missing from navigation')
+check('nav:network', "['network', '/network', '关系网', 'Network']" in layout, 'network missing from bilingual navigation')
 
 check('reverse:character', 'RelatedArchive client:load' in character_page and 'getRelationsForRef' in character_page, 'character reverse links missing')
 check('reverse:lore', 'RelatedArchive client:load' in lore_page and 'getRelationsForRef' in lore_page, 'lore reverse links missing')

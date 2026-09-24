@@ -19,7 +19,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "在 Seasons 中，黑色方块与不同季节记忆之间的推进相连。"
+            "text": "在 《逃离方块：四季》 中，黑色方块与不同季节记忆之间的推进相连。"
           }
         ],
         "en": [
@@ -48,7 +48,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "The Lake 的另一种结局中，逼近的 Corrupted Soul 消失后留下一个黑色方块。"
+            "text": "《逃离方块：锈湖湖畔》 的另一种结局中，逼近的 腐化灵魂 消失后留下一个黑色方块。"
           }
         ],
         "en": [
@@ -65,7 +65,7 @@
         ],
         "allowManualReveal": true,
         "reason": {
-          "zhHans": "涉及 The Lake 的另一种结局。",
+          "zhHans": "涉及 《逃离方块：锈湖湖畔》 的另一种结局。",
           "en": "Contains an alternate-ending detail from The Lake."
         }
       },

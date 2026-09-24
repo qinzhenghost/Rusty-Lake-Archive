@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import I18nText from '../components/I18nText.astro';
 import { getChapters, getEvents, getGames } from '../lib/content';
 import type { EventData } from '../lib/models';
 const events = getEvents();
@@ -13,15 +14,15 @@ const groups = events.reduce<Record<string, EventData[]>>((acc, event) => {
 function route(event: EventData) {
   const chapter = chapters.find((item) => item.id === event.chapterIds[0]);
   const game = chapter && games.find((item) => item.id === chapter.gameId);
-  return chapter && game ? `/read/${game.slug}/${chapter.slug}` : '/timeline';
+  return chapter && game ? '/read/' + game.slug + '/' + chapter.slug : '/timeline';
 }
 ---
-<BaseLayout title="故事时间线" active="timeline">
+<BaseLayout title="故事时间线" titleEn="Story Timeline" active="timeline">
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Chronology</div><h1>故事时间线</h1></div><span class="muted">事件直接来自 content/events</span></div>
-    <p class="section-intro">时间线与阅读器共享同一套事件数据，避免页面手工维护两份年份与章节映射。</p>
+    <div class="section-head"><div><div class="kicker"><I18nText zh="故事年代" en="Chronology" /></div><h1><I18nText zh="故事时间线" en="Story Timeline" /></h1></div><span class="muted"><I18nText zh="事件直接来自结构化事件数据" en="Events come directly from structured event data" /></span></div>
+    <p class="section-intro"><I18nText zh="时间线与阅读器共享同一套事件数据，避免页面手工维护两份年份与章节映射。" en="The timeline and reader share the same event data, avoiding a separate manually maintained chronology." /></p>
     <div class="timeline">
-      {Object.entries(groups).map(([year, yearEvents]) => <div class="timeline-year"><div class="year-label">{year}</div><div class="timeline-events">{yearEvents?.map((event) => <a class="timeline-event" href={route(event)}><h3>{event.title.zhHans}</h3><small class="muted">{event.summary.zhHans}</small></a>)}</div></div>)}
+      {Object.entries(groups).map(([year, yearEvents]) => <div class="timeline-year"><div class="year-label">{year}</div><div class="timeline-events">{yearEvents?.map((event) => <a class="timeline-event" href={route(event)}><h3><I18nText zh={event.title.zhHans} en={event.title.en} /></h3><small class="muted"><span data-i18n-zh>{event.summary.zhHans}</span><span data-i18n-en>{event.summary.en}</span></small></a>)}</div></div>)}
     </div>
   </section>
 </BaseLayout>

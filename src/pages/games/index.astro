@@ -1,22 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import I18nText from '../../components/I18nText.astro';
+import LocalizedTitle from '../../components/LocalizedTitle.astro';
 import { getGames } from '../../lib/content';
 const games = getGames();
 ---
-<BaseLayout title="游戏档案" active="games">
+<BaseLayout title="游戏档案" titleEn="Game Files" active="games">
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Game Files</div><h1>游戏档案</h1></div><span class="muted">按官方推荐顺序组织，不等同于故事时间线</span></div>
-    <p class="section-intro">Seasons 与 The Lake 已开放完整阅读路径；其他作品可以先作为档案 stub 存在，直到内容录入完成。</p>
+    <div class="section-head"><div><div class="kicker"><I18nText zh="作品档案" en="Game Files" /></div><h1><I18nText zh="游戏档案" en="Game Files" /></h1></div><span class="muted"><I18nText zh="按官方推荐顺序组织，不等同于故事时间线" en="Organized by official recommended play order, not in-universe chronology" /></span></div>
+    <p class="section-intro"><I18nText zh="《逃离方块：四季》与《逃离方块：锈湖湖畔》已开放完整阅读路径；其他作品可以先作为档案占位，直到内容录入完成。" en="Cube Escape: Seasons and Cube Escape: The Lake have complete reading paths. Other games may remain archive stubs until their content is authored." /></p>
     <div class="game-grid">
       {games.map((game) => (
-        <a class:list={['game-card', game.contentStatus === 'stub' && 'content-stub']} href={`/games/${game.slug}`}>
+        <a class:list={['game-card', game.contentStatus === 'stub' && 'content-stub']} href={'/games/' + game.slug}>
           <div>
-            <div class="cover">ARCHIVE COVER</div>
-            <h3>{game.title.zhHans}</h3>
-            <small>{game.releaseDate ?? '日期待录入'} · 推荐顺序 {game.recommendedPlayOrder ?? '—'}</small>
-            <p>{game.summary.zhHans}</p>
+            <div class="cover"><I18nText zh="作品封面占位" en="ARCHIVE COVER" /></div>
+            <h3><LocalizedTitle value={game.title} /></h3>
+            <small><span>{game.releaseDate ?? '—'}</span> · <I18nText zh={'推荐顺序 ' + (game.recommendedPlayOrder ?? '—')} en={'Recommended order ' + (game.recommendedPlayOrder ?? '—')} /></small>
+            <p><span data-i18n-zh>{game.summary.zhHans}</span><span data-i18n-en>{game.summary.en}</span></p>
           </div>
-          <div><span class:list={['badge', game.contentStatus !== 'stub' && 'rust']}>{game.contentStatus.toUpperCase()}</span></div>
+          <div><span class:list={['badge', game.contentStatus !== 'stub' && 'rust']}><I18nText zh={game.contentStatus === 'complete' ? '完整' : game.contentStatus === 'partial' ? '部分' : '待录入'} en={game.contentStatus.toUpperCase()} /></span></div>
         </a>
       ))}
     </div>

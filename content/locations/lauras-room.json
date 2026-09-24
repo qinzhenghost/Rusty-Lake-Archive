@@ -1,1 +1,27 @@
-{"kind":"location","schemaVersion":"1.0.0","id":"lauras-room","slug":"lauras-room","title":{"zhHans":"Laura 的房间","en":"Laura's Room"},"summary":{"zhHans":"Seasons 第一段记忆发生的主要室内空间。","en":"The primary interior setting of the first memory in Seasons."},"entries":[],"timelineRefs":["seasons-event-spring-1964"],"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["official-seasons-presskit","primary-seasons-game"]}
+{
+  "kind": "location",
+  "schemaVersion": "1.0.0",
+  "id": "lauras-room",
+  "slug": "lauras-room",
+  "title": {
+    "zhHans": "劳拉的房间",
+    "en": "Laura's Room"
+  },
+  "summary": {
+    "zhHans": "《逃离方块：四季》第一段记忆发生的主要室内空间。",
+    "en": "The primary interior setting of the first memory in Seasons."
+  },
+  "entries": [],
+  "timelineRefs": [
+    "seasons-event-spring-1964"
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-seasons-presskit",
+    "primary-seasons-game"
+  ]
+}

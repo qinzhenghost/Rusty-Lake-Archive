@@ -6,7 +6,7 @@
   "slug": "final",
   "narrativeOrder": 5,
   "title": {
-    "zhHans": "Final",
+    "zhHans": "终章",
     "en": "Final"
   },
   "timeline": null,
@@ -15,7 +15,7 @@
       "id": "final-scene",
       "type": "scene",
       "title": {
-        "zhHans": "Final",
+        "zhHans": "终章",
         "en": "Final"
       },
       "subtitle": {
@@ -103,11 +103,11 @@
               "type": "character",
               "id": "harvey"
             },
-            "label": "Harvey"
+            "label": "哈维"
           },
           {
             "kind": "text",
-            "text": " 的处境可以被改变，房间中的物件也能为后来的机器准备条件。Seasons 因而把“解开房间”转化成“重写一段已经发生的记忆”。"
+            "text": " 的处境可以被改变，房间中的物件也能为后来的机器准备条件。《逃离方块：四季》 因而把“解开房间”转化成“重写一段已经发生的记忆”。"
           }
         ],
         "en": [
@@ -157,7 +157,7 @@
               "type": "character",
               "id": "laura-vanderboom"
             },
-            "label": "Laura"
+            "label": "劳拉"
           },
           {
             "kind": "text",

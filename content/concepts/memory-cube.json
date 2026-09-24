@@ -1,1 +1,23 @@
-{"kind":"concept","schemaVersion":"1.0.0","id":"memory-cube","slug":"memory-cube","title":{"zhHans":"记忆方块","en":"Memory Cube"},"summary":{"zhHans":"MVP 预留概念条目，详细设定将在后续内容阶段补充。","en":"Reserved concept entry for the MVP; detailed lore will be added in a later content phase."},"entries":[],"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["editorial-rla"]}
+{
+  "kind": "concept",
+  "schemaVersion": "1.0.0",
+  "id": "memory-cube",
+  "slug": "memory-cube",
+  "title": {
+    "zhHans": "记忆方块",
+    "en": "Memory Cube"
+  },
+  "summary": {
+    "zhHans": "MVP 预留概念条目，详细设定将在后续内容阶段补充。",
+    "en": "Reserved concept entry for the MVP; detailed lore will be added in a later content phase."
+  },
+  "entries": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "editorial-rla"
+  ]
+}

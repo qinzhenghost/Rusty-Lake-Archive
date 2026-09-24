@@ -4,11 +4,11 @@
   "id": "rusty-lake-cabin",
   "slug": "rusty-lake-cabin",
   "title": {
-    "zhHans": "Rusty Lake 小岛木屋",
+    "zhHans": "锈湖湖畔小屋",
     "en": "Rusty Lake Island Cabin"
   },
   "summary": {
-    "zhHans": "《The Lake》的主要场景：位于 Rusty Lake 一座小岛上的废弃木屋。",
+    "zhHans": "《逃离方块：锈湖湖畔》的主要场景：位于锈湖一座小岛上的废弃木屋。",
     "en": "The primary setting of The Lake: an abandoned cabin on a small island at Rusty Lake."
   },
   "entries": [
@@ -19,7 +19,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "官方页面将场景描述为 Rusty Lake 一座小岛上的废弃木屋。"
+            "text": "官方页面将场景描述为锈湖一座小岛上的废弃木屋。"
           }
         ],
         "en": [

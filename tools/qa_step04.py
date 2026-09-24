@@ -30,7 +30,7 @@ timeline = (ROOT / 'src/pages/timeline.astro').read_text('utf-8')
 
 check('reader:no-dangerous-html', 'dangerouslySetInnerHTML' not in reader and 'innerHTML' not in reader, 'reader must render rich tokens structurally')
 check('reader:entity-links', 'entity-button' in reader and 'onEntity' in reader, 'entity tokens must stay interactive')
-check('reader:languages', all(token in reader for token in ["'zhHans'", "'en'", "'bi'"]), 'three language modes missing')
+check('reader:languages', "useArchiveLanguage" in reader and "'zhHans'" in reader and "'en'" in reader, 'reader must follow the global Chinese/English language state')
 check('reader:spoiler-gate', 'canView' in reader and 'manualRevealIds' in reader, 'spoiler logic is not wired')
 check('reader:mobile-sheet', 'chapter-sheet' in reader and 'mobile-tabs' in reader, 'mobile chapter/navigation interaction missing')
 check('progress:local-storage', 'localStorage' in progress and 'rla-progress-v1' in progress, 'progress persistence missing')

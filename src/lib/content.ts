@@ -150,15 +150,22 @@ export function routeForRef(ref: EntityRef): string | null {
 }
 
 
-function richTextToText(tokens: { kind: string; text?: string; label?: string }[]): string {
-  return tokens.map((token) => token.kind === 'text' ? token.text ?? '' : token.label ?? '').join('');
+function richTextToText(tokens: { kind: string; text?: string; label?: string; entity?: EntityRef }[], locale: 'zhHans' | 'en'): string {
+  return tokens.map((token) => {
+    if (token.kind === 'text') return token.text ?? '';
+    if (token.entity) {
+      const record = getEntityRecord(token.entity);
+      if (record && 'title' in record) return record.title[locale];
+    }
+    return token.label ?? '';
+  }).join('');
 }
 
 function storyBlockText(block: StoryBlockData, locale: 'zhHans' | 'en'): string {
   if (block.type === 'paragraph' || block.type === 'dialogue' || block.type === 'note') {
-    return richTextToText(block.content[locale]);
+    return richTextToText(block.content[locale], locale);
   }
-  if (block.type === 'event') return richTextToText(block.summary[locale]);
+  if (block.type === 'event') return richTextToText(block.summary[locale], locale);
   if (block.type === 'scene') return [block.title[locale], block.subtitle?.[locale] ?? ''].filter(Boolean).join(' · ');
   if (block.type === 'quote') return block.content[locale];
   if (block.type === 'interaction') return block.label[locale];
@@ -272,8 +279,8 @@ export function getSearchDocuments(): SearchDocument[] {
     const ref: EntityRef = { type: entity.kind, id: entity.id };
     const route = routeForRef(ref) ?? '/';
     return entity.entries.map((entry) => {
-      const zh = richTextToText(entry.content.zhHans);
-      const en = richTextToText(entry.content.en);
+      const zh = richTextToText(entry.content.zhHans, 'zhHans');
+      const en = richTextToText(entry.content.en, 'en');
       return {
         id: `entry:${entity.kind}:${entity.id}:${entry.id}`,
         contentId: entry.id,

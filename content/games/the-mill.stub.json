@@ -1,8 +1,29 @@
 {
-  "kind":"game","schemaVersion":"1.0.0","id":"the-mill","slug":"the-mill",
-  "title":{"zhHans":"Cube Escape: The Mill","en":"Cube Escape: The Mill"},
-  "series":"cube-escape","releaseDate":"2015-09-05","releaseOrder":6,"recommendedPlayOrder":6,"contentStatus":"stub",
-  "summary":{"zhHans":"用于验证跨作品剧透门槛的占位作品条目；本阶段不录入剧情。","en":"Stub game entry used to validate cross-game spoiler gating; story content is not authored in this phase."},
-  "chapterIds":[],"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},
-  "sourceIds":["official-rustylake-faq","official-the-mill-presskit"]
+  "kind": "game",
+  "schemaVersion": "1.0.0",
+  "id": "the-mill",
+  "slug": "the-mill",
+  "title": {
+    "zhHans": "逃离方块：磨坊",
+    "en": "Cube Escape: The Mill"
+  },
+  "series": "cube-escape",
+  "releaseDate": "2015-09-05",
+  "releaseOrder": 6,
+  "recommendedPlayOrder": 6,
+  "contentStatus": "stub",
+  "summary": {
+    "zhHans": "用于验证跨作品剧透门槛的占位作品条目；本阶段不录入剧情。",
+    "en": "Stub game entry used to validate cross-game spoiler gating; story content is not authored in this phase."
+  },
+  "chapterIds": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-rustylake-faq",
+    "official-the-mill-presskit"
+  ]
 }

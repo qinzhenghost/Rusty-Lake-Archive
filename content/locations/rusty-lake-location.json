@@ -1,1 +1,24 @@
-{"kind":"location","schemaVersion":"1.0.0","id":"rusty-lake-location","slug":"rusty-lake","title":{"zhHans":"Rusty Lake","en":"Rusty Lake"},"summary":{"zhHans":"MVP 预留地点条目。","en":"Reserved location entry for the MVP."},"entries":[],"timelineRefs":[],"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["editorial-rla"]}
+{
+  "kind": "location",
+  "schemaVersion": "1.0.0",
+  "id": "rusty-lake-location",
+  "slug": "rusty-lake",
+  "title": {
+    "zhHans": "锈湖",
+    "en": "Rusty Lake"
+  },
+  "summary": {
+    "zhHans": "系列世界与地点相关的核心地点索引。",
+    "en": "Reserved location entry for the MVP."
+  },
+  "entries": [],
+  "timelineRefs": [],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "editorial-rla"
+  ]
+}

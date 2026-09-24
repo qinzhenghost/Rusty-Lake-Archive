@@ -48,7 +48,7 @@ check('search:reader-jump', 'item.readerLinks.map' in search and '剧情中查�
 check('search:network-jump', 'item.networkFocus' in search and '/network?focus=' in search, 'network focus action missing')
 check('search:empty-safe', '没有可见结果' in search and '被锁定' not in search, 'empty state should not identify specific locked matches')
 
-check('nav:search', "'search' | 'progress'" in layout and "['search', '/search', '搜索']" in layout, 'search missing from navigation')
+check('nav:search', "'search' | 'progress'" in layout and "['search', '/search', '搜索', 'Search']" in layout, 'search missing from bilingual navigation')
 check('home:search-entry', 'href="/search"' in home and '全站搜索' in home, 'home search entry missing')
 check('quick:component', 'Quick Paths' in quick and 'Lore Network' in quick and '剧情章节' in quick, 'quick-path component incomplete')
 check('quick:character', 'ArchiveReaderLinks' in character and 'getReaderLinksForRef' in character, 'character quick paths missing')

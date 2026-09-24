@@ -12,11 +12,10 @@ export function getStaticPaths() {
     return { params: { game: game.slug, chapter: chapter.slug }, props: { game, chapter } };
   });
 }
-
 const { game, chapter } = Astro.props as { game: GameData; chapter: ChapterData };
 const chapters = getChaptersForGame(game.id);
 const entityMap = getEntityMap();
 ---
-<BaseLayout title={`${chapter.title.zhHans} · ${game.title.zhHans}`}>
+<BaseLayout title={chapter.title.zhHans + ' · ' + game.title.zhHans} titleEn={chapter.title.en + ' · ' + game.title.en}>
   <ReaderApp client:load game={game} chapter={chapter} chapters={chapters} entityMap={entityMap} />
 </BaseLayout>

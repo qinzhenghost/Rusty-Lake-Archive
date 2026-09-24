@@ -59,7 +59,7 @@
           },
           {
             "kind": "text",
-            "text": " 的异常从暗示变成公开的威胁。电视画面、血迹与窗外出现的黑暗身影让此前零散的不安指向同一件事：Laura 的命运已经发生严重转折。"
+            "text": " 的异常从暗示变成公开的威胁。电视画面、血迹与窗外出现的黑暗身影让此前零散的不安指向同一件事：劳拉 的命运已经发生严重转折。"
           }
         ],
         "en": [
@@ -109,7 +109,7 @@
               "type": "character",
               "id": "harvey"
             },
-            "label": "Harvey"
+            "label": "哈维"
           },
           {
             "kind": "text",
@@ -241,7 +241,7 @@
         "id": "harvey"
       },
       "label": {
-        "zhHans": "查看 Harvey 档案",
+        "zhHans": "查看 哈维 档案",
         "en": "Open Harvey's file"
       },
       "spoiler": {

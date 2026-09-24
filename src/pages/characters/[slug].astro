@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveReaderLinks from '../../components/ArchiveReaderLinks.astro';
 import DossierEntries from '../../components/DossierEntries';
+import I18nText from '../../components/I18nText.astro';
+import LocalizedTitle from '../../components/LocalizedTitle.astro';
 import RelatedArchive from '../../components/RelatedArchive';
 import { getCharacters, getEntityMap, getReaderLinksForRef, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
@@ -16,20 +18,20 @@ const relations = getRelationsForRef(subject);
 const readerLinks = getReaderLinksForRef(subject);
 const entityMap = getEntityMap();
 ---
-<BaseLayout title={entity.title.zhHans} active="characters">
+<BaseLayout title={entity.title.zhHans} titleEn={entity.title.en} active="characters">
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Subject File</div><h1>{entity.title.zhHans}</h1></div><span class="badge">{entity.entries.length} entries</span></div>
+    <div class="section-head"><div><div class="kicker"><I18nText zh="人物档案" en="Subject File" /></div><h1><LocalizedTitle value={entity.title} /></h1></div><span class="badge">{entity.entries.length} <I18nText zh="条目" en="entries" /></span></div>
     <div class="detail-grid">
       <div>
-        <p class="section-intro">{entity.summary.zhHans}</p>
+        <p class="section-intro"><span data-i18n-zh>{entity.summary.zhHans}</span><span data-i18n-en>{entity.summary.en}</span></p>
         <DossierEntries client:load entries={entity.entries} entityMap={entityMap} />
         <ArchiveReaderLinks links={readerLinks} networkFocus={'character:' + entity.id} />
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Spoiler Control</div>
-        <p>完整档案页与阅读器使用同一套本地游玩进度。未满足条件的条目不会因为跳出阅读器而泄露。</p>
-        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}>搜索相关内容</a>
+        <div class="kicker"><I18nText zh="防剧透控制" en="Spoiler Control" /></div>
+        <p><I18nText zh="完整档案页与阅读器使用同一套本地游玩进度。未满足条件的条目不会因为跳出阅读器而泄露。" en="Full dossier pages and the reader use the same local play progress. Locked entries stay hidden even after leaving the reader." /></p>
+        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}><I18nText zh="搜索相关内容" en="Search related content" /></a>
       </aside>
     </div>
   </section>

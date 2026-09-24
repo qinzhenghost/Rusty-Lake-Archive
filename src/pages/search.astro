@@ -1,17 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import I18nText from '../components/I18nText.astro';
 import SearchApp from '../components/SearchApp';
 import { getSearchDocuments } from '../lib/content';
-
 const documents = getSearchDocuments();
 ---
-<BaseLayout title="全站搜索" active="search">
+<BaseLayout title="全站搜索" titleEn="Archive Search" active="search">
   <section class="section search-page">
     <div class="section-head">
-      <div><div class="kicker">Archive Search</div><h1>全站搜索</h1></div>
-      <span class="muted">{documents.length} 条结构化索引记录</span>
+      <div><div class="kicker"><I18nText zh="档案搜索" en="Archive Search" /></div><h1><I18nText zh="全站搜索" en="Search the Archive" /></h1></div>
+      <span class="muted">{documents.length} <I18nText zh="条结构化索引记录" en="structured index records" /></span>
     </div>
-    <p class="section-intro">从一个名字、年份、地点或意象开始，直接跨作品检索剧情与 Lore。搜索结果遵循当前浏览器中的游玩进度，不会用被锁定条目的正文提前回答你的问题。</p>
+    <p class="section-intro"><I18nText zh="从一个名字、年份、地点或意象开始，直接跨作品检索剧情与世界观档案。搜索结果遵循当前浏览器中的游玩进度，不会用被锁定条目的正文提前回答你的问题。" en="Start with a name, year, place, or motif and search stories and lore across games. Results respect your current play progress and do not expose the text of locked entries." /></p>
     <SearchApp client:load documents={documents} />
   </section>
 </BaseLayout>

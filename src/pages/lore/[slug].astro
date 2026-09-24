@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArchiveReaderLinks from '../../components/ArchiveReaderLinks.astro';
 import DossierEntries from '../../components/DossierEntries';
+import I18nText from '../../components/I18nText.astro';
+import LocalizedTitle from '../../components/LocalizedTitle.astro';
 import RelatedArchive from '../../components/RelatedArchive';
 import { getConcepts, getEntityMap, getReaderLinksForRef, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
@@ -16,20 +18,20 @@ const relations = getRelationsForRef(subject);
 const readerLinks = getReaderLinksForRef(subject);
 const entityMap = getEntityMap();
 ---
-<BaseLayout title={entity.title.zhHans}>
+<BaseLayout title={entity.title.zhHans} titleEn={entity.title.en}>
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Lore File</div><h1>{entity.title.zhHans}</h1></div><span class="badge">{relations.length} relations</span></div>
+    <div class="section-head"><div><div class="kicker"><I18nText zh="世界观档案" en="Lore File" /></div><h1><LocalizedTitle value={entity.title} /></h1></div><span class="badge">{relations.length} <I18nText zh="关系" en="relations" /></span></div>
     <div class="detail-grid">
       <div>
-        <p class="section-intro">{entity.summary.zhHans}</p>
+        <p class="section-intro"><span data-i18n-zh>{entity.summary.zhHans}</span><span data-i18n-en>{entity.summary.en}</span></p>
         <DossierEntries client:load entries={entity.entries} entityMap={entityMap} />
         <ArchiveReaderLinks links={readerLinks} networkFocus={'concept:' + entity.id} />
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Archive Index</div>
-        <p>从当前概念可以继续回到出现它的剧情章节、定位关系网，或搜索全站其他提及。</p>
-        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}>搜索相关内容</a>
+        <div class="kicker"><I18nText zh="档案索引" en="Archive Index" /></div>
+        <p><I18nText zh="从当前概念可以继续回到出现它的剧情章节、定位关系网，或搜索全站其他提及。" en="From this concept, jump back to related story chapters, locate it in the network, or search for other mentions across the archive." /></p>
+        <a class="button" href={'/search?q=' + encodeURIComponent(entity.title.zhHans)}><I18nText zh="搜索相关内容" en="Search related content" /></a>
       </aside>
     </div>
   </section>

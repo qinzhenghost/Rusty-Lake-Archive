@@ -55,7 +55,7 @@
               "type": "character",
               "id": "laura-vanderboom"
             },
-            "label": "Laura"
+            "label": "劳拉"
           },
           {
             "kind": "text",
@@ -134,7 +134,7 @@
               "type": "character",
               "id": "harvey"
             },
-            "label": "Harvey"
+            "label": "哈维"
           },
           {
             "kind": "text",
@@ -216,7 +216,7 @@
           },
           {
             "kind": "text",
-            "text": " 和被整理完成的记忆画面收束。方块不是单纯的通关道具，它建立了 Seasons 最重要的叙事语法：通过 "
+            "text": " 和被整理完成的记忆画面收束。方块不是单纯的通关道具，它建立了 《逃离方块：四季》 最重要的叙事语法：通过 "
           },
           {
             "kind": "entity",
@@ -283,7 +283,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "建立 Seasons 的第一个时间锚点："
+            "text": "建立 《逃离方块：四季》 的第一个时间锚点："
           },
           {
             "kind": "entity",
@@ -291,7 +291,7 @@
               "type": "character",
               "id": "laura-vanderboom"
             },
-            "label": "Laura"
+            "label": "劳拉"
           },
           {
             "kind": "text",
@@ -303,7 +303,7 @@
               "type": "character",
               "id": "harvey"
             },
-            "label": "Harvey"
+            "label": "哈维"
           },
           {
             "kind": "text",

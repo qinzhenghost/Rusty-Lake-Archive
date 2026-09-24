@@ -1,6 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import I18nText from '../components/I18nText.astro';
 ---
-<BaseLayout title="关于项目" active="about">
-  <section class="section"><div class="kicker">About</div><h1>关于 Rusty Lake Archive</h1><div class="prose"><p>这是一个非官方、非商业定位的 Rusty Lake / Cube Escape 剧情阅读与 Lore Explorer 项目，用于验证“阅读优先、关联探索、防剧透”的世界观整理方式。</p><h2>内容原则</h2><p>项目内容优先采用原创编辑摘要，并在数据层区分 <code>fact</code>、<code>interpretation</code> 与 <code>theory</code>。不以网站形式重新分发游戏完整对白、谜题攻略或未经授权的官方素材。</p><h2>当前阶段</h2><p>Step 08 已加入构建时生成的全站搜索索引，可搜索作品、剧情正文、人物、概念、地点、事件、档案条目和 Relation。搜索、关系网、完整档案页与剧情阅读器共享同一套本地游玩进度，跨作品锁定内容会先被排除，再参与搜索匹配。</p></div></section>
+<BaseLayout title="关于项目" titleEn="About" active="about">
+  <section class="section">
+    <div class="kicker"><I18nText zh="关于" en="About" /></div>
+    <h1><I18nText zh="关于锈湖档案馆" en="About Rusty Lake Archive" /></h1>
+    <div class="prose">
+      <p><I18nText zh="这是一个非官方、非商业定位的锈湖 / Cube Escape 剧情阅读与世界观探索项目，用于验证“阅读优先、关联探索、防剧透”的整理方式。" en="This is an unofficial, non-commercial Rusty Lake / Cube Escape story reader and lore explorer built around reading-first navigation, connected exploration, and spoiler control." /></p>
+      <h2><I18nText zh="内容原则" en="Content Principles" /></h2>
+      <p><I18nText zh="项目内容优先采用原创编辑摘要，并在数据层区分事实、解释与理论。不以网站形式重新分发游戏完整对白、谜题攻略或未经授权的官方素材。" en="The project prioritizes original editorial summaries and distinguishes facts, interpretations, and theories in the data layer. It does not republish full game dialogue, walkthroughs, or unauthorized official assets." /></p>
+      <h2><I18nText zh="当前阶段" en="Current Stage" /></h2>
+      <p><I18nText zh="当前版本已经支持全站双语切换、全站搜索、世界观关系网、进度感知防剧透与两套完整阅读档案。" en="The current version supports a site-wide language switch, full archive search, a Lore Network, progress-aware spoiler control, and two complete reading archives." /></p>
+    </div>
+  </section>
 </BaseLayout>

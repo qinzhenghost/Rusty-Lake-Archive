@@ -4,12 +4,14 @@
   "id": "laura-vanderboom",
   "slug": "laura-vanderboom",
   "title": {
-    "zhHans": "Laura Vanderboom",
+    "zhHans": "劳拉·范德布姆",
     "en": "Laura Vanderboom"
   },
-  "aliases": [],
+  "aliases": [
+    "Laura Vanderboom"
+  ],
   "summary": {
-    "zhHans": "《Cube Escape: Seasons》的核心人物之一。档案只展示当前游玩进度允许确认的信息。",
+    "zhHans": "《逃离方块：四季》的核心人物之一。档案只展示当前游玩进度允许确认的信息。",
     "en": "A central figure in Cube Escape: Seasons. The archive reveals only information allowed by the current play progress."
   },
   "entries": [
@@ -20,7 +22,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "Laura 是 Seasons 当前档案的核心人物，故事围绕她的记忆展开。"
+            "text": "劳拉是《逃离方块：四季》当前档案的核心人物，故事围绕她的记忆展开。"
           }
         ],
         "en": [

@@ -1,9 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import I18nText from '../components/I18nText.astro';
 import ProgressApp from '../components/ProgressApp';
 import { getGames } from '../lib/content';
 const games = getGames();
 ---
-<BaseLayout title="我的游玩进度" active="progress">
-  <section class="section"><div class="section-head"><div><div class="kicker">Spoiler Control</div><h1>我的游玩进度</h1></div><span class="muted">仅保存在本地浏览器</span></div><p class="section-intro">勾选你已经完成的作品。剧情阅读器、完整档案、Lore Network 与全站搜索会共享这份进度；未满足条件的跨作品内容默认遮蔽或不进入搜索结果，档案条目仍允许你主动展开。</p><ProgressApp client:load games={games} /></section>
+<BaseLayout title="我的游玩进度" titleEn="My Play Progress" active="progress">
+  <section class="section">
+    <div class="section-head"><div><div class="kicker"><I18nText zh="防剧透控制" en="Spoiler Control" /></div><h1><I18nText zh="我的游玩进度" en="My Play Progress" /></h1></div><span class="muted"><I18nText zh="仅保存在本地浏览器" en="Stored only in this browser" /></span></div>
+    <p class="section-intro"><I18nText zh="勾选你已经完成的作品。剧情阅读器、完整档案、世界观关系网与全站搜索会共享这份进度；未满足条件的跨作品内容默认遮蔽或不进入搜索结果。" en="Mark the games you have completed. The reader, dossiers, Lore Network, and search share this progress. Cross-game content that does not meet your progress requirements stays hidden or out of search results." /></p>
+    <ProgressApp client:load games={games} />
+  </section>
 </BaseLayout>

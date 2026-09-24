@@ -51,7 +51,7 @@ home = (ROOT/'src/pages/index.astro').read_text('utf-8')
 progress = (ROOT/'src/components/ProgressApp.tsx').read_text('utf-8')
 check('reader:lake-theme', "game.id === 'the-lake'" in reader and 'season-lake' in css, 'The Lake reader theme missing')
 check('reader:undated-label', 'UNDATED' in reader and '未标注明确年份' in reader, 'undated reader labels missing')
-check('ui:games-copy', 'Seasons 与 The Lake' in games_page, 'games page still says only Seasons is complete')
+check('ui:games-copy', '逃离方块：四季' in games_page and '逃离方块：锈湖湖畔' in games_page and 'Cube Escape: The Lake' in games_page, 'games page must describe both complete archives bilingually')
 check('ui:home-copy', 'The Lake' in home and '两套' in home, 'home does not mention second complete archive')
 check('ui:progress-data-driven', 'games.map' in progress and 'game.contentStatus' in progress, 'progress list is not game-data-driven')
 

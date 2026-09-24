@@ -19,7 +19,7 @@
         "en": "Change Your Fate"
       },
       "subtitle": {
-        "zhHans": "来自 Seasons 的记忆",
+        "zhHans": "来自 《逃离方块：四季》 的记忆",
         "en": "A memory carried from Seasons"
       },
       "spoiler": {
@@ -41,7 +41,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "木屋中存在一处明确要求玩家“记得 Seasons”的机关。它不是彩蛋式提及，而是把 "
+            "text": "木屋中存在一处明确要求玩家“记得 《逃离方块：四季》”的机关。它不是彩蛋式提及，而是把 "
           },
           {
             "kind": "entity",
@@ -49,11 +49,11 @@
               "type": "game",
               "id": "seasons"
             },
-            "label": "Cube Escape: Seasons"
+            "label": "逃离方块：四季"
           },
           {
             "kind": "text",
-            "text": " 中获得的知识直接变成 The Lake 的可用条件。"
+            "text": " 中获得的知识直接变成 《逃离方块：锈湖湖畔》 的可用条件。"
           }
         ],
         "en": [
@@ -94,7 +94,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "用来自 Seasons 的信息打开这条分支后，玩家得到不同的宝石，并用它替换默认路线中的关键位置。相同的空间和物件因此导向了不同结果。"
+            "text": "用来自 《逃离方块：四季》 的信息打开这条分支后，玩家得到不同的宝石，并用它替换默认路线中的关键位置。相同的空间和物件因此导向了不同结果。"
           }
         ],
         "en": [
@@ -131,7 +131,7 @@
               "type": "character",
               "id": "corrupted-soul"
             },
-            "label": "Corrupted Soul"
+            "label": "腐化灵魂"
           },
           {
             "kind": "text",
@@ -147,7 +147,7 @@
           },
           {
             "kind": "text",
-            "text": "。The Lake 的“改变命运”由此获得了具体结果。"
+            "text": "。《逃离方块：锈湖湖畔》 的“改变命运”由此获得了具体结果。"
           }
         ],
         "en": [
@@ -258,7 +258,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "从 Seasons 阅读黑色方块档案时，这段 The Lake 结局信息会被进度系统遮蔽；完成 The Lake 后才自动解锁。"
+            "text": "从 《逃离方块：四季》 阅读黑色方块档案时，这段 《逃离方块：锈湖湖畔》 结局信息会被进度系统遮蔽；完成 《逃离方块：锈湖湖畔》 后才自动解锁。"
           }
         ],
         "en": [

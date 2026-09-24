@@ -1,0 +1,12 @@
+---
+import type { LocalizedText } from '../content/schema';
+interface Props {
+  value: LocalizedText;
+  showOriginal?: boolean;
+}
+const { value, showOriginal = true } = Astro.props;
+---
+<span class="localized-title">
+  <span data-i18n-zh>{value.zhHans}{showOriginal && value.zhHans !== value.en && <small class="localized-original">{value.en}</small>}</span>
+  <span data-i18n-en>{value.en}</span>
+</span>

@@ -41,7 +41,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "起初，钓鱼像是在为木屋补充普通物件；很快，湖里被拉上来的东西开始偏离常识。The Lake 由此把“湖”从背景变成会主动回应玩家的空间。"
+            "text": "起初，钓鱼像是在为木屋补充普通物件；很快，湖里被拉上来的东西开始偏离常识。《逃离方块：锈湖湖畔》 由此把“湖”从背景变成会主动回应玩家的空间。"
           }
         ],
         "en": [
@@ -79,7 +79,7 @@
               "type": "character",
               "id": "corrupted-soul"
             },
-            "label": "Corrupted Soul"
+            "label": "腐化灵魂"
           },
           {
             "kind": "text",
@@ -157,7 +157,7 @@
         "id": "corrupted-soul"
       },
       "label": {
-        "zhHans": "打开 Corrupted Soul 档案",
+        "zhHans": "打开 腐化灵魂 档案",
         "en": "Open the Corrupted Soul file"
       },
       "spoiler": {

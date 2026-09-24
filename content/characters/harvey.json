@@ -1,7 +1,56 @@
 {
-  "kind":"character","schemaVersion":"1.0.0","id":"harvey","slug":"harvey",
-  "title":{"zhHans":"Harvey","en":"Harvey"},"aliases":[],
-  "summary":{"zhHans":"在 Seasons 的第一段记忆中与 Laura 一同出现的鹦鹉。","en":"The parrot appearing with Laura in the first memory of Seasons."},
-  "entries":[{"id":"harvey-parrot","claimKind":"fact","content":{"zhHans":[{"kind":"text","text":"官方资料将 Harvey 描述为 Laura 的鹦鹉。"}],"en":[{"kind":"text","text":"Official material identifies Harvey as Laura’s parrot."}]},"spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"provenance":{"mode":"editorial-summary","sourceIds":["official-seasons-presskit"]}}],
-  "spoiler":{"level":"none","requiredCompletedGameIds":[],"allowManualReveal":true},"sourceIds":["official-seasons-presskit"]
+  "kind": "character",
+  "schemaVersion": "1.0.0",
+  "id": "harvey",
+  "slug": "harvey",
+  "title": {
+    "zhHans": "哈维",
+    "en": "Harvey"
+  },
+  "aliases": [
+    "Harvey"
+  ],
+  "summary": {
+    "zhHans": "在《逃离方块：四季》的第一段记忆中与劳拉一同出现的鹦鹉。",
+    "en": "The parrot appearing with Laura in the first memory of Seasons."
+  },
+  "entries": [
+    {
+      "id": "harvey-parrot",
+      "claimKind": "fact",
+      "content": {
+        "zhHans": [
+          {
+            "kind": "text",
+            "text": "官方资料将哈维描述为劳拉的鹦鹉。"
+          }
+        ],
+        "en": [
+          {
+            "kind": "text",
+            "text": "Official material identifies Harvey as Laura’s parrot."
+          }
+        ]
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "editorial-summary",
+        "sourceIds": [
+          "official-seasons-presskit"
+        ]
+      }
+    }
+  ],
+  "spoiler": {
+    "level": "none",
+    "requiredCompletedGameIds": [],
+    "allowManualReveal": true
+  },
+  "sourceIds": [
+    "official-seasons-presskit"
+  ]
 }

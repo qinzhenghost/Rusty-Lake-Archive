@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import I18nText from '../../components/I18nText.astro';
+import LocalizedTitle from '../../components/LocalizedTitle.astro';
 import RelatedArchive from '../../components/RelatedArchive';
 import { getChaptersForGame, getEntityMap, getGames, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
@@ -8,42 +10,41 @@ import type { GameData } from '../../lib/models';
 export function getStaticPaths() {
   return getGames().map((game) => ({ params: { slug: game.slug }, props: { game } }));
 }
-
 const { game } = Astro.props as { game: GameData };
 const chapters = getChaptersForGame(game.id);
 const subject: EntityRef = { type: 'game', id: game.id };
 const relations = getRelationsForRef(subject);
 const entityMap = getEntityMap();
 ---
-<BaseLayout title={game.title.zhHans} active="games">
+<BaseLayout title={game.title.zhHans} titleEn={game.title.en} active="games">
   <section class="section">
-    <div class="section-head"><div><div class="kicker">Game File · {game.series}</div><h1>{game.title.zhHans}</h1></div><span class="badge">{game.contentStatus.toUpperCase()}</span></div>
+    <div class="section-head"><div><div class="kicker"><I18nText zh="作品档案" en="Game File" /> · {game.series}</div><h1><LocalizedTitle value={game.title} /></h1></div><span class="badge"><I18nText zh={game.contentStatus === 'complete' ? '完整' : game.contentStatus === 'partial' ? '部分' : '待录入'} en={game.contentStatus.toUpperCase()} /></span></div>
     <div class="detail-grid">
       <div>
-        <p class="section-intro">{game.summary.zhHans}</p>
+        <p class="section-intro"><span data-i18n-zh>{game.summary.zhHans}</span><span data-i18n-en>{game.summary.en}</span></p>
         {chapters.length > 0 ? (
           <div class="chapter-list">
             {chapters.map((chapter, index) => (
               <a class="chapter-link" href={'/read/' + game.slug + '/' + chapter.slug}>
                 <span class="chapter-index">{String(index + 1).padStart(2, '0')}</span>
-                <span><b>{chapter.title.zhHans}</b><br /><small class="muted">{chapter.timeline ? String(chapter.timeline.year) + ' · ' + chapter.timeline.precision : '无固定时间节点'}</small></span>
+                <span><b><I18nText zh={chapter.title.zhHans} en={chapter.title.en} /></b><br /><small class="muted">{chapter.timeline ? <I18nText zh={String(chapter.timeline.year) + ' · ' + (chapter.timeline.season ?? chapter.timeline.precision)} en={String(chapter.timeline.year) + ' · ' + (chapter.timeline.season ?? chapter.timeline.precision)} /> : <I18nText zh="无固定时间节点" en="No fixed story date" />}</small></span>
                 <span>→</span>
               </a>
             ))}
           </div>
-        ) : <div class="empty-state">该作品目前只是结构化占位，还没有录入可阅读章节。</div>}
+        ) : <div class="empty-state"><I18nText zh="该作品目前只是结构化占位，还没有录入可阅读章节。" en="This game is currently a structured placeholder and has no readable chapters yet." /></div>}
         <RelatedArchive client:load subject={subject} relations={relations} entityMap={entityMap} />
       </div>
       <aside class="detail-card">
-        <div class="kicker">Archive Metadata</div>
-        <p><b>发布时间</b><br />{game.releaseDate ?? '—'}</p>
-        <p><b>推荐游玩顺序</b><br />{game.recommendedPlayOrder ?? '—'}</p>
-        <p><b>内容状态</b><br />{game.contentStatus}</p>
-        <p><b>章节数量</b><br />{chapters.length}</p>
-        <p><b>结构化关系</b><br />{relations.length}</p>
-        {chapters[0] && <a class="button" href={'/read/' + game.slug + '/' + chapters[0].slug}>进入第一章</a>}
-        <a class="button-ghost game-network-link" href={'/network?focus=game%3A' + game.id}>在关系网中定位</a>
-        <a class="button-ghost game-network-link" href={'/search?q=' + encodeURIComponent(game.title.zhHans)}>搜索本作相关内容</a>
+        <div class="kicker"><I18nText zh="档案信息" en="Archive Metadata" /></div>
+        <p><b><I18nText zh="发布时间" en="Release date" /></b><br />{game.releaseDate ?? '—'}</p>
+        <p><b><I18nText zh="推荐游玩顺序" en="Recommended play order" /></b><br />{game.recommendedPlayOrder ?? '—'}</p>
+        <p><b><I18nText zh="内容状态" en="Content status" /></b><br /><I18nText zh={game.contentStatus === 'complete' ? '完整' : game.contentStatus === 'partial' ? '部分' : '待录入'} en={game.contentStatus} /></p>
+        <p><b><I18nText zh="章节数量" en="Chapters" /></b><br />{chapters.length}</p>
+        <p><b><I18nText zh="结构化关系" en="Relations" /></b><br />{relations.length}</p>
+        {chapters[0] && <a class="button" href={'/read/' + game.slug + '/' + chapters[0].slug}><I18nText zh="进入第一章" en="Open first chapter" /></a>}
+        <a class="button-ghost game-network-link" href={'/network?focus=game%3A' + game.id}><I18nText zh="在关系网中定位" en="Locate in network" /></a>
+        <a class="button-ghost game-network-link" href={'/search?q=' + encodeURIComponent(game.title.zhHans)}><I18nText zh="搜索本作相关内容" en="Search this game" /></a>
       </aside>
     </div>
   </section>

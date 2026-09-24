@@ -1,42 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContinueReading from '../components/ContinueReading';
+import I18nText from '../components/I18nText.astro';
+import LocalizedTitle from '../components/LocalizedTitle.astro';
 import { getGameBySlug } from '../lib/content';
 const seasons = getGameBySlug('seasons');
 ---
 <BaseLayout active="home">
   <section class="hero">
     <div class="hero-copy">
-      <div class="kicker">Archive / Memory / Lake</div>
-      <h1>进入<br />锈湖档案</h1>
-      <p>不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。现在已有两套完整阅读档案：Cube Escape: Seasons 与 Cube Escape: The Lake；可以从剧情阅读、Lore Network 或全站搜索任意入口开始，再沿结构化关联继续探索。</p>
+      <div class="kicker"><I18nText zh="档案 / 记忆 / 锈湖" en="Archive / Memory / Lake" /></div>
+      <h1><span data-i18n-zh>进入<br />锈湖档案</span><span data-i18n-en>Enter the<br />Rusty Lake Archive</span></h1>
+      <p><I18nText zh="这不是攻略站，而是一套按作品、时间、人物与线索重新组织的剧情阅读器。现在已有两套完整阅读档案：《逃离方块：四季》与《逃离方块：锈湖湖畔》；你可以从剧情阅读、关系网或全站搜索任意入口开始。" en="This is not a walkthrough site. It is a story reader reorganized by games, chronology, characters, and clues. Two complete reading archives are available: Cube Escape: Seasons and Cube Escape: The Lake. Start from the story reader, the Lore Network, or full-site search." /></p>
       <div class="hero-actions">
-        <a class="button" href="/read/seasons/spring-1964">从 Seasons 开始</a>
-        <a class="button-ghost" href="/search">全站搜索</a>
-        <a class="button-ghost" href="/network">探索关系网</a>
-        <a class="button-ghost" href="/progress">设置游玩进度</a>
+        <a class="button" href="/read/seasons/spring-1964"><I18nText zh="从《四季》开始" en="Start with Seasons" /></a>
+        <a class="button-ghost" href="/search"><I18nText zh="全站搜索" en="Search Archive" /></a>
+        <a class="button-ghost" href="/network"><I18nText zh="探索关系网" en="Explore Network" /></a>
+        <a class="button-ghost" href="/progress"><I18nText zh="设置游玩进度" en="Set Play Progress" /></a>
       </div>
       <ContinueReading client:load />
     </div>
     <div class="hero-file">
       <article class="file-card">
-        <div class="kicker">Case File 01</div>
-        <div class="stamp">OPEN</div>
-        <h2>{seasons?.title.zhHans ?? 'Cube Escape: Seasons'}</h2>
+        <div class="kicker"><I18nText zh="档案 01" en="Case File 01" /></div>
+        <div class="stamp"><I18nText zh="开放" en="OPEN" /></div>
+        <h2>{seasons ? <LocalizedTitle value={seasons.title} /> : <I18nText zh="逃离方块：四季" en="Cube Escape: Seasons" />}</h2>
         <div class="rule"></div>
         <div class="file-meta">
-          <div><div class="muted">STATUS</div><b>STORY READY</b></div>
-          <div><div class="muted">SEARCH</div><b>FULL ARCHIVE</b></div>
-          <div><div class="muted">NETWORK</div><b>RELATIONS</b></div>
-          <div><div class="muted">SPOILER</div><b>PROGRESS AWARE</b></div>
+          <div><div class="muted"><I18nText zh="状态" en="STATUS" /></div><b><I18nText zh="剧情已就绪" en="STORY READY" /></b></div>
+          <div><div class="muted"><I18nText zh="搜索" en="SEARCH" /></div><b><I18nText zh="全档案" en="FULL ARCHIVE" /></b></div>
+          <div><div class="muted"><I18nText zh="关系网" en="NETWORK" /></div><b><I18nText zh="结构化关系" en="RELATIONS" /></b></div>
+          <div><div class="muted"><I18nText zh="剧透" en="SPOILER" /></div><b><I18nText zh="跟随进度" en="PROGRESS AWARE" /></b></div>
         </div>
       </article>
     </div>
   </section>
   <section class="home-grid" aria-label="探索入口">
-    <a class="home-tile" href="/games"><div class="kicker">01</div><b>按游戏阅读</b><span>Seasons 与 The Lake 已开放完整阅读路径。</span></a>
-    <a class="home-tile" href="/search"><div class="kicker">02</div><b>全站搜索</b><span>搜索剧情正文、人物、概念、地点、事件与关系，同时遵循防剧透进度。</span></a>
-    <a class="home-tile" href="/network"><div class="kicker">03</div><b>Lore Network</b><span>从结构化关系继续探索，不靠视觉邻近猜测关联。</span></a>
-    <a class="home-tile" href="/progress"><div class="kicker">04</div><b>防剧透进度</b><span>搜索、关系网、完整档案和阅读器共享同一套本地进度门槛。</span></a>
+    <a class="home-tile" href="/games"><div class="kicker">01</div><b><I18nText zh="按游戏阅读" en="Browse Games" /></b><span><I18nText zh="《四季》与《锈湖湖畔》已开放完整阅读路径。" en="Seasons and The Lake have complete reading paths." /></span></a>
+    <a class="home-tile" href="/search"><div class="kicker">02</div><b><I18nText zh="全站搜索" en="Archive Search" /></b><span><I18nText zh="搜索剧情、人物、概念、地点、事件与关系，同时遵循防剧透进度。" en="Search stories, characters, concepts, locations, events, and relations while respecting spoiler progress." /></span></a>
+    <a class="home-tile" href="/network"><div class="kicker">03</div><b><I18nText zh="世界观关系网" en="Lore Network" /></b><span><I18nText zh="从结构化关系继续探索，不靠视觉邻近猜测关联。" en="Explore structured relationships without inferring connections from visual proximity." /></span></a>
+    <a class="home-tile" href="/progress"><div class="kicker">04</div><b><I18nText zh="防剧透进度" en="Spoiler Progress" /></b><span><I18nText zh="搜索、关系网、完整档案和阅读器共享同一套本地进度。" en="Search, network, dossiers, and the reader share the same local progress state." /></span></a>
   </section>
 </BaseLayout>

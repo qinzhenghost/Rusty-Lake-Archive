@@ -109,11 +109,11 @@
               "type": "concept",
               "id": "rusty-lake"
             },
-            "label": "Rusty Lake"
+            "label": "锈湖"
           },
           {
             "kind": "text",
-            "text": " 的意象联系得更紧。线索不再只指向 Laura 的日常生活，而开始暗示某件已经发生或即将发生的暴力事件。"
+            "text": " 的意象联系得更紧。线索不再只指向 劳拉 的日常生活，而开始暗示某件已经发生或即将发生的暴力事件。"
           }
         ],
         "en": [
@@ -218,7 +218,7 @@
               "type": "character",
               "id": "laura-vanderboom"
             },
-            "label": "Laura"
+            "label": "劳拉"
           },
           {
             "kind": "text",
@@ -265,7 +265,7 @@
         "id": "rusty-lake"
       },
       "label": {
-        "zhHans": "打开「Rusty Lake」概念档案",
+        "zhHans": "打开「锈湖」概念档案",
         "en": "Open the Rusty Lake concept file"
       },
       "spoiler": {
@@ -291,7 +291,7 @@
         "zhHans": [
           {
             "kind": "text",
-            "text": "1971 年在 Seasons 中出现两次：夏与秋。阅读时应把它们视为两个连续但气氛明显升级的记忆切片。"
+            "text": "1971 年在 《逃离方块：四季》 中出现两次：夏与秋。阅读时应把它们视为两个连续但气氛明显升级的记忆切片。"
           }
         ],
         "en": [
