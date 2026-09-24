@@ -35,8 +35,10 @@ for name in expected:
     if path.exists():
         raw=path.read_text('utf-8')
         check('asset:svg:'+name, '<svg' in raw and 'viewBox=' in raw, 'not a valid inline SVG asset')
-        external_ref = re.search(r'(?:href|xlink:href|src)\\s*=\\s*["\\\']https?://|url\\(\\s*https?://', raw, re.IGNORECASE)
-        check('asset:local-only:'+name, external_ref is None, 'external referenced resource found inside original SVG')
+        lowered = raw.lower()
+        external_markers = ('href="http://', 'href="https://', "href='http://", "href='https://", 'src="http://', 'src="https://', "src='http://", "src='https://", 'url(http://', 'url(https://')
+        external_ref = any(marker in lowered for marker in external_markers)
+        check('asset:local-only:'+name, not external_ref, 'external referenced resource found inside original SVG')
 
 hero_targets = [
     ('game','seasons'),('game','the-lake'),('game','arles'),
