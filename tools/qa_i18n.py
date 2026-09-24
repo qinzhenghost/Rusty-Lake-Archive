@@ -14,6 +14,7 @@ def check(name, ok, detail=''):
 layout=(ROOT/'src/layouts/BaseLayout.astro').read_text('utf-8')
 css=(ROOT/'src/styles/global.css').read_text('utf-8')
 hook=(ROOT/'src/components/useArchiveLanguage.ts').read_text('utf-8')
+language_lib=(ROOT/'src/lib/language.ts').read_text('utf-8')
 toggle=(ROOT/'src/components/LanguageToggle.tsx').read_text('utf-8')
 reader=(ROOT/'src/components/ReaderApp.tsx').read_text('utf-8')
 search=(ROOT/'src/components/SearchApp.tsx').read_text('utf-8')
@@ -32,7 +33,7 @@ for rel in [
 
 check('global:top-toggle','LanguageToggle client:load' in layout and 'global-language-toggle' in toggle,'top language toggle missing')
 check('global:preload-language',"rla-language-v1" in layout and 'document.documentElement.dataset.lang' in layout,'language is not applied before hydration')
-check('global:persistence',"rla-language-v1" in hook and 'localStorage.setItem(LANGUAGE_KEY' in hook,'language persistence missing')
+check('global:persistence',"rla-language-v1" in language_lib and 'localStorage.setItem(LANGUAGE_KEY' in hook,'language persistence missing')
 check('global:event-sync',"rla-language-change" in hook and 'CustomEvent' in hook,'React islands do not share language changes')
 check('global:metadata','data-page-title-zh' in layout and 'data-page-title-en' in layout and 'document.title' in layout,'document title does not switch')
 check('global:css',all(x in css for x in ['[data-i18n-en]','html[data-lang="en"] [data-i18n-zh]','global-language-toggle','localized-original']),'bilingual CSS missing')
