@@ -669,6 +669,9 @@
             "type": "string",
             "pattern": "^[a-z0-9][a-z0-9-]*$"
           }
+        },
+        "heroAsset": {
+          "$ref": "#/$defs/assetRef"
         }
       },
       "additionalProperties": false
@@ -814,6 +817,9 @@
           "items": {
             "$ref": "#/$defs/localizedText"
           }
+        },
+        "heroAsset": {
+          "$ref": "#/$defs/assetRef"
         }
       },
       "additionalProperties": false
@@ -867,6 +873,9 @@
           "items": {
             "$ref": "#/$defs/factEntry"
           }
+        },
+        "heroAsset": {
+          "$ref": "#/$defs/assetRef"
         }
       },
       "additionalProperties": false
@@ -927,6 +936,9 @@
           "items": {
             "type": "string"
           }
+        },
+        "heroAsset": {
+          "$ref": "#/$defs/assetRef"
         }
       },
       "additionalProperties": false

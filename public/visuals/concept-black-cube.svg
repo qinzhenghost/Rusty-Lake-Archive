@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+<defs>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#c2b89c"/>
+
+<polygon points="600,135 880,295 600,455 320,295" fill="#272b2b"/>
+<polygon points="320,295 600,455 600,715 320,555" fill="#171918"/>
+<polygon points="880,295 600,455 600,715 880,555" fill="#0d0f0f"/>
+<path d="M600 135v320M320 295l280 160 280-160" fill="none" stroke="#b3aa92" stroke-width="5" opacity=".35"/>
+<ellipse cx="600" cy="610" rx="350" ry="70" fill="#242522" opacity=".18" filter="url(#soft)"/>
+
+<rect width="1200" height="800" filter="url(#grain)" opacity=".35"/>
+<rect x="24" y="24" width="1152" height="752" fill="none" stroke="#2c2a22" stroke-width="2" opacity=".65"/>
+</svg>

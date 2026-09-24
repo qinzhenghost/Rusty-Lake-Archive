@@ -35,6 +35,34 @@
       }
     },
     {
+      "id": "arles-bedroom-visual",
+      "type": "image",
+      "asset": {
+        "assetType": "original",
+        "rights": "owned",
+        "src": "/visuals/location-arles-bedroom.svg",
+        "alt": {
+          "zhHans": "阿尔勒卧室的原创档案场景插画",
+          "en": "Original archival scene illustration of the bedroom in Arles"
+        },
+        "caption": {
+          "zhHans": "原创场景插画｜阿尔勒卧室",
+          "en": "Original scene illustration | Bedroom in Arles"
+        }
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
       "id": "arles-bedroom-p1",
       "type": "paragraph",
       "content": {

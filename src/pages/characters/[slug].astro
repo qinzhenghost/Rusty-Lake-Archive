@@ -4,6 +4,7 @@ import ArchiveReaderLinks from '../../components/ArchiveReaderLinks.astro';
 import DossierEntries from '../../components/DossierEntries';
 import I18nText from '../../components/I18nText.astro';
 import LocalizedTitle from '../../components/LocalizedTitle.astro';
+import VisualAsset from '../../components/VisualAsset.astro';
 import RelatedArchive from '../../components/RelatedArchive';
 import { getCharacters, getEntityMap, getReaderLinksForRef, getRelationsForRef } from '../../lib/content';
 import type { EntityRef } from '../../content/schema';
@@ -23,6 +24,7 @@ const entityMap = getEntityMap();
     <div class="section-head"><div><div class="kicker"><I18nText zh="人物档案" en="Subject File" /></div><h1><LocalizedTitle value={entity.title} /></h1></div><span class="badge">{entity.entries.length} <I18nText zh="条目" en="entries" /></span></div>
     <div class="detail-grid">
       <div>
+        {entity.heroAsset && <VisualAsset asset={entity.heroAsset} className="detail-hero entity-hero" priority />}
         <p class="section-intro"><span data-i18n-zh>{entity.summary.zhHans}</span><span data-i18n-en>{entity.summary.en}</span></p>
         <DossierEntries client:load entries={entity.entries} entityMap={entityMap} />
         <ArchiveReaderLinks links={readerLinks} networkFocus={'character:' + entity.id} />

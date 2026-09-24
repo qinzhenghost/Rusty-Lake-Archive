@@ -32,5 +32,18 @@
     "official-arles-release",
     "official-rustylake-faq",
     "primary-arles-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/game-arles.svg",
+    "alt": {
+      "zhHans": "赭黄卧室、画框与几何光源构成的原创阿尔勒档案插画",
+      "en": "Original Arles archive illustration with an ochre bedroom, frames, and geometric light"
+    },
+    "caption": {
+      "zhHans": "原创档案插画｜阿尔勒",
+      "en": "Original archive illustration | Arles"
+    }
+  }
 }

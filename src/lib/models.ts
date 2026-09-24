@@ -1,4 +1,5 @@
 import type {
+  AssetRef,
   ClaimKind,
   EntityRef,
   LocalizedRichText,
@@ -34,6 +35,7 @@ export type GameData = {
   recommendedPlayOrder?: number;
   contentStatus: 'partial' | 'complete' | 'stub';
   summary: LocalizedText;
+  heroAsset?: AssetRef;
   chapterIds: string[];
   spoiler: SpoilerRule;
   sourceIds: string[];
@@ -70,6 +72,7 @@ export type ArchiveEntity = {
   slug: string;
   title: LocalizedText;
   summary: LocalizedText;
+  heroAsset?: AssetRef;
   entries: ArchiveEntry[];
   spoiler: SpoilerRule;
   sourceIds: string[];

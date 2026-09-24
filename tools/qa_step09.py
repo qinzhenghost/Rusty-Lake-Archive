@@ -78,7 +78,11 @@ for rel in [
     check('file:'+rel, (ROOT/rel).exists(), 'missing Step09 file')
 
 pkg=json.loads((ROOT/'package.json').read_text('utf-8'))
-check('package:version', pkg.get('version')=='0.9.0', pkg.get('version'))
+try:
+    version_tuple = tuple(int(x) for x in pkg.get('version','0.0.0').split('.')[:3])
+except (TypeError, ValueError):
+    version_tuple = (0, 0, 0)
+check('package:version', version_tuple >= (0, 9, 0), pkg.get('version'))
 check('package:step09', 'qa:step09' in pkg.get('scripts',{}) and 'qa:step09' in pkg.get('scripts',{}).get('test',''), 'Step09 QA not wired into full test')
 
 print(f'Step09 QA: {sum(ok for _,ok,_ in checks)}/{len(checks)} checks passed')

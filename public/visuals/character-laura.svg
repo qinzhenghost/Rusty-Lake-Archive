@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+<defs>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#ddd3b8"/>
+
+<ellipse cx="600" cy="390" rx="285" ry="315" fill="#c3b79a"/>
+<path d="M465 600c-10-130 25-320 65-395 38-70 155-80 205 20 46 95 22 245 15 375z" fill="#332d29"/>
+<ellipse cx="610" cy="330" rx="118" ry="150" fill="#d6c0a1"/>
+<path d="M503 318c60-40 143-50 220-7" fill="none" stroke="#332d29" stroke-width="16"/>
+<circle cx="563" cy="335" r="10" fill="#292820"/><circle cx="657" cy="335" r="10" fill="#292820"/>
+<path d="M565 420c34 18 67 18 96 0" fill="none" stroke="#8a3b2d" stroke-width="8"/>
+<path d="M430 640c100-75 250-85 350 0" fill="#596650"/>
+<circle cx="855" cy="205" r="50" fill="#8a3b2d" opacity=".65"/><path d="M820 245c-40 55-75 95-95 155" stroke="#506047" stroke-width="10" fill="none"/>
+
+<rect width="1200" height="800" filter="url(#grain)" opacity=".35"/>
+<rect x="24" y="24" width="1152" height="752" fill="none" stroke="#2c2a22" stroke-width="2" opacity=".65"/>
+</svg>

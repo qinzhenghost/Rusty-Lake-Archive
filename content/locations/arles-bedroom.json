@@ -51,5 +51,18 @@
   "sourceIds": [
     "official-arles-page",
     "primary-arles-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/location-arles-bedroom.svg",
+    "alt": {
+      "zhHans": "赭黄色几何卧室与画框构成的原创阿尔勒场景插画",
+      "en": "Original Arles scene illustration with an ochre geometric bedroom and frames"
+    },
+    "caption": {
+      "zhHans": "原创地点档案插画｜阿尔勒卧室",
+      "en": "Original location archive illustration | Bedroom in Arles"
+    }
+  }
 }

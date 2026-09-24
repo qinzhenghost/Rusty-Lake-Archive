@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+<defs>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#d9cfb2"/>
+
+<rect x="85" y="85" width="1030" height="630" rx="4" fill="#c9bea1" stroke="#292820" stroke-width="8"/>
+<path d="M600 85v630M85 400h1030" stroke="#292820" stroke-width="7"/>
+<rect x="120" y="120" width="445" height="245" fill="#d8cba7"/><circle cx="455" cy="205" r="58" fill="#8e4938" opacity=".82"/>
+<path d="M210 340c60-130 120-120 180 0M250 340c20-95 82-160 155-185" fill="none" stroke="#43594a" stroke-width="13"/>
+<rect x="635" y="120" width="445" height="245" fill="#b2b88f"/><circle cx="955" cy="205" r="48" fill="#d6b85a"/>
+<path d="M675 330c85-160 230-125 350 0" fill="none" stroke="#40534b" stroke-width="14"/>
+<rect x="120" y="435" width="445" height="245" fill="#a88b74"/><path d="M150 650l150-160 90 85 140-110" fill="none" stroke="#6d3028" stroke-width="16"/>
+<rect x="635" y="435" width="445" height="245" fill="#9fa9ad"/><circle cx="850" cy="560" r="92" fill="#1c2020"/><circle cx="850" cy="560" r="24" fill="#d8d2bc"/>
+<path d="M955 500v120M895 560h120" stroke="#d8d2bc" stroke-width="9"/>
+
+<rect width="1200" height="800" filter="url(#grain)" opacity=".35"/>
+<rect x="24" y="24" width="1152" height="752" fill="none" stroke="#2c2a22" stroke-width="2" opacity=".65"/>
+</svg>

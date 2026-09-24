@@ -18,11 +18,19 @@ export type UserProgress = {
 };
 export type ClaimKind = 'fact' | 'interpretation' | 'theory';
 
+export type AssetRef = {
+  assetType: 'placeholder' | 'original' | 'official-licensed';
+  rights: 'placeholder' | 'owned' | 'licensed';
+  src?: string;
+  alt: LocalizedText;
+  caption?: LocalizedText;
+};
+
 export type StoryBlock =
   | { id:string; type:'scene'; title:LocalizedText; subtitle?:LocalizedText; spoiler:SpoilerRule }
   | { id:string; type:'paragraph'; content:LocalizedRichText; spoiler:SpoilerRule }
   | { id:string; type:'dialogue'; speaker:EntityRef; content:LocalizedRichText; spoiler:SpoilerRule }
-  | { id:string; type:'image'; asset:{assetType:'placeholder'|'original'|'official-licensed';rights:'placeholder'|'owned'|'licensed';src?:string;alt:LocalizedText;caption?:LocalizedText}; spoiler:SpoilerRule }
+  | { id:string; type:'image'; asset:AssetRef; spoiler:SpoilerRule }
   | { id:string; type:'quote'; content:LocalizedText; attribution:LocalizedText; spoiler:SpoilerRule }
   | { id:string; type:'event'; eventId:string; summary:LocalizedRichText; spoiler:SpoilerRule }
   | { id:string; type:'interaction'; action:'open-entity'|'reveal-spoiler'|'jump-to-event'; target:EntityRef; label:LocalizedText; spoiler:SpoilerRule }

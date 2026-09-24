@@ -50,5 +50,18 @@
   },
   "sourceIds": [
     "official-the-lake-page"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/location-lake-cabin.svg",
+    "alt": {
+      "zhHans": "昏暗木屋、湖光与室内钓线构成的原创场景插画",
+      "en": "Original scene illustration of a dim cabin with lake light and fishing line"
+    },
+    "caption": {
+      "zhHans": "原创地点档案插画｜锈湖湖畔小屋",
+      "en": "Original location archive illustration | Rusty Lake cabin"
+    }
+  }
 }

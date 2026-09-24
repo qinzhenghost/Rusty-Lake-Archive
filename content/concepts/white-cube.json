@@ -55,5 +55,18 @@
   },
   "sourceIds": [
     "primary-arles-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/concept-white-cube.svg",
+    "alt": {
+      "zhHans": "白色立方体的原创档案概念插画",
+      "en": "Original archive concept illustration of a white cube"
+    },
+    "caption": {
+      "zhHans": "原创概念档案插画",
+      "en": "Original concept archive illustration"
+    }
+  }
 }

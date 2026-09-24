@@ -35,6 +35,34 @@
       }
     },
     {
+      "id": "the-lake-arrival-visual",
+      "type": "image",
+      "asset": {
+        "assetType": "original",
+        "rights": "owned",
+        "src": "/visuals/location-lake-cabin.svg",
+        "alt": {
+          "zhHans": "锈湖湖畔小屋的原创档案场景插画",
+          "en": "Original archival scene illustration of the cabin at Rusty Lake"
+        },
+        "caption": {
+          "zhHans": "原创场景插画｜湖畔小屋",
+          "en": "Original scene illustration | Lake cabin"
+        }
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
       "id": "lake-arrival-p1",
       "type": "paragraph",
       "content": {

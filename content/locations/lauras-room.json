@@ -23,5 +23,18 @@
   "sourceIds": [
     "official-seasons-presskit",
     "primary-seasons-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/location-lauras-room.svg",
+    "alt": {
+      "zhHans": "窗、桌面与植物组成的劳拉房间原创场景插画",
+      "en": "Original scene illustration of Laura's room with a window, table, and plant"
+    },
+    "caption": {
+      "zhHans": "原创地点档案插画｜劳拉的房间",
+      "en": "Original location archive illustration | Laura's Room"
+    }
+  }
 }

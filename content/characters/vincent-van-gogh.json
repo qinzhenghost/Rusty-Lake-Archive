@@ -89,5 +89,18 @@
     "official-arles-release",
     "primary-arles-game",
     "editorial-rla"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/character-vincent.svg",
+    "alt": {
+      "zhHans": "文森特·梵高的原创档案式人物插画，不复刻具体作品",
+      "en": "Original archival portrait illustration of Vincent van Gogh without reproducing a specific artwork"
+    },
+    "caption": {
+      "zhHans": "原创人物档案插画",
+      "en": "Original character archive illustration"
+    }
+  }
 }

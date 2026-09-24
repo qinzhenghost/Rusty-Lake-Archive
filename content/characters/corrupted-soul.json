@@ -128,5 +128,18 @@
     "primary-seasons-game",
     "primary-the-lake-game",
     "primary-arles-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/character-corrupted-soul.svg",
+    "alt": {
+      "zhHans": "黑暗人形与浅色眼睛构成的腐化灵魂原创概念插画",
+      "en": "Original concept illustration of a dark humanoid Corrupted Soul with pale eyes"
+    },
+    "caption": {
+      "zhHans": "原创概念人物插画",
+      "en": "Original concept character illustration"
+    }
+  }
 }

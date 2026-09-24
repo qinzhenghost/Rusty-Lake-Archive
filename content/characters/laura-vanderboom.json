@@ -50,5 +50,18 @@
   },
   "sourceIds": [
     "primary-seasons-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/character-laura.svg",
+    "alt": {
+      "zhHans": "劳拉·范德布姆的原创档案式人物剪影插画",
+      "en": "Original archival portrait illustration of Laura Vanderboom"
+    },
+    "caption": {
+      "zhHans": "原创人物档案插画",
+      "en": "Original character archive illustration"
+    }
+  }
 }

@@ -41,6 +41,34 @@
       }
     },
     {
+      "id": "seasons-spring-visual",
+      "type": "image",
+      "asset": {
+        "assetType": "original",
+        "rights": "owned",
+        "src": "/visuals/location-lauras-room.svg",
+        "alt": {
+          "zhHans": "劳拉房间的原创档案场景插画",
+          "en": "Original archival scene illustration of Laura's room"
+        },
+        "caption": {
+          "zhHans": "原创场景插画｜1964 年春",
+          "en": "Original scene illustration | Spring 1964"
+        }
+      },
+      "spoiler": {
+        "level": "none",
+        "requiredCompletedGameIds": [],
+        "allowManualReveal": true
+      },
+      "provenance": {
+        "mode": "original-note",
+        "sourceIds": [
+          "editorial-rla"
+        ]
+      }
+    },
+    {
       "id": "spring-p1",
       "type": "paragraph",
       "content": {

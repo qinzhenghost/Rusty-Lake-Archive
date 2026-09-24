@@ -388,3 +388,25 @@ html[data-lang="en"] .brand strong { font-size: 14px; }
   .global-language-toggle button { font-size: 10px; min-width: 32px; padding: 4px 6px; }
   .mobile-menu summary { padding: 6px 8px; }
 }
+
+
+/* Step 10 — visual asset system */
+.visual-asset { margin: 0; position: relative; overflow: hidden; border: 1px solid var(--line); background: var(--paper-3); }
+.visual-asset img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.visual-asset figcaption, .story-visual figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 8px 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.4; }
+.visual-asset figcaption small, .story-visual figcaption small { letter-spacing: .1em; color: var(--rust); }
+.visual-card-image { width: 100%; min-height: 0; }
+.game-card .visual-card-image, .character-card .visual-card-image { margin-bottom: 14px; }
+.game-card .visual-card-image img { aspect-ratio: 16 / 9; }
+.character-card .visual-card-image img { aspect-ratio: 4 / 3; }
+.detail-hero { margin: 0 0 22px; box-shadow: 4px 5px 0 rgba(41,40,32,.07); }
+.detail-hero img { max-height: 460px; }
+.entity-hero { max-width: 760px; }
+.story-visual { margin: 26px 0 30px; border: 1px solid var(--line); background: var(--paper-3); box-shadow: 4px 5px 0 rgba(41,40,32,.06); }
+.story-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.visual-fallback { min-height: 220px; background: repeating-linear-gradient(135deg, rgba(41,40,32,.04) 0 10px, transparent 10px 20px); }
+@media (max-width: 720px) {
+  .detail-hero { margin-bottom: 18px; }
+  .detail-hero img, .story-visual img { aspect-ratio: 4 / 3; }
+  .visual-asset figcaption, .story-visual figcaption { align-items: flex-start; flex-direction: column; }
+}

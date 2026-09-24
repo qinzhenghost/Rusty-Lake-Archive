@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+<defs>
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .10"/></feComponentTransfer></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#d0c5a6"/>
+
+<circle cx="600" cy="400" r="310" fill="#b9b08f"/>
+<path d="M470 570c-70-195-20-375 105-420 105-38 235 40 245 165 10 140-115 230-175 270-55 37-108 65-175-15z" fill="#3f5e54"/>
+<path d="M720 210c75 0 125 42 150 86-60 6-107 20-153 60z" fill="#c7a047"/>
+<circle cx="670" cy="250" r="14" fill="#171915"/>
+<path d="M485 380c-70 55-118 110-135 190 110-45 170-92 215-155" fill="#7a4638"/>
+<path d="M560 610c0 45-15 82-38 115M645 610c2 48 18 82 40 110" stroke="#2a2a24" stroke-width="10"/>
+
+<rect width="1200" height="800" filter="url(#grain)" opacity=".35"/>
+<rect x="24" y="24" width="1152" height="752" fill="none" stroke="#2c2a22" stroke-width="2" opacity=".65"/>
+</svg>

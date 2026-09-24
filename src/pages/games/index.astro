@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import I18nText from '../../components/I18nText.astro';
 import LocalizedTitle from '../../components/LocalizedTitle.astro';
+import VisualAsset from '../../components/VisualAsset.astro';
 import { getGames } from '../../lib/content';
 const games = getGames();
 ---
@@ -13,7 +14,7 @@ const games = getGames();
       {games.map((game) => (
         <a class:list={['game-card', game.contentStatus === 'stub' && 'content-stub']} href={'/games/' + game.slug}>
           <div>
-            <div class="cover"><I18nText zh="作品封面占位" en="ARCHIVE COVER" /></div>
+            {game.heroAsset ? <VisualAsset asset={game.heroAsset} className="cover visual-card-image" showCaption={false} /> : <div class="cover"><I18nText zh="作品封面占位" en="ARCHIVE COVER" /></div>}
             <h3><LocalizedTitle value={game.title} /></h3>
             <small><span>{game.releaseDate ?? '—'}</span> · <I18nText zh={'推荐顺序 ' + (game.recommendedPlayOrder ?? '—')} en={'Recommended order ' + (game.recommendedPlayOrder ?? '—')} /></small>
             <p><span data-i18n-zh>{game.summary.zhHans}</span><span data-i18n-en>{game.summary.en}</span></p>

@@ -32,5 +32,18 @@
     "official-seasons-presskit",
     "official-rustylake-faq",
     "primary-seasons-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/game-seasons.svg",
+    "alt": {
+      "zhHans": "四个季节被分割在同一扇档案窗格中的原创抽象插画",
+      "en": "Original abstract illustration dividing four seasons across one archival window"
+    },
+    "caption": {
+      "zhHans": "原创档案插画｜四季记忆",
+      "en": "Original archive illustration | Four seasonal memories"
+    }
+  }
 }

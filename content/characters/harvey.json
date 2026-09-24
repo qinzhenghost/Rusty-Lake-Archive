@@ -50,5 +50,18 @@
   },
   "sourceIds": [
     "official-seasons-presskit"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/character-harvey.svg",
+    "alt": {
+      "zhHans": "哈维鹦鹉的原创档案式插画",
+      "en": "Original archival illustration of Harvey the parrot"
+    },
+    "caption": {
+      "zhHans": "原创人物档案插画",
+      "en": "Original character archive illustration"
+    }
+  }
 }

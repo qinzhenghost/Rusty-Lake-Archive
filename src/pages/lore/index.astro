@@ -2,12 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import I18nText from '../../components/I18nText.astro';
 import LocalizedTitle from '../../components/LocalizedTitle.astro';
+import VisualAsset from '../../components/VisualAsset.astro';
 import { getConcepts } from '../../lib/content';
 const concepts = getConcepts();
 ---
 <BaseLayout title="世界观档案" titleEn="Lore Files">
   <section class="section">
     <div class="section-head"><div><div class="kicker"><I18nText zh="世界观档案" en="Lore Files" /></div><h1><I18nText zh="概念档案" en="Concept Files" /></h1></div></div>
-    <div class="character-grid">{concepts.map((item) => <a class="character-card" href={'/lore/' + item.slug}><div class="portrait"><I18nText zh="概念档案" en="LORE FILE" /></div><h3><LocalizedTitle value={item.title} /></h3><small class="muted"><span data-i18n-zh>{item.summary.zhHans}</span><span data-i18n-en>{item.summary.en}</span></small></a>)}</div>
+    <div class="character-grid">{concepts.map((item) => <a class="character-card" href={'/lore/' + item.slug}>{item.heroAsset ? <VisualAsset asset={item.heroAsset} className="portrait visual-card-image" showCaption={false} /> : <div class="portrait"><I18nText zh="概念档案" en="LORE FILE" /></div>}<h3><LocalizedTitle value={item.title} /></h3><small class="muted"><span data-i18n-zh>{item.summary.zhHans}</span><span data-i18n-en>{item.summary.en}</span></small></a>)}</div>
   </section>
 </BaseLayout>

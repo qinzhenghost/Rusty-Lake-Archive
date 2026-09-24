@@ -1,0 +1,49 @@
+---
+import type { AssetRef } from '../content/schema';
+
+interface Props {
+  asset: AssetRef;
+  className?: string;
+  showCaption?: boolean;
+  priority?: boolean;
+}
+const { asset, className = '', showCaption = true, priority = false } = Astro.props;
+const src = asset.src ?? '';
+---
+<figure class:list={['visual-asset', className]} data-rights={asset.rights} data-asset-type={asset.assetType}>
+  {src ? (
+    <img
+      src={src}
+      alt={asset.alt.zhHans}
+      data-alt-zh={asset.alt.zhHans}
+      data-alt-en={asset.alt.en}
+      width="1200"
+      height="800"
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+      fetchpriority={priority ? 'high' : 'auto'}
+    />
+  ) : (
+    <div class="visual-fallback" aria-hidden="true"></div>
+  )}
+  {showCaption && asset.caption && (
+    <figcaption>
+      <span data-i18n-zh>{asset.caption.zhHans}</span>
+      <span data-i18n-en>{asset.caption.en}</span>
+      <small>{asset.rights === 'owned' ? 'ORIGINAL / OWNED' : asset.rights.toUpperCase()}</small>
+    </figcaption>
+  )}
+</figure>
+<script is:inline>
+  (() => {
+    const updateVisualAlts = () => {
+      const language = document.documentElement.dataset.lang === 'en' ? 'en' : 'zhHans';
+      document.querySelectorAll('img[data-alt-zh][data-alt-en]').forEach((img) => {
+        const value = language === 'en' ? img.dataset.altEn : img.dataset.altZh;
+        if (value) img.setAttribute('alt', value);
+      });
+    };
+    updateVisualAlts();
+    window.addEventListener('rla-language-change', updateVisualAlts);
+  })();
+</script>

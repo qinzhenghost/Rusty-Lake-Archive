@@ -86,7 +86,12 @@ function StoryBlockView({ block, language, progress, entityMap, onEntity, onReve
       case 'scene': return <div className="scene-label">{language === 'en' ? 'Memory Record' : '记忆记录'}<strong>{localize(block.title, language)}</strong>{block.subtitle && <span>{localize(block.subtitle, language)}</span>}</div>;
       case 'paragraph': return <p>{rich(block.content)}</p>;
       case 'dialogue': return <div className="story-dialogue">{rich(block.content)}</div>;
-      case 'image': return <figure className="story-image memory-plate"><div className="memory-plate-mark">{language === 'en' ? 'MEMORY / VISUAL PLACEHOLDER' : '记忆 / 视觉占位'}</div><div>{localize(block.asset.alt, language)}</div>{block.asset.caption && <figcaption>{localize(block.asset.caption, language)}</figcaption>}</figure>;
+      case 'image': return block.asset.src
+        ? <figure className="story-image story-visual">
+            <img src={block.asset.src} alt={localize(block.asset.alt, language)} width={1200} height={800} loading="lazy" decoding="async" />
+            {block.asset.caption && <figcaption>{localize(block.asset.caption, language)}<small>{block.asset.rights === 'owned' ? 'ORIGINAL / OWNED' : block.asset.rights.toUpperCase()}</small></figcaption>}
+          </figure>
+        : <figure className="story-image memory-plate"><div className="memory-plate-mark">{language === 'en' ? 'MEMORY / VISUAL PLACEHOLDER' : '记忆 / 视觉占位'}</div><div>{localize(block.asset.alt, language)}</div>{block.asset.caption && <figcaption>{localize(block.asset.caption, language)}</figcaption>}</figure>;
       case 'quote': return <blockquote className="inline-note">“{localize(block.content, language)}”<br /><small>{localize(block.attribution, language)}</small></blockquote>;
       case 'event': return <div className="story-event"><div className="kicker">{language === 'en' ? 'Timeline Event' : '时间线事件'}</div>{rich(block.summary)}</div>;
       case 'interaction': return <button type="button" className="button-ghost story-action" onClick={() => onEntity(block.target)}>{localize(block.label, language)} →</button>;

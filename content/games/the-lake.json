@@ -32,5 +32,18 @@
     "official-the-lake-presskit",
     "official-rustylake-faq",
     "primary-the-lake-game"
-  ]
+  ],
+  "heroAsset": {
+    "assetType": "original",
+    "rights": "owned",
+    "src": "/visuals/game-the-lake.svg",
+    "alt": {
+      "zhHans": "夜色湖面、木屋与方块倒影构成的原创档案插画",
+      "en": "Original archive illustration of a night lake, cabin, and cube reflection"
+    },
+    "caption": {
+      "zhHans": "原创档案插画｜锈湖湖畔",
+      "en": "Original archive illustration | The Lake"
+    }
+  }
 }
